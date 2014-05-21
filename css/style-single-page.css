@@ -11,11 +11,11 @@ a.brand img {
 }
 #profile h2, #skills h2, #work h2, #resume h2 {
 	font-weight:normal;
-	color: #39D084;
+	color: #DE1010;
 }
 /***** Profile *****/
 	#profile h1 {
-	color:#39d084;
+	color:#DE1010;
 	font-weight: normal;
 }
 #profile h3 {
@@ -35,7 +35,7 @@ a.hire-me {
 	display: inline-block;
  *display: inline;
 	padding:20px 60px;
-	background:#39d084;
+	background:#DE1010;
 	color:#fff;
 	text-transform:uppercase;
 	font-size:26px;
@@ -100,10 +100,10 @@ ul.social-icons li a:hover {
 	background:#ee742b;
 }
 #skills .html {
-	background:#f04949;
+	background:#14232E;
 }
 #skills .css {
-	background:#39d084;
+	background:#DE1010;
 }
 #skills .ps:hover, #skills .ai:hover, #skills .html:hover, #skills .css:hover {
 	border:8px solid #fff;
@@ -155,13 +155,13 @@ ul.social-icons li a:hover {
 }
 .html2 {
 	width:75%;
-	background:#f04949;
+	background:#14232E;
 	-moz-animation:jquery 2s ease-out;
 	-webkit-animation:jquery 2s ease-out;
 }
 .css2 {
 	width:85%;
-	background:#39d084;
+	background:#DE1010;
 	-moz-animation:photoshop 2s ease-out;
 	-webkit-animation:photoshop 2s ease-out;
 }
@@ -241,7 +241,7 @@ ul.work-images li:first-child {
 }
 ul.work-images li div {
 	background:url(../img/eye.png) 50% 50% no-repeat;
-	background-color: #f04949;
+	background-color: #14232E;
 	-webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
@@ -274,5 +274,5 @@ ul.work-images li img:hover {
 	text-decoration:none;
 }
 .footer p a:hover {
-	color:#39d084;
+	color:#DE1010;
 }
