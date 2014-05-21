@@ -11,11 +11,11 @@ a.brand img {
 }
 #profile h2, #skills h2, #work h2, #resume h2 {
 	font-weight:normal;
-	color: #f04949;
+	color: #ffa800;
 }
 /***** Profile *****/
 	#profile h1 {
-	color:#f04949;
+	color:#ffa800;
 	font-weight: normal;
 }
 #profile h3 {
@@ -35,7 +35,7 @@ a.hire-me {
 	display: inline-block;
  *display: inline;
 	padding:20px 60px;
-	background:#f04949;
+	background:#ffa800;
 	color:#fff;
 	text-transform:uppercase;
 	font-size:26px;
@@ -103,7 +103,7 @@ ul.social-icons li a:hover {
 	background:#14232E;
 }
 #skills .css {
-	background:#f04949;
+	background:#ffa800;
 }
 #skills .ps:hover, #skills .ai:hover, #skills .html:hover, #skills .css:hover {
 	border:8px solid #fff;
@@ -161,7 +161,7 @@ ul.social-icons li a:hover {
 }
 .css2 {
 	width:85%;
-	background:#f04949;
+	background:#ffa800;
 	-moz-animation:photoshop 2s ease-out;
 	-webkit-animation:photoshop 2s ease-out;
 }
@@ -274,5 +274,5 @@ ul.work-images li img:hover {
 	text-decoration:none;
 }
 .footer p a:hover {
-	color:#f04949;
+	color:#ffa800;
 }
