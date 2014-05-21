@@ -98,7 +98,7 @@ ul.social-icons li a:hover {
 	background:#ee742b;
 }
 .skills .html {
-	background:#f04949;
+	background:#14232E;
 }
 .skills .css {
 	background:#39d084;
@@ -153,7 +153,7 @@ ul.social-icons li a:hover {
 }
 .html2 {
 	width:75%;
-	background:#f04949;
+	background:#14232E;
 	-moz-animation:jquery 2s ease-out;
 	-webkit-animation:jquery 2s ease-out;
 }
@@ -239,7 +239,7 @@ ul.work-images li:first-child {
 }
 ul.work-images li div {
 	background:url(../img/eye.png) 50% 50% no-repeat;
-	background-color: #f04949;
+	background-color: #14232E;
 	-webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
 	-o-transition: all 0.2s linear;
