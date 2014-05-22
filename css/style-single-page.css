@@ -276,3 +276,9 @@ ul.work-images li img:hover {
 .footer p a:hover {
 	color:#9ACD32;
 }
+
+/** OGG **/
+.strongskill {
+    color: #9ACD32;
+    font-weight: bold;
+}
