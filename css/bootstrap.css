@@ -1572,7 +1572,7 @@ legend + .control-group {
 	line-height: 20px;
 	text-align: center;
 	vertical-align: middle;
-	background:#f04949;
+	background:#9ACD32;
 	cursor: pointer;
 	color: #fff;
 	border:0;
@@ -3033,7 +3033,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	float: right;
 	padding: 32px;
 	color: #ffffff;
-	background-color: #f04949;
+	background-color: #9ACD32;
  *background-color: #e5e5e5;
 /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 }
