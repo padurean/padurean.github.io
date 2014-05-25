@@ -3039,7 +3039,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 }
 .navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
 	color: #ffffff;
-	background-color: #e5e5e5;
+	background-color: #68b6e6;
  *background-color: #d9d9d9;
 }
 .navbar .btn-navbar:active, .navbar .btn-navbar.active {
@@ -3099,7 +3099,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	border-bottom-color: #333333;
 }
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-	background-color: #e5e5e5;
+	background-color: #68b6e6;
 	color: #555555;
 }
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
