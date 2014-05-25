@@ -47,6 +47,8 @@ a.hire-me {
 a.hire-me:hover {
 	text-decoration:none;
 	background:#71c6fa;
+}
+a.hire-me:hover > i {
     color:#ffffff;
 }
 .social {
