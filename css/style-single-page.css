@@ -284,6 +284,6 @@ ul.work-images li img:hover {
     font-weight: bold;
 }
 
-.navbar .oggTopMenu > li > a:hover > span {
+.navbar .oggTopMenu > li > a:hover > i {
     color: #71c6fa;
 }
