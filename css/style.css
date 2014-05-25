@@ -44,7 +44,7 @@ a.hire-me {
 }
 a.hire-me:hover {
 	text-decoration:none;
-	background:#71c6fa;
+	background:#68b6e6;
 }
 a.hire-me:hover > i {
     color:#ffffff;
@@ -282,5 +282,5 @@ ul.work-images li img:hover {
 }
 
 .navbar .oggTopMenu > li > a:hover > i {
-    color: #71c6fa;
+    color: #68b6e6;
 }
