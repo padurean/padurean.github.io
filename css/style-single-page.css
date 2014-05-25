@@ -47,6 +47,7 @@ a.hire-me {
 a.hire-me:hover {
 	text-decoration:none;
 	background:#71c6fa;
+    color: #203748;
 }
 .social {
 	text-align:center;
@@ -281,4 +282,8 @@ ul.work-images li img:hover {
 .strongskill {
     color: #65b1df;
     font-weight: bold;
+}
+
+ul.oggTopMenu > li > a:hover {
+    color: #71c6fa;
 }

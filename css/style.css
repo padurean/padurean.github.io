@@ -277,3 +277,7 @@ ul.work-images li img:hover {
 .footer p a:hover {
 	color:#65b1df;
 }
+
+ul.oggTopMenu > li > a:hover {
+    color: #71c6fa;
+}
