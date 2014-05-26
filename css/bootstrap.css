@@ -1572,7 +1572,7 @@ legend + .control-group {
 	line-height: 20px;
 	text-align: center;
 	vertical-align: middle;
-	background:#65b1df;
+	background:#9ACD32;
 	cursor: pointer;
 	color: #fff;
 	border:0;
@@ -3033,13 +3033,13 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	float: right;
 	padding: 32px;
 	color: #ffffff;
-	background-color: #65b1df;
- *background-color: #68b6e6;
+	background-color: #9ACD32;
+ *background-color: #9ACD32;
 /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 }
 .navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
 	color: #ffffff;
-	background-color: #68b6e6;
+	background-color: #9ACD32;
  *background-color: #d9d9d9;
 }
 .navbar .btn-navbar:active, .navbar .btn-navbar.active {
@@ -3099,7 +3099,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	border-bottom-color: #333333;
 }
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-	background-color: #68b6e6;
+	background-color: #9ACD32;
 	color: #555555;
 }
 .navbar .nav li.dropdown > .dropdown-toggle .caret {

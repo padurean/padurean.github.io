@@ -11,11 +11,11 @@ a.brand img {
 }
 #profile h2, #skills h2, #work h2, #resume h2 {
 	font-weight:normal;
-	color: #65b1df;
+	color: #9ACD32;
 }
 /***** Profile *****/
 	#profile h1 {
-	color:#65b1df;
+	color:#9ACD32;
 	font-weight: normal;
 }
 #profile h3 {
@@ -35,7 +35,7 @@ a.hire-me {
 	display: inline-block;
  *display: inline;
 	padding:20px 60px;
-	background:#65b1df;
+	background:#9ACD32;
     color: #203748;
 	text-transform:uppercase;
 	font-size:26px;
@@ -46,7 +46,7 @@ a.hire-me {
 }
 a.hire-me:hover {
 	text-decoration:none;
-	background:#68b6e6;
+	background:#9ACD32;
 }
 a.hire-me:hover > i {
     color:#ffffff;
@@ -106,7 +106,7 @@ ul.social-icons li a:hover {
 	background:#14232E;
 }
 #skills .css {
-	background:#65b1df;
+	background:#9ACD32;
 }
 #skills .ps:hover, #skills .ai:hover, #skills .html:hover, #skills .css:hover {
 	border:8px solid #fff;
@@ -164,7 +164,7 @@ ul.social-icons li a:hover {
 }
 .css2 {
 	width:85%;
-	background:#65b1df;
+	background:#9ACD32;
 	-moz-animation:photoshop 2s ease-out;
 	-webkit-animation:photoshop 2s ease-out;
 }
@@ -277,14 +277,14 @@ ul.work-images li img:hover {
 	text-decoration:none;
 }
 .footer p a:hover {
-	color:#65b1df;
+	color:#9ACD32;
 }
 
 /** OGG **/
 .strongskill {
-    color: #65b1df;
+    color: #9ACD32;
 }
 
 .navbar .oggTopMenu > li > a:hover > i {
-    color: #68b6e6;
+    color: #9ACD32;
 }
