@@ -281,6 +281,11 @@ ul.work-images li img:hover {
 	color:#65b1df;
 }
 
+/** OGG **/
+.strongskill {
+    color: #65b1df;
+}
+
 .navbar .oggTopMenu > li > a:hover > i {
     color: #68b6e6;
 }
