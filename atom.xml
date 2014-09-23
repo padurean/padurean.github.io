@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Ogg's Blog]]></title>
+  <title><![CDATA[Ogg's Blog - Valentin M. Padurean's personal GitHub page / blog]]></title>
   <link href="http://padurean.github.io/atom.xml" rel="self"/>
   <link href="http://padurean.github.io/"/>
-  <updated>2014-09-23T14:02:00+03:00</updated>
+  <updated>2014-09-23T14:06:24+03:00</updated>
   <id>http://padurean.github.io/</id>
   <author>
-    <name><![CDATA[Ogg]]></name>
+    <name><![CDATA[Ogg (Valentin M. Padurean)]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
