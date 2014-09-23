@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Scala | Ogg's Blog]]></title>
   <link href="http://padurean.github.io/blog/categories/scala/atom.xml" rel="self"/>
   <link href="http://padurean.github.io/"/>
-  <updated>2014-09-23T19:05:29+03:00</updated>
+  <updated>2014-09-23T19:33:16+03:00</updated>
   <id>http://padurean.github.io/</id>
   <author>
     <name><![CDATA[Ogg (Valentin M. Padurean)]]></name>
@@ -19,6 +19,31 @@
     <updated>2014-09-23T16:23:56+03:00</updated>
     <id>http://padurean.github.io/blog/2014/09/23/type-classes-in-scala</id>
     <content type="html"><![CDATA[<p>Type Classes in Scala explained:</p>
+
+<pre><code class="scala Some scala code http://ninja.com Scala Ninja">object Statistics {
+  trait NumberLike[A] {
+    def get: A
+    def plus(y: NumberLike[A]): NumberLike[A]
+    def minus(y: NumberLike[A]): NumberLike[A]
+    def divide(y: Int): NumberLike[A]
+  }
+  case class NumberLikeDouble(x: Double) extends NumberLike[Double] {
+    def get: Double = x
+    def minus(y: NumberLike[Double]) = NumberLikeDouble(x - y.get)
+    def plus(y: NumberLike[Double]) = NumberLikeDouble(x + y.get)
+    def divide(y: Int) = NumberLikeDouble(x / y)
+  }
+  type Quartile[A] = (NumberLike[A], NumberLike[A], NumberLike[A])
+  def median[A](xs: Vector[NumberLike[A]]): NumberLike[A] = xs(xs.size / 2)
+  def quartiles[A](xs: Vector[NumberLike[A]]): Quartile[A] =
+    (xs(xs.size / 4), median(xs), xs(xs.size / 4 * 3))
+  def iqr[A](xs: Vector[NumberLike[A]]): NumberLike[A] = quartiles(xs) match {
+    case (lowerQuartile, _, upperQuartile) =&gt; upperQuartile.minus(lowerQuartile)
+  }
+  def mean[A](xs: Vector[NumberLike[A]]): NumberLike[A] =
+    xs.reduce(_.plus(_)).divide(xs.size)
+}
+</code></pre>
 
 <p><a href="http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html">http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html</a></p>
 ]]></content>

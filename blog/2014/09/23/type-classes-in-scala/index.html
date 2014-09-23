@@ -9,8 +9,30 @@
   <meta name="author" content="Ogg (Valentin M. Padurean)">
 
   
-  <meta name="description" content="Type Classes in Scala explained: http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
-">
+  <meta name="description" content="Type Classes in Scala explained: Some scala codeScala Ninja1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+object Statistics { trait &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +111,55 @@
 
 
 <div class="entry-content"><p>Type Classes in Scala explained:</p>
+
+<figure class='code'><figcaption><span>Some scala code</span><a href='http://ninja.com'>Scala Ninja</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">object</span> <span class="nc">Statistics</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">trait</span> <span class="nc">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">get</span><span class="k">:</span> <span class="kt">A</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">plus</span><span class="o">(</span><span class="n">y</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">minus</span><span class="o">(</span><span class="n">y</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">divide</span><span class="o">(</span><span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>  <span class="k">case</span> <span class="k">class</span> <span class="nc">NumberLikeDouble</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">NumberLike</span><span class="o">[</span><span class="kt">Double</span><span class="o">]</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">get</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="n">x</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">minus</span><span class="o">(</span><span class="n">y</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="nc">NumberLikeDouble</span><span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span><span class="n">get</span><span class="o">)</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">plus</span><span class="o">(</span><span class="n">y</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">Double</span><span class="o">])</span> <span class="k">=</span> <span class="nc">NumberLikeDouble</span><span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">.</span><span class="n">get</span><span class="o">)</span>
+</span><span class='line'>    <span class="k">def</span> <span class="n">divide</span><span class="o">(</span><span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="nc">NumberLikeDouble</span><span class="o">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="o">)</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>  <span class="k">type</span> <span class="kt">Quartile</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">(</span><span class="nc">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="nc">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="nc">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">median</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">xs</span><span class="k">:</span> <span class="kt">Vector</span><span class="o">[</span><span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="n">xs</span><span class="o">(</span><span class="n">xs</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="o">)</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">quartiles</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">xs</span><span class="k">:</span> <span class="kt">Vector</span><span class="o">[</span><span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">Quartile</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+</span><span class='line'>    <span class="o">(</span><span class="n">xs</span><span class="o">(</span><span class="n">xs</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">4</span><span class="o">),</span> <span class="n">median</span><span class="o">(</span><span class="n">xs</span><span class="o">),</span> <span class="n">xs</span><span class="o">(</span><span class="n">xs</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">3</span><span class="o">))</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">iqr</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">xs</span><span class="k">:</span> <span class="kt">Vector</span><span class="o">[</span><span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="n">quartiles</span><span class="o">(</span><span class="n">xs</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">case</span> <span class="o">(</span><span class="n">lowerQuartile</span><span class="o">,</span> <span class="k">_</span><span class="o">,</span> <span class="n">upperQuartile</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">upperQuartile</span><span class="o">.</span><span class="n">minus</span><span class="o">(</span><span class="n">lowerQuartile</span><span class="o">)</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>  <span class="k">def</span> <span class="n">mean</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">xs</span><span class="k">:</span> <span class="kt">Vector</span><span class="o">[</span><span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">NumberLike</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+</span><span class='line'>    <span class="n">xs</span><span class="o">.</span><span class="n">reduce</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">plus</span><span class="o">(</span><span class="k">_</span><span class="o">)).</span><span class="n">divide</span><span class="o">(</span><span class="n">xs</span><span class="o">.</span><span class="n">size</span><span class="o">)</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p><a href="http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html">http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html</a></p>
 </div>
@@ -190,9 +261,9 @@
 </section>
 
 <section>
-     <h1>On Twitter</h1>
-     <a class="twitter-timeline" href="https://twitter.com/vpadure" data-widget-id="514393615699697664">Tweets by @vpadure</a>
-     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <h1>On Twitter</h1>
+  <a class="twitter-timeline" href="https://twitter.com/vpadure" data-widget-id="514393615699697664">Tweets by @vpadure</a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
  </section>
 
 
