@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Ogg's Blog]]></title>
-  <link href="http://padurean.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Scala | Ogg's Blog]]></title>
+  <link href="http://padurean.github.io/blog/categories/scala/atom.xml" rel="self"/>
   <link href="http://padurean.github.io/"/>
   <updated>2014-09-23T16:35:26+03:00</updated>
   <id>http://padurean.github.io/</id>
