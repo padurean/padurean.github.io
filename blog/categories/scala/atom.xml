@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Scala | Ogg's Blog]]></title>
   <link href="http://padurean.github.io/blog/categories/scala/atom.xml" rel="self"/>
   <link href="http://padurean.github.io/"/>
-  <updated>2014-09-23T20:30:07+03:00</updated>
+  <updated>2014-09-23T23:25:47+03:00</updated>
   <id>http://padurean.github.io/</id>
   <author>
     <name><![CDATA[Ogg (Valentin M. Padurean)]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Another Sample Post]]></title>
+    <link href="http://padurean.github.io/blog/2014/09/23/another-sample-post/"/>
+    <updated>2014-09-23T23:22:01+03:00</updated>
+    <id>http://padurean.github.io/blog/2014/09/23/another-sample-post</id>
+    <content type="html"><![CDATA[<pre><code class="scala Some scala code http://getithere.com Get It">trait IntValued extends Key {
+ type Value = Int
+}
+trait StringValued extends Key {
+  type Value = String
+}
+object Keys {
+  val foo = new Key("foo") with IntValued
+  val bar = new Key("bar") with StringValued
+}
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Type Classes in Scala]]></title>

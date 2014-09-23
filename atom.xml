@@ -4,7 +4,7 @@
   <title><![CDATA[Ogg's Blog]]></title>
   <link href="http://padurean.github.io/atom.xml" rel="self"/>
   <link href="http://padurean.github.io/"/>
-  <updated>2014-09-23T20:30:07+03:00</updated>
+  <updated>2014-09-23T23:25:47+03:00</updated>
   <id>http://padurean.github.io/</id>
   <author>
     <name><![CDATA[Ogg (Valentin M. Padurean)]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Another Sample Post]]></title>
+    <link href="http://padurean.github.io/blog/2014/09/23/another-sample-post/"/>
+    <updated>2014-09-23T23:22:01+03:00</updated>
+    <id>http://padurean.github.io/blog/2014/09/23/another-sample-post</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span>Some scala code</span><a href='http://getithere.com'>Get It</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">IntValued</span> <span class="k">extends</span> <span class="nc">Key</span> <span class="o">{</span>
+</span><span class='line'> <span class="k">type</span> <span class="kt">Value</span> <span class="o">=</span> <span class="nc">Int</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="k">trait</span> <span class="nc">StringValued</span> <span class="k">extends</span> <span class="nc">Key</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">type</span> <span class="kt">Value</span> <span class="o">=</span> <span class="nc">String</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="k">object</span> <span class="nc">Keys</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">val</span> <span class="n">foo</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Key</span><span class="o">(</span><span class="s">&quot;foo&quot;</span><span class="o">)</span> <span class="k">with</span> <span class="nc">IntValued</span>
+</span><span class='line'>  <span class="k">val</span> <span class="n">bar</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Key</span><span class="o">(</span><span class="s">&quot;bar&quot;</span><span class="o">)</span> <span class="k">with</span> <span class="nc">StringValued</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Type Classes in Scala]]></title>

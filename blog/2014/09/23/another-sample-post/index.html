@@ -5,12 +5,24 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Type Classes in Scala - Ogg&#8217;s Blog</title>
+  <title>Another Sample Post - Ogg&#8217;s Blog</title>
   <meta name="author" content="Ogg (Valentin M. Padurean)">
 
   
-  <meta name="description" content="TODO
-">
+  <meta name="description" content="Some scala codeGet It1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+trait IntValued extends Key { type Value = Int
+}
+trait StringValued extends Key { type Value = String
+} &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +31,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://padurean.github.io/blog/2014/09/23/type-classes-in-scala">
+  <link rel="canonical" href="http://padurean.github.io/blog/2014/09/23/another-sample-post">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Ogg's Blog" type="application/atom+xml">
@@ -69,7 +81,7 @@
   
   <header>
     
-      <h1 class="entry-title">Type Classes in Scala</h1>
+      <h1 class="entry-title">Another Sample Post</h1>
     
     
       <p class="meta">
@@ -78,7 +90,7 @@
 
 
 
-<time class='entry-date' datetime='2014-09-23T16:23:56+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>4:23 pm</span></time>
+<time class='entry-date' datetime='2014-09-23T23:22:01+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>11:22 pm</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://padurean.github.io">Comments</a>
@@ -88,7 +100,28 @@
   </header>
 
 
-<div class="entry-content"><p>TODO</p>
+<div class="entry-content"><figure class='code'><figcaption><span>Some scala code</span><a href='http://getithere.com'>Get It</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">IntValued</span> <span class="k">extends</span> <span class="nc">Key</span> <span class="o">{</span>
+</span><span class='line'> <span class="k">type</span> <span class="kt">Value</span> <span class="o">=</span> <span class="nc">Int</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="k">trait</span> <span class="nc">StringValued</span> <span class="k">extends</span> <span class="nc">Key</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">type</span> <span class="kt">Value</span> <span class="o">=</span> <span class="nc">String</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="k">object</span> <span class="nc">Keys</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">val</span> <span class="n">foo</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Key</span><span class="o">(</span><span class="s">&quot;foo&quot;</span><span class="o">)</span> <span class="k">with</span> <span class="nc">IntValued</span>
+</span><span class='line'>  <span class="k">val</span> <span class="n">bar</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Key</span><span class="o">(</span><span class="s">&quot;bar&quot;</span><span class="o">)</span> <span class="k">with</span> <span class="nc">StringValued</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
@@ -104,7 +137,7 @@
 
 
 
-<time class='entry-date' datetime='2014-09-23T16:23:56+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>4:23 pm</span></time>
+<time class='entry-date' datetime='2014-09-23T23:22:01+03:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>11:22 pm</span></time>
       
 
 <span class="categories">
@@ -118,7 +151,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://padurean.github.io/blog/2014/09/23/type-classes-in-scala/" data-via="vpadure" data-counturl="http://padurean.github.io/blog/2014/09/23/type-classes-in-scala/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://padurean.github.io/blog/2014/09/23/another-sample-post/" data-via="vpadure" data-counturl="http://padurean.github.io/blog/2014/09/23/another-sample-post/" >Tweet</a>
   
   
   
@@ -127,8 +160,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2014/09/23/type-classes-in-scala/" title="Previous Post: Type Classes in Scala">&laquo; Type Classes in Scala</a>
       
-        <a class="basic-alignment right" href="/blog/2014/09/23/another-sample-post/" title="Next Post: Another sample post">Another sample post &raquo;</a>
       
     </p>
   </footer>
@@ -220,8 +253,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://padurean.github.io/blog/2014/09/23/type-classes-in-scala/';
-        var disqus_url = 'http://padurean.github.io/blog/2014/09/23/type-classes-in-scala/';
+        var disqus_identifier = 'http://padurean.github.io/blog/2014/09/23/another-sample-post/';
+        var disqus_url = 'http://padurean.github.io/blog/2014/09/23/another-sample-post/';
         var disqus_script = 'embed.js';
       
     (function () {
