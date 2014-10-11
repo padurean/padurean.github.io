@@ -9,20 +9,7 @@
   <meta name="author" content="Ogg (Valentin M. Padurean)">
 
   
-  <meta name="description" content="Some scala codeGet It1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-trait IntValued extends Key { type Value = Int
-}
-trait StringValued extends Key { type Value = String
-} &hellip;">
+  <meta name="description" content="Header 1 Header 2 Header 3 Header 4 Header 5 Markdown plus h2 with a custom ID ## {#id-goes-here} Link back to H2 This is a paragraph, which is text &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -100,7 +87,132 @@ trait StringValued extends Key { type Value = String
   </header>
 
 
-<div class="entry-content"><figure class='code'><figcaption><span>Some scala code</span><a href='http://getithere.com'>Get It</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="entry-content"><h1>Header 1</h1>
+
+<h2>Header 2</h2>
+
+<h3>Header 3</h3>
+
+<h4>Header 4</h4>
+
+<h5>Header 5</h5>
+
+<h1>Markdown plus h2 with a custom ID ##         {#id-goes-here}</h1>
+
+<p><a href="#id-goes-here">Link back to H2</a></p>
+
+<p>This is a paragraph, which is text surrounded by whitespace. Paragraphs can be on one
+line (or many), and can drone on for hours.</p>
+
+<p>Here is a Markdown link to <a href="http://warpedvisions.org">Warped</a>, and a literal .
+Now some SimpleLinks, like one to [google] (automagically links to are-you-
+feeling-lucky), a [wiki: test] link to a Wikipedia page, and a link to
+[foldoc: CPU]s at foldoc.</p>
+
+<p>Now some inline markup like <em>italics</em>,  <strong>bold</strong>, and <code>code()</code>. Note that underscores in
+words are ignored in Markdown Extra.</p>
+
+<p><img src="/images/photo.jpeg" title="Title is optional" alt="picture alt" /></p>
+
+<blockquote><p>Blockquotes are like quoted text in email replies</p>
+
+<blockquote><p>And, they can be nested</p></blockquote></blockquote>
+
+<ul>
+<li>Bullet lists are easy too</li>
+<li>Another one</li>
+<li><p>Another one</p></li>
+<li><p>A numbered list</p></li>
+<li>Which is numbered</li>
+<li>With periods and a space</li>
+</ul>
+
+
+<p>And now some code:</p>
+
+<pre><code>// Code is just text indented a bit
+which(is_easy) to_remember();
+</code></pre>
+
+<pre><code>
+// Markdown extra adds un-indented code blocks too
+
+if (this_is_more_code == true &amp;&amp; !indented) {
+    // tild wrapped code blocks, also not indented
+}
+</code></pre>
+
+<p>Text with<br/>
+two trailing spaces<br/>
+(on the right)<br/>
+can be used<br/>
+for things like poems</p>
+
+<h3>Horizontal rules</h3>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<div class="custom-class" markdown="1">
+This is a div wrapping some Markdown plus.  Without the DIV attribute, it ignores the
+block.
+</div>
+
+
+<h2>Markdown plus tables</h2>
+
+<table>
+<thead>
+<tr>
+<th> Header </th>
+<th> Header </th>
+<th style="text-align:right;"> Right  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  Cell  </td>
+<td>  Cell  </td>
+<td style="text-align:right;">   $10  </td>
+</tr>
+<tr>
+<td>  Cell  </td>
+<td>  Cell  </td>
+<td style="text-align:right;">   $20  </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>Outer pipes on tables are optional</li>
+<li>Colon used for alignment (right versus left)</li>
+</ul>
+
+
+<h2>Markdown plus definition lists</h2>
+
+<dl>
+<dt>Bottled water</dt>
+<dd>$ 1.25</dd>
+<dd>$ 1.55 (Large)</dd>
+<dt>Milk</dt>
+<dt>Pop</dt>
+<dd>$ 1.75</dd>
+</dl>
+
+<ul>
+<li>Multiple definitions and terms are possible</li>
+<li>Definitions can include multiple paragraphs too</li>
+</ul>
+
+
+<p>*[ABBR]: Markdown plus abbreviations (produces an <abbr> tag)</p>
+
+<figure class='code'><figcaption><span>Some scala code</span><a href='http://getithere.com'>Get It</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
