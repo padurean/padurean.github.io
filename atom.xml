@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Ogg's Blog]]></title>
+  <link href="http://padurean.github.io/atom.xml" rel="self"/>
+  <link href="http://padurean.github.io/"/>
+  <updated>2014-12-13T17:40:07+02:00</updated>
+  <id>http://padurean.github.io/</id>
+  <author>
+    <name><![CDATA[Ogg (Valentin M. Padurean)]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Another Sample Post]]></title>
+    <link href="http://padurean.github.io/blog/2014/09/23/another-sample-post/"/>
+    <updated>2014-09-23T23:22:01+03:00</updated>
+    <id>http://padurean.github.io/blog/2014/09/23/another-sample-post</id>
+    <content type="html"><![CDATA[<h1>Header 1</h1>
+
+<h2>Header 2</h2>
+
+<h3>Header 3</h3>
+
+<h4>Header 4</h4>
+
+<h5>Header 5</h5>
+
+<h1>Markdown plus h2 with a custom ID ##         {#id-goes-here}</h1>
+
+<p><a href="#id-goes-here">Link back to H2</a></p>
+
+<p>This is a paragraph, which is text surrounded by whitespace. Paragraphs can be on one
+line (or many), and can drone on for hours.</p>
+
+<p>Here is a Markdown link to <a href="http://warpedvisions.org">Warped</a>, and a literal .
+Now some SimpleLinks, like one to [google] (automagically links to are-you-
+feeling-lucky), a [wiki: test] link to a Wikipedia page, and a link to
+[foldoc: CPU]s at foldoc.</p>
+
+<p>Now some inline markup like <em>italics</em>,  <strong>bold</strong>, and <code>code()</code>. Note that underscores in
+words are ignored in Markdown Extra.</p>
+
+<p><img src="http://padurean.github.io/images/photo.jpeg" title="Title is optional" alt="picture alt" /></p>
+
+<blockquote><p>Blockquotes are like quoted text in email replies</p>
+
+<blockquote><p>And, they can be nested</p></blockquote></blockquote>
+
+<ul>
+<li>Bullet lists are easy too</li>
+<li>Another one</li>
+<li><p>Another one</p></li>
+<li><p>A numbered list</p></li>
+<li>Which is numbered</li>
+<li>With periods and a space</li>
+</ul>
+
+
+<p>And now some code:</p>
+
+<pre><code>// Code is just text indented a bit
+which(is_easy) to_remember();
+</code></pre>
+
+<pre><code>
+// Markdown extra adds un-indented code blocks too
+
+if (this_is_more_code == true &amp;&amp; !indented) {
+    // tild wrapped code blocks, also not indented
+}
+</code></pre>
+
+<p>Text with<br/>
+two trailing spaces<br/>
+(on the right)<br/>
+can be used<br/>
+for things like poems</p>
+
+<h3>Horizontal rules</h3>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<div class="custom-class" markdown="1">
+This is a div wrapping some Markdown plus.  Without the DIV attribute, it ignores the
+block.
+</div>
+
+
+<h2>Markdown plus tables</h2>
+
+<table>
+<thead>
+<tr>
+<th> Header </th>
+<th> Header </th>
+<th style="text-align:right;"> Right  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  Cell  </td>
+<td>  Cell  </td>
+<td style="text-align:right;">   $10  </td>
+</tr>
+<tr>
+<td>  Cell  </td>
+<td>  Cell  </td>
+<td style="text-align:right;">   $20  </td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>Outer pipes on tables are optional</li>
+<li>Colon used for alignment (right versus left)</li>
+</ul>
+
+
+<h2>Markdown plus definition lists</h2>
+
+<dl>
+<dt>Bottled water</dt>
+<dd>$ 1.25</dd>
+<dd>$ 1.55 (Large)</dd>
+<dt>Milk</dt>
+<dt>Pop</dt>
+<dd>$ 1.75</dd>
+</dl>
+
+<ul>
+<li>Multiple definitions and terms are possible</li>
+<li>Definitions can include multiple paragraphs too</li>
+</ul>
+
+
+<p>*[ABBR]: Markdown plus abbreviations (produces an <abbr> tag)</p>
+
+<figure class='code'><figcaption><span>Some scala code</span><a href='http://getithere.com'>Get It</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='scala'><span class='line'><span class="k">trait</span> <span class="nc">IntValued</span> <span class="k">extends</span> <span class="nc">Key</span> <span class="o">{</span>
+</span><span class='line'> <span class="k">type</span> <span class="kt">Value</span> <span class="o">=</span> <span class="nc">Int</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="k">trait</span> <span class="nc">StringValued</span> <span class="k">extends</span> <span class="nc">Key</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">type</span> <span class="kt">Value</span> <span class="o">=</span> <span class="nc">String</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="k">object</span> <span class="nc">Keys</span> <span class="o">{</span>
+</span><span class='line'>  <span class="k">val</span> <span class="n">foo</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Key</span><span class="o">(</span><span class="s">&quot;foo&quot;</span><span class="o">)</span> <span class="k">with</span> <span class="nc">IntValued</span>
+</span><span class='line'>  <span class="k">val</span> <span class="n">bar</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Key</span><span class="o">(</span><span class="s">&quot;bar&quot;</span><span class="o">)</span> <span class="k">with</span> <span class="nc">StringValued</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Type Classes in Scala]]></title>
+    <link href="http://padurean.github.io/blog/2014/09/23/type-classes-in-scala/"/>
+    <updated>2014-09-23T16:23:56+03:00</updated>
+    <id>http://padurean.github.io/blog/2014/09/23/type-classes-in-scala</id>
+    <content type="html"><![CDATA[<p>TODO</p>
+]]></content>
+  </entry>
+  
+</feed>
