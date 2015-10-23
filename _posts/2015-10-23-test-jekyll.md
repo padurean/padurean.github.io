@@ -1,5 +1,5 @@
 ---
-title: This is my title
+title: Here is da post
 layout: post
 ---
 
@@ -9,4 +9,3 @@ First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
-
