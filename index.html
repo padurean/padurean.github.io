@@ -1,13 +1,16 @@
 ---
-layout: default
-title: Ogg (Valentin M. Padurean)
+layout: page
+title: Blog
+subtitle: Hitchhiker's guid to web development
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
+<ul class="list-posts">
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li class="post-teaser">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <span class="post-teaser__title">{{ post.title }}</span>
+                <span class="post-teaser__date">{{ post.date | date: "%d %B %Y" }}</span>
+            </a>
+        </li>
     {% endfor %}
-  </ul>
-</div>
+</ul>

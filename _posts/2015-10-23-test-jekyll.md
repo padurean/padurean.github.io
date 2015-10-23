@@ -10,7 +10,7 @@ First Header  | Second Header
 Content Cell  | Content Cell
 Content Cell  | Content Cell
 
-```scala
+``` scala
 def minus(other: Interval): Set[Interval] = {
     val diffs = if (interval.overlaps(other)) {
 
