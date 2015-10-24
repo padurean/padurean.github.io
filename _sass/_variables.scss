@@ -52,13 +52,19 @@ $darken-2: rgba(#000,.125) !default;
 $darken-3: rgba(#000,.25) !default;
 $darken-4: rgba(#000,.5) !default;
 
+// Ogg colors
+$ogg-light-sea-green: #20B2AA !default;
+$ogg-dark-sea-green: #8FBC8F !default;
+$ogg-dark-cyan: #008B8B !default;
+
+
 // Links
-// Original color:
+// Original links color:
 // $link-color: $blue;
 // $link-hover-color: darken($blue, 40%);
-// Ogg color:
-$link-color: $purple;
-$link-hover-color: darken($purple, 40%);
+// Ogg links color:
+$link-color: $ogg-light-sea-green;
+$link-hover-color: $ogg-dark-sea-green;
 
 // Breakpoints
 $breakpoint-md: '(min-width: 52em)';
