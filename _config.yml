@@ -3,7 +3,7 @@ title:       PureCore.ro
 email:       ogg@purecore.ro
 author:      Valentin M. Padurean ("Ogg")
 description: "Personal blog on Functional (Reactive) Programming, Scala, Haskell & more."
-baseurl:     "purecore.ro"
+baseurl:     ""
 url:         "http://purecore.ro"
 date_format: "%b %-d, %Y"
 
