@@ -18,7 +18,7 @@ works if <del>for some reason you need to update your post</del>. For consistenc
 
 Here's an example of some Scala code with line anchors.
 
-{% highlight scala lineanchors %}
+{% highlight scala %}
 package utils
 
 import scala.annotation.tailrec
