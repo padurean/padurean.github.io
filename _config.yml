@@ -5,7 +5,7 @@ author:      Valentin M. Padurean ("Ogg")
 description: "Personal blog on Functional (Reactive) Programming, Scala, Haskell & more."
 baseurl:     ""
 url:         "http://purecore.ro"
-date_format: "%b %-d, %Y"
+date_format: "%-d %b %Y"
 
 # Google services
 google_analytics:
