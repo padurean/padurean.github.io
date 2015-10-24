@@ -18,7 +18,7 @@ works if <del>for some reason you need to update your post</del>. For consistenc
 
 Here's an example of some Scala code with line anchors.
 
-``` scala
+~~~ scala
 package utils
 
 import scala.annotation.tailrec
@@ -191,7 +191,7 @@ object RichInterval {
     else new Interval(new DateTime(END_OF_TIME), new DateTime(BIG_BANG))
   }
 }
-```
+~~~
 
 Here's an example of some ruby code with line anchors.
 
