@@ -16,6 +16,183 @@ works if <del>for some reason you need to update your post</del>. For consistenc
 
 ### Code, with syntax highlighting
 
+Here's an example of some Scala code with line anchors.
+
+{% highlight scala lineanchors %}
+package utils
+
+import scala.annotation.tailrec
+
+import models.ClientMessageAwareException
+import org.joda.time._
+import utils.implicits.richDateTime
+import utils.time.TimeIntervalHelper.{PAST_UNBOUNDED => BIG_BANG, FUTURE_UNBOUNDED => END_OF_TIME}
+
+class RichInterval(val interval: Interval) extends AnyRef {
+
+  override def toString: String = interval.toString
+
+  def cancelDSTOffset(
+    ref: Interval,
+    tz: DateTimeZone,
+    exceptHeads: Interval)
+  : Interval = {
+    val s =
+      if (
+        interval.getStartMillis != exceptHeads.getStartMillis &&
+        interval.getStartMillis != exceptHeads.getEndMillis)
+        interval.getStart.cancelDSTDifference(ref.getStart, tz)
+      else
+        interval.getStart
+
+    val e =
+      if (
+        interval.getEndMillis != exceptHeads.getStartMillis &&
+        interval.getEndMillis != exceptHeads.getEndMillis)
+        interval.getEnd.cancelDSTDifference(ref.getEnd, tz)
+      else
+        interval.getEnd
+
+    if (e.isAfter(s))
+      new Interval(s, e)
+    else
+      interval
+  }
+
+  def intersectWith(is: Set[Interval]): Set[Interval] = {
+    if (is.nonEmpty) {
+      val intersects =
+        (for (i <- is) yield Option(interval.overlap(i))).flatten
+
+      if (intersects.nonEmpty)
+        RichInterval.unionOf(Set.empty[Interval], intersects)
+      else
+        intersects
+    } else Set.empty[Interval]
+  }
+
+  def minus(other: Interval): Set[Interval] = {
+    val diffs = if (interval.overlaps(other)) {
+
+      // interval:    |--|--|--|
+      //       or: |--|--|--|--|--|
+      // i:        |--|--|--|--|--|
+      if (
+        interval.getStartMillis >= other.getStartMillis &&
+        interval.getEndMillis <= other.getEndMillis) {
+        Set.empty[Interval] }
+
+      // interval: |--|--|--|--|--|
+      // i:           |--|--|--|
+      else if (
+        interval.getStartMillis < other.getStartMillis &&
+        interval.getEndMillis > other.getEndMillis) {
+        Set(
+          new Interval(interval.getStart, other.getStart),
+          new Interval(other.getEnd, interval.getEnd)) }
+
+      // interval: |--|--|--|
+      //       or: |--|--|--|--|
+      // i:           |--|--|--|
+      else if (
+        interval.getStartMillis < other.getStartMillis &&
+        interval.getEndMillis <= other.getEndMillis)
+        Set(new Interval(interval.getStart, other.getStart))
+
+      // interval:    |--|--|--|
+      //       or: |--|--|--|--|
+      // i:        |--|--|--|
+      else if (
+        interval.getStartMillis >= other.getStartMillis &&
+        interval.getEndMillis > other.getEndMillis)
+        Set(new Interval(other.getEnd, interval.getEnd))
+
+      else throw new ClientMessageAwareException(
+        s"Unprocessable intervals: $interval and $other")
+
+    } else Set(interval)
+    diffs.filterNot(_.toDurationMillis == 0)
+  }
+
+  def minus(is: Set[Interval]): Set[Interval] = {
+    if (is.exists(_.contains(interval)))
+      Set.empty[Interval]
+    else if (!is.exists(_.overlaps(interval)))
+      Set(interval)
+    else {
+      val diffs = RichInterval.unionOf(is)
+        .foldLeft(Set.empty[Interval])((acc, i) => acc ++ minus(i))
+      RichInterval.intersectionOf(diffs)
+    }
+  }
+
+  def trimWith(dt: DateTime): (Option[Interval], Option[Interval]) = {
+    if (interval.contains(dt))
+      (Some(new Interval(interval.getStart, dt)).filter(_.toDurationMillis > 0L),
+      Some(new Interval(dt, interval.getEnd)).filter(_.toDurationMillis > 0L))
+    else
+      (Some(interval), None)
+  }
+
+  def trimWith(is: Set[Interval]): (Set[Interval], Set[Interval]) =
+    (intersectWith(is), minus(is))
+}
+
+object RichInterval {
+  val orderingByStart = Ordering.by[Interval, Long](_.getStartMillis)
+
+  def apply(i: Interval) = new RichInterval(i)
+
+  def unionOf(is: Set[Interval]): Set[Interval] =
+    unionOf(Set.empty[Interval], is)
+
+  @tailrec
+  private def unionOf(acc: Set[Interval], is: Set[Interval]): Set[Interval] = {
+    val maybeMerges = for (i1 <- is; i2 <- is if i1 != i2) yield {
+      val maybeMerge =
+        if (Option(i1.gap(i2)).isEmpty) {
+          Some(new Interval(
+            Math.min(i1.getStartMillis, i2.getStartMillis),
+            Math.max(i1.getEndMillis, i2.getEndMillis)))
+        } else None
+      (maybeMerge, Seq(i1, i2))
+    }
+
+    val notOverlapping = is.filterNot(i =>
+      maybeMerges.exists(u => u._1.isDefined && u._2.contains(i)))
+    val merges = maybeMerges.flatMap(_._1)
+
+    val accUpdated = acc ++ notOverlapping
+    if (merges.nonEmpty)
+      unionOf(accUpdated, merges)
+    else
+      accUpdated
+  }
+
+  @tailrec
+  private def intersectionOf(
+    is: Set[Interval])
+  : Set[Interval] = {
+
+    val intersects =
+      (for (i1 <- is; i2 <- is if i1 != i2)
+        yield Option(i1.overlap(i2))).flatten
+
+    if (intersects.isEmpty)
+        unionOf(Set.empty[Interval], is)
+    else
+      intersectionOf(intersects)
+  }
+
+  def spanOf(is: Set[Interval]): Interval = {
+    if (is.nonEmpty) new Interval(
+      new DateTime(is.minBy(_.getStartMillis).getStart),
+      new DateTime(is.maxBy(_.getEndMillis).getEnd))
+    else new Interval(new DateTime(END_OF_TIME), new DateTime(BIG_BANG))
+  }
+}
+{% endhighlight %}
+
 Here's an example of some ruby code with line anchors.
 
 {% highlight ruby lineanchors %}
