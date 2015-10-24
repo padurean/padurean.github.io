@@ -1,5 +1,5 @@
 # Site settings
-title:       PureCore.ro
+title:       &Lambda; PureCore.ro
 email:       ogg@purecore.ro
 author:      Valentin M. Padurean ("Ogg")
 description: "Personal blog on Functional (Reactive) Programming, Scala, Haskell & more."
