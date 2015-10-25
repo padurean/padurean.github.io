@@ -36,7 +36,7 @@ def stateChange = ComposedAction.async(parse.json) { request =>
 }
 ```
 
-{% highlight scala lineanchors %}
+{% highlight scala linenos %}
 package utils
 
 import scala.annotation.tailrec
