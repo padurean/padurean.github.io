@@ -122,7 +122,7 @@ $hljs-title: $red;
 $hljs-type: $dark-blue;
 $hljs-tag: $dark-blue;
 $hljs-attribute: $dark-green;
-$hljs-regexp: $dark-green;
+$hljs-regexp: $purple;
 $hljs-symbol: $purple;
 $hljs-built-in: $dark-blue;
 $hljs-preprocessor: $mid-gray;
@@ -130,6 +130,9 @@ $hljs-deletion: $light-pink;
 $hljs-addition: $light-green;
 $hljs-change: $dark-blue;
 $hljs-chunk: $light-gray;
+
+// OGG additions
+$hljs-attribute-nb: $blue;
 
 // Footer
 $footer-border-top: thin solid #f3f3f3;
