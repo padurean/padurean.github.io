@@ -108,7 +108,10 @@ $form-field-padding-x: .5rem;
 // Code
 $pre-border-radius: 0;
 $pre-background-color: #fafafa;
-$hljs-comment: $mid-gray;
+// OGG customization:
+// $hljs-comment: $mid-gray;
+$hljs-comment: $ogg-dark-sea-green
+
 $hljs-keyword: $dark-blue;
 $hljs-name: $dark-gray;
 $hljs-number: $dark-green;
