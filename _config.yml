@@ -50,7 +50,7 @@ share_stumbleupon: false
 share_hackernews: true
 
 # Build settings
-markdown:     kramdown
+markdown:     kramdown-pygments
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 kramdown:
