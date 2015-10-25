@@ -74,6 +74,11 @@
   color: $hljs-type;
 }
 
+// OGG customization
+.highlight .n {
+  color: $mid-gray;
+}
+
 .highlight .o {
   color: $hljs-tag;
   font-weight: normal;
