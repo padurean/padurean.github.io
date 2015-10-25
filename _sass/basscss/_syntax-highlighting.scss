@@ -91,6 +91,11 @@
   color: $hljs-symbol;
 }
 
+// OGG customization
+.highlight .lineno {
+  color: $ogg-mid-light-gray;
+}
+
 .hljs-built_in {
   color: $hljs-built-in;
 }
