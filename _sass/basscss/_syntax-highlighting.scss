@@ -14,7 +14,8 @@
   // OGG customization: font-style: italic;
 }
 
-.highlight .k,
+// OGG customization - look lower for the new style
+// .highlight .k,
 .highlight .kc,
 .highlight .kd,
 .highlight .kn,
@@ -22,6 +23,12 @@
 .highlight .kt,
 .highlight .kp {
   color: $hljs-keyword;
+}
+
+// OGG customization
+.highlight .k {
+  color: $hljs-attribute;
+  font-weight: bold;
 }
 
 .highlight .na,
