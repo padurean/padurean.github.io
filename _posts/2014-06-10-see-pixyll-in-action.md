@@ -18,6 +18,24 @@ works if <del>for some reason you need to update your post</del>. For consistenc
 
 Here's an example of some Scala code with line anchors.
 
+```scala
+def stateChange = ComposedAction.async(parse.json) { request =>
+  execute {
+    val vppList = deserialize[java.util.List[Vpp]](request.body.toString())
+    service.stateChange(vppList)
+  } map {
+    case Success(result) =>
+      result match {
+        case Right(list) => Ok(serialize(list)) as JSON
+        case Left(list) => Status(422) {
+          serialize(list)
+        }
+      }
+    case Failure(t) => errors(t)
+  }
+}
+```
+
 {% highlight scala lineanchors %}
 package utils
 
