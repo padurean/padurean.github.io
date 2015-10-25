@@ -28,7 +28,8 @@
 .highlight .nb,
 .highlight .nc,
 .highlight .no,
-.highlight .nd,
+// OGG customization - look lower for the new style
+// .highlight .nd,
 .highlight .ni,
 .highlight .ne,
 .highlight .nf,
@@ -36,6 +37,11 @@
 .highlight .nn,
 .highlight .nx {
   color: $hljs-name;
+}
+
+// OGG customization
+.highlight .nd {
+  color: $orange;
 }
 
 .highlight .mi,
