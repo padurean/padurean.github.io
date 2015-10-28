@@ -20,7 +20,8 @@ ajaxify_contact_form: false
 
 # Disqus post comments
 # (leave blank to disable Disqus)
-disqus_shortname:     purecorero
+disqus_shortname:
+#disqus_shortname:     purecorero
 
 # Facebook Comments plugin
 # (leave blank to disable Facebook Comments, otherwise set it to true)
