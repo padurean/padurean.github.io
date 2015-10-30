@@ -16,30 +16,9 @@ works if <del>for some reason you need to update your post</del>. For consistenc
 
 ### Code, with syntax highlighting
 
-Here's an example of some Scala code:
+Here's an example of some Scala code with line numbers:
 
-~~~
-def stateChange = ComposedAction.async(parse.json) { request =>
-  execute {
-    val vppList = deserialize[java.util.List[Vpp]](request.body.toString())
-    service.stateChange(vppList)
-  } map {
-    case Success(result) =>
-      result match {
-        case Right(list) => Ok(serialize(list)) as JSON
-        case Left(list) => Status(422) {
-          serialize(list)
-        }
-      }
-    case Failure(t) => errors(t)
-  }
-}
-~~~
-{: .language-scala}
-
-And another one with line numbers:
-
-{% highlight scala linenos %}
+{% highlight scala linenos lineanchors %}
 package utils
 
 import scala.annotation.tailrec
