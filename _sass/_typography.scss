@@ -22,3 +22,16 @@ sup {
   vertical-align: middle;
   top: -0.9ex;
 }
+
+//--> PureCore.ro / FunctionalProgramming.ro LogoType
+@mixin logotype($fontsizerem) {
+  background-color: $dark-gray;
+  color: $ogg-light-sea-green;
+  font-size: $fontsizerem;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+
+.logotype-medium { @include logotype(1.75rem); }
+.logotype-small { @include logotype(1rem); }
+//<--
