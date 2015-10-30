@@ -18,7 +18,7 @@ works if <del>for some reason you need to update your post</del>. For consistenc
 
 Here's an example of some Scala code:
 
-```scala
+~~~ scala
 def stateChange = ComposedAction.async(parse.json) { request =>
   execute {
     val vppList = deserialize[java.util.List[Vpp]](request.body.toString())
@@ -34,7 +34,7 @@ def stateChange = ComposedAction.async(parse.json) { request =>
     case Failure(t) => errors(t)
   }
 }
-```
+~~~
 
 And another one with line numbers:
 
