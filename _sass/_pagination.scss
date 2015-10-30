@@ -22,7 +22,9 @@
 
 .pagination a:hover, .pagination a:focus {
   background: white;
-  color: #477dca;
+// OGG customization:
+// color: #477dca;
+  color: $link-hover-color;
 }
 
 .pagination a:active {
