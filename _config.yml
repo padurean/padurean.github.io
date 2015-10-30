@@ -57,12 +57,13 @@ share_stumbleupon: false
 share_hackernews: true
 
 # Build settings
-markdown:     redcarpet
+# markdown:     redcarpet
+markdown:     kramdown
 pygments:     true
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
-# kramdown:
-#   input: GFM # Enable GitHub Flavored Markdown (fenced code blocks) also for kramdown
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown (fenced code blocks) also for kramdown
 permalink:    pretty
 paginate:     4
 sass:
