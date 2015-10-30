@@ -10,6 +10,9 @@ If you're curious, check the project status below ;)
 
 [![Stories in Progress](https://badge.waffle.io/padurean/padurean.github.io.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/padurean/padurean.github.io)
 
+
+
+
 ### Stats:
 
 [![Throughput Graph](https://graphs.waffle.io/padurean/padurean.github.io/throughput.svg)](https://waffle.io/padurean/padurean.github.io/metrics)
