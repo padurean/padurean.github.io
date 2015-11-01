@@ -1,6 +1,8 @@
 .button-blue {
   color: white;
-  background-color: $blue;
+  // OGG customization:
+  // background-color: $blue;
+  background-color: $ogg-light-sea-green;
   border-radius: $border-radius;
   transition-duration: .1s;
   transition-timing-function: ease-out;
