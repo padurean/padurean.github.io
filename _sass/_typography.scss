@@ -23,7 +23,8 @@ sup {
   top: -0.9ex;
 }
 
-//--> PureCore.ro / FunctionalProgramming.ro LogoType
+//--> OGG customizations
+// PureCore.ro / FunctionalProgramming.ro LogoType
 @mixin logotype($fontsizerem) {
   background-color: $dark-gray;
   color: $ogg-light-sea-green;
@@ -34,4 +35,7 @@ sup {
 
 .logotype-medium { @include logotype(1.75rem); }
 .logotype-small { @include logotype(1rem); }
+
+// Footnotes
+.footnotes { font-size: 0.8rem; }
 //<--
