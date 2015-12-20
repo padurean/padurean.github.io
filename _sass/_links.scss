@@ -1,5 +1,6 @@
 a {
   color: $link-color;
+  //--> below not needed as we do not use underlined links
   // background-image: linear-gradient(to top,
   //   rgba(0,0,0,0) 13%,
   //   rgba($link-color,.8) 13%,
@@ -7,6 +8,7 @@ a {
   //   rgba(0,0,0,0) 17%
   // );
   // text-shadow: white 1px 0px 0px, white -1px 0px 0px;
+  //<--
 }
 
 a:hover,
@@ -15,6 +17,7 @@ a:active {
   border: 0;
   color: $link-hover-color;
   text-decoration: none;
+  //--> below not needed as we do not use underlined links
   // background-image: linear-gradient(to top,
   //   rgba(0,0,0,0) 13%,
   //   rgba($link-hover-color,.8) 13%,
@@ -22,4 +25,22 @@ a:active {
   //   rgba(0,0,0,0) 17%
   // );
   // text-shadow: white 1px 0px 0px, white -1px 0px 0px;
+  //<--
 }
+
+// Correct issues with buttons
+//--> below not needed as we do not use underlined links
+// button,
+// .button {
+//   text-shadow: none;
+//   background-image: none;
+// }
+//
+// .button:hover,
+// .button:focus,
+// .button:active {
+//   color: white;
+//   text-shadow: none;
+//   background-image: none;
+// }
+//<--
