@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I am freelance developer. Currently doing more in backend, actually in Python and Django.
+Hi, i am Ogg and i like (functional) (reactive) programming :)
 
-email: agus[at]python.web.id
+email: ogg[at]purecore.ro
