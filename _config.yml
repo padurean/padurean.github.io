@@ -1,8 +1,8 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I am freelance developer. Currently doing more in backend, actually in Python and Django.
+title: PureCore.ro
+description: Ogg's personal blog.
+author: Ogg (Valentin Padurean)
+github: https://github.com/padurean
+about: Functional reactive coder ("software developer" / "programmer" :)) - Scala, Elm, Haskell and unfortunately Javascript :)
 urls:
     - text: About Me
       url: /about/

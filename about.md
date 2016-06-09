@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I am freelance developer. Currently doing more in backend, actually in Python and Django.
+Functional reactive coder ("software developer" / "programmer" :)) - Scala, Elm, Haskell and unfortunately Javascript :)
 
-email: agus[at]python.web.id
+email: ogg[at]purecore.ro
