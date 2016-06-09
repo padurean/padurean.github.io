@@ -6,7 +6,7 @@ email:       ogg@purecore.ro
 github: https://github.com/agusmakmun
 date_format: "%-d %B %Y"
 baseurl:     ""
-url:         "http://purecore.ro"
+url:         "http://functionalprogramming.ro"
 urls:
     - text: About Me
       url: /about/
@@ -18,6 +18,6 @@ gems: [jekyll-paginate]
 paginate: 20
 per_page: 20
 paginate_path: "/page:num/"
-#markdown: kramdown
+markdown: kramdown
 
 
