@@ -34,40 +34,40 @@ hr {
 span.time, span.categories {
     color: #ADADAD;
     margin-bottom: .25rem;
-    font-size: .75rem;
+    font-size: 1rem;
 }
 
 h1 {
     font-weight: normal;
     color: #666666;
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    font-size: 2.5rem;
 }
 
 h2 {
     font-weight: normal;
-    margin-bottom: .75rem;
+    margin-bottom: 1rem;
     color: #666666;
-    font-size: 1.75rem;
+    font-size: 2.25rem;
 }
 
 h3 {
     font-weight: normal;
-    margin-bottom: .75rem;
+    margin-bottom: 1rem;
     color: #666666;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 h4 {
-  margin-bottom: .5rem;
+  margin-bottom: .75rem;
   color: #666666;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 
 h5 {
-  margin-bottom: .5rem;
+  margin-bottom: .75rem;
   color: #666666;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 a, a:link, a:active {
