@@ -208,3 +208,7 @@ div.col-sm-3 img#about {
     text-align: left;
     float: left;
 }
+
+.posts > li > i {
+  color: #666;
+}
