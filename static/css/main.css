@@ -33,31 +33,41 @@ hr {
  */
 span.time, span.categories {
     color: #ADADAD;
-    margin-bottom: 5px;
-    font-size: 11px;
+    margin-bottom: .25rem;
+    font-size: .75rem;
 }
 
 h1 {
     font-weight: normal;
-    color: #696969;
-    margin-bottom: 10px;
-    font-size: 25px;
+    color: #666666;
+    margin-bottom: 1rem;
+    font-size: 2rem;
 }
 
 h2 {
     font-weight: normal;
-    margin-bottom: 5px;
+    margin-bottom: .75rem;
     color: #666666;
+    font-size: 1.75rem;
 }
 
 h3 {
     font-weight: normal;
-    margin-bottom: 5px;
+    margin-bottom: .75rem;
     color: #666666;
+    font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 18px;
+  margin-bottom: .5rem;
+  color: #666666;
+  font-size: 1.25rem;
+}
+
+h5 {
+  margin-bottom: .5rem;
+  color: #666666;
+  font-size: 1rem;
 }
 
 a, a:link, a:active {
