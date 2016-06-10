@@ -6,17 +6,17 @@ categories: [jekyll]
 ---
 SimplyGrey is a simple, easy to use theme for Jekyll that compromises of mainly grey colours. A lot of people enjoy the simplistic look of grey and also find it easier to read.
 
-## Why use Simply Grey?
+#### Why use Simply Grey?
 There are lots of reasons why I think you should use Simply Grey but I will list the main ones that I believe are more of benefit to you, the user.
 
 +	<em>Easy to use and setup</em> - Jekyll has a huge range of documentation to get you started writing posts and the Simply Grey theme makes your blog look beautiful.
 +	<em>Easy configuration</em> - I developed this theme in order to be as customisable as possible. If you want to add more links to the navigation bar, all you have to do is edit the _config.yaml file and the `urls` part of it.
-+	<em>You can change it</em> - After being released with the MIT license (like Jekyll itself) you are free to change and basically do anything you want to this theme provided you keep the copyright notice in the files and distribute the license with it. 
++	<em>You can change it</em> - After being released with the MIT license (like Jekyll itself) you are free to change and basically do anything you want to this theme provided you keep the copyright notice in the files and distribute the license with it.
 
-## Jekyll
-Jekyll is a static site generator developed in ruby that generates websites from markdown and many other formats. The benefit of this is that you can have a highly customisable blog where you can generate posts by writing easy markdown code whilst still retaining the small memory imprint that Jekyll has. 
+#### Jekyll
+Jekyll is a static site generator developed in ruby that generates websites from markdown and many other formats. The benefit of this is that you can have a highly customisable blog where you can generate posts by writing easy markdown code whilst still retaining the small memory imprint that Jekyll has.
 
-### Code Snippets
+##### Code Snippets
 Code Snippets are one of the main reasons why I love Jekyll and I think you will too. All code snippets become highlighted with great colours when you write the code in markdown. Here is an example of highlighted Ruby code in a weather application that I have made.
 
 {% highlight ruby %}
