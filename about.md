@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
-I am freelance developer. Currently doing more in backend, actually in Python and Django.
+I am a full stack developer from Romania.
+Currently doing full stack development: JavaScript, NodeJS,
+Express/Koa, Scala, Elm, Haskell, AWS Lambda & API Gateway, Google Firebase.
 
-email: agus[at]python.web.id
+email: ogg[at]purecore.ro / ogg[at]functionalprogramming.ro
