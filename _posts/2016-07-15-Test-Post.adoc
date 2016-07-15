@@ -4,11 +4,12 @@
 *Habra Kadabra*
 
 Lumbda bumbda, _kumba_ yaaaaaaa!
+ggg
 
 Operating Systems::
-
+  +
   Linux:::
-  
+  	+
     . Fedora
       * Desktop
     . Ubuntu
@@ -16,12 +17,12 @@ Operating Systems::
       * Server
   
   BSD:::
-  
+  	+
     . FreeBSD
     . NetBSD
 
 Cloud Providers::
-
+  +
   PaaS:::
     . OpenShift
     . CloudBees
