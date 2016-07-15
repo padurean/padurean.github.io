@@ -2,9 +2,12 @@
   "meta": {
     "username": "padurean",
     "repositoryName": "padurean.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": "functionalprogramming.ro"
   },
+  "site": {},
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
