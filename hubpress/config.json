@@ -11,7 +11,13 @@
     "googleAnalytics": "UA-71073443-2",
     "disqus": "functionalprogramming"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "ogg@purecore.ro",
+    "twitter": "vpadure",
+    "linkedin": "vpadure",
+    "facebook": "vpadurean",
+    "github": "padurean"
+  },
   "theme": {
     "name": "casper"
   }
