@@ -2,9 +2,24 @@
   "meta": {
     "username": "padurean",
     "repositoryName": "padurean.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": "functionalprogramming.ro"
+  },
+  "site": {
+    "title": "PureCore.ro",
+    "description": "On Scala and FP",
+    "cover": "http://www.lispcast.com/img/lambda.png",
+    "googleAnalytics": "UA-71073443-2",
+    "disqus": "functionalprogramming"
+  },
+  "socialnetwork": {
+    "email": "ogg@purecore.ro",
+    "twitter": "https://twitter.com/vpadure",
+    "linkedin": "https://linkedin.com/in/vpadure",
+    "facebook": "https://facebook.com/vpadurean",
+    "github": "https://github.com/padurean"
   },
   "theme": {
-    "name": "Casper"
+    "name": "uno"
   }
 }
