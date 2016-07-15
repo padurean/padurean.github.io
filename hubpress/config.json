@@ -8,6 +8,7 @@
   "site": {
     "title": "PureCore.ro",
     "description": "On Scala and FP",
+    "cover": "http://www.lispcast.com/img/lambda.png",
     "googleAnalytics": "UA-71073443-2",
     "disqus": "functionalprogramming"
   },
