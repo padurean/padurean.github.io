@@ -13,10 +13,10 @@
   },
   "socialnetwork": {
     "email": "ogg@purecore.ro",
-    "twitter": "vpadure",
-    "linkedin": "vpadure",
-    "facebook": "vpadurean",
-    "github": "padurean"
+    "twitter": "https://twitter.com/vpadure",
+    "linkedin": "https://linkedin.com/in/vpadure",
+    "facebook": "https://facebook.com/vpadurean",
+    "github": "https://github.com/padurean"
   },
   "theme": {
     "name": "casper"
