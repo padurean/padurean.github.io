@@ -6,8 +6,8 @@
     "cname": "functionalprogramming.ro"
   },
   "site": {
-    "title": "Ogg's Blog - PureCore.ro",
-    "description": "Functional programming etc :)",
+    "title": "PureCore.ro",
+    "description": "On Scala and FP",
     "googleAnalytics": "UA-71073443-2",
     "disqus": "functionalprogramming"
   },
