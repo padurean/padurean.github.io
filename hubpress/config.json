@@ -5,7 +5,12 @@
     "branch": "master",
     "cname": "functionalprogramming.ro"
   },
-  "site": {},
+  "site": {
+    "title": "Ogg's Blog - PureCore.ro",
+    "description": "Functional programming etc :)",
+    "googleAnalytics": "UA-71073443-2",
+    "disqus": "functionalprogramming"
+  },
   "socialnetwork": {},
   "theme": {
     "name": "casper"
