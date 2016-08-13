@@ -99,5 +99,6 @@ footer small {
 }
 
 .hack article > h1 {
-  margin-bottom: 2rem;
+  display: inline-block;
+  margin-bottom: 1.25rem;
 }
