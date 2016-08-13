@@ -48,3 +48,8 @@ footer.footer {
   line-height: 5rem;
   font-size: 5rem;
 }
+.javascript-avatar {
+  background-image: url('/img/Unofficial_JavaScript_logo_2.svg');
+  background-repeat: no-repeat;
+  background-size: 6rem 6rem;
+}
