@@ -2,7 +2,7 @@
 $(function() {
   $('footer').prepend(new Date().getFullYear());
 
-  setTimeout(showLangIconsAboveSnippets, 200);
+  setTimeout(showLangIconsAboveSnippets, 500);
 });
 
 function showLangIconsAboveSnippets() {
