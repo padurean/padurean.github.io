@@ -30,3 +30,8 @@ div.prism-show-language > div.prism-show-language-label {
   color: #999;
   background-color: #333;
 }
+
+.dark-grey pre {
+  padding: 0 .5rem;
+  border: solid 1px #333;
+}
