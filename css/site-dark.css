@@ -17,6 +17,7 @@
   color: #666;
 }
 
+article > h1 >small,
 .media-heading > small {
   color: #666;
 }

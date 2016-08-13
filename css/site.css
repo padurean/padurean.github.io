@@ -82,10 +82,12 @@ a {
 .media-heading > a {
   color: inherit;
 }
+article > h1 > small,
 .media-heading > small {
   font-weight: normal;
   white-space: nowrap;
 }
+article > h1 > small > time,
 .media-heading > small > time {
   font-style: italic;
 }
