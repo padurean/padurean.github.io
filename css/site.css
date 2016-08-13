@@ -74,3 +74,6 @@ a {
 .media-heading > a {
   color: inherit;
 }
+header .site-motto {
+  font-size: .85rem;
+}
