@@ -17,6 +17,9 @@ function showLangIconsAboveSnippets() {
     } else if (lang === 'javascript') {
       langLabel.css('background-image', 'url("/img/javascript-logo.svg")');
       setCssForLangLabelWithImage(langLabel);
+    } else if (lang === 'html') {
+      langLabel.css('background-image', 'url("/img/html-logo.svg")');
+      setCssForLangLabelWithImage(langLabel);
     }
   }
 }

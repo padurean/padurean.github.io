@@ -67,8 +67,26 @@
                 <a href="https://github.com/skapadia/akka-streams-backpressure">Github repo</a>
                 and use <code>sbt run</code> or fire up your favorite IDE):
 
-            <pre><code class="language-scala">
-            &lt;span&gt;Some text&lt;span&gt;
+            <pre><code class="language-javascript">
+function showLangIconsAboveSnippets() {
+  var langLabels =
+    $('div.prism-show-language > div.prism-show-language-label');
+  for (var i=0; i&lt;langLabels.length; i++) {
+    var langLabel = $(langLabels[i]);
+    var lang = langLabel.text().toLowerCase();
+    if (lang === 'scala') {
+      langLabel.css('background-image', 'url("/img/scala-logo.svg")');
+      setCssForLangLabelWithImage(langLabel);
+    } else if (lang === 'javascript') {
+      langLabel.css('background-image', 'url("/img/javascript-logo.svg")');
+      setCssForLangLabelWithImage(langLabel);
+    }
+  }
+}
+            </code></pre>
+
+            <pre><code class="language-html">
+&lt;span&gt;Some text&lt;span&gt;
             </code></pre>
             <br/><br/>
                 <pre><code class="language-scala">
