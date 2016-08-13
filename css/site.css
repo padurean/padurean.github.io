@@ -112,3 +112,8 @@ footer small {
 .style .token.string {
   background: transparent;
 }
+
+img {
+  margin: 2rem 0;
+  width: 100%;
+}
