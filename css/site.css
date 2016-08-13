@@ -41,3 +41,10 @@ footer.footer {
   background-color: transparent;
   font-weight: normal;
 }
+
+.avatarholder {
+  width: 6rem;
+  height: 6rem;
+  line-height: 5rem;
+  font-size: 5rem;
+}
