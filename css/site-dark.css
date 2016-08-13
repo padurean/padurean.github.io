@@ -20,3 +20,7 @@
 .media-heading > small {
   color: #666;
 }
+
+.hack article > h1:after {
+  color: #666;
+}

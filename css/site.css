@@ -71,12 +71,6 @@ footer.footer {
 .hack section.page-content {
   margin: 3rem 0;
 }
-.hack article > h1:after {
-  content: "----------------------------------------------------------------------------------------------------";
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-}
 
 .media:not(:last-child) {
   margin-bottom: 2rem;
