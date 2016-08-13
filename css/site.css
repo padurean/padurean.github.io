@@ -64,6 +64,10 @@ footer.footer {
   margin: 2rem 0;
 }
 
+.media:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
 a {
   border: none 0;
 }
