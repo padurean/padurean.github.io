@@ -53,6 +53,6 @@ footer.footer {
   background-repeat: no-repeat;
   background-size: 6rem 6rem;
 }
-.page-content {
+.hack section.page-content {
   margin: 2rem 0;
 }
