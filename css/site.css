@@ -67,6 +67,7 @@ footer.footer {
   background-image: url('/img/aws-api-gateway-logo.svg');
 }
 
+.page-content,
 .hack section.page-content {
   margin: 3rem 0;
 }
