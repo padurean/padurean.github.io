@@ -104,3 +104,11 @@ footer small {
   display: inline-block;
   margin-bottom: 1.25rem;
 }
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background: transparent;
+}
