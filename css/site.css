@@ -59,6 +59,9 @@ footer.footer {
 .haskell-avatar {
   background-image: url('/img/haskell-logo.svg');
 }
+.aws-lambda-avatar {
+  background-image: url('/img/aws-lambda-logo.svg');
+}
 
 .hack section.page-content {
   margin: 3rem 0;
