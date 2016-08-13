@@ -28,5 +28,5 @@ function showLangIconsAboveSnippets() {
     langLabel.css('padding-left', '1.5rem');
     langLabel.css('background-size', '1.25rem 1.25rem');
     langLabel.css('background-repeat', 'no-repeat');
-    langLabel.css('background-position', '.15rem .1rem');
+    langLabel.css('background-position', '.25rem .1rem');
   }
