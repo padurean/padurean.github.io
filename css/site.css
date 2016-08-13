@@ -47,12 +47,19 @@ footer.footer {
   height: 6rem;
   line-height: 5rem;
   font-size: 5rem;
-}
-.javascript-avatar {
-  background-image: url('/img/Unofficial_JavaScript_logo_2.svg');
   background-repeat: no-repeat;
   background-size: 6rem 6rem;
 }
+.scala-avatar {
+  background-image: url('/img/scala-logo.svg');
+}
+.javascript-avatar {
+  background-image: url('/img/javascript-logo.svg');
+}
+.haskell-avatar {
+  background-image: url('/img/haskell-logo.svg');
+}
+
 .hack section.page-content {
   margin: 2rem 0;
 }
