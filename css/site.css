@@ -56,3 +56,10 @@ footer.footer {
 .hack section.page-content {
   margin: 2rem 0;
 }
+.media a {
+  border: none 0;
+}
+.media-heading > a {
+  border: none 0;
+  color: inherit;
+}
