@@ -97,3 +97,7 @@ header .site-motto {
 footer small {
   color: #666;
 }
+
+.hack article > h1 {
+  margin-bottom: 2rem;
+}

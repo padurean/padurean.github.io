@@ -32,17 +32,25 @@
     </header>
     <article class="page-content">
         <h1>Some Scala -related blog post</h1>
-        <div class="grid">
-            <div class="cell -3of12" style="background-color: #999;">
-                3 of 12
-            </div>
-            <div class="cell -4of12" style="background-color: #666;">
-                4 of 12
-            </div>
-            <div class="cell -5of12" style="background-color: #333;">
-                5 of 12
-            </div>
-        </div>
+        <section>
+            <h2>Food for thought</h2>
+            <p>Very simply put, the idea behind backpressure is the ability to say "hey slow down!".
+            Let's start with an example that has nothing to do with software:
+            Imagine you own a factory that produces doughnuts (lucky you!) and just signed a contract
+            with the largest grocery chain in the Northeast US.
+            To increase output, you decided to overhaul your existing factory and open a new one.
+            Late Monday evening you get a text "Emergency! Get to the factory now!".
+            It turns out doughnuts were being produced 5% faster than they could be glazed and packaged.
+            Needless to say, there was a big, tasty mess to clean up, one of the factories had to be
+            temporarily shut down, and you couldn't fulfill your contract.
+            <br/><br/>
+            Misconfiguration can literally wreak havoc. To make matters worse, the glazer couldn't react
+            by signalling "hey you, slow down!". Even if it could, it didn't have a way to hold on to
+            some extra doughnuts or throw them into a plain donut bin while things slowed down.
+            Being able to signal backpressure and handle temporary bursts is critical in building resilient systems.
+            <br/><br/>
+            Today we'll demonstrate backpressure in Akka Streams (note this is not an intro to Akka Streams itself).
+        </section>
     </article>
     <footer>
         <b style="font-family: sans-serif;">&copy;</b> Ogg
