@@ -63,6 +63,9 @@ footer.footer {
 .aws-lambda-avatar {
   background-image: url('/img/aws-lambda-logo.svg');
 }
+.aws-api-gateway-avatar {
+  background-image: url('/img/aws-api-gateway-logo.svg');
+}
 
 .hack section.page-content {
   margin: 3rem 0;
