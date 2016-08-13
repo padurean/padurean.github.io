@@ -25,3 +25,8 @@ article > h1 >small,
 .hack article > h1:after {
   color: #666;
 }
+
+div.prism-show-language > div.prism-show-language-label {
+  color: #333;
+  background-color: #CFCFCF;
+}
