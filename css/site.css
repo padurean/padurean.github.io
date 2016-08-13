@@ -83,6 +83,7 @@ a {
 }
 .media-heading > small {
   font-weight: normal;
+  white-space: nowrap;
 }
 .media-heading > small > time {
   font-style: italic;
