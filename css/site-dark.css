@@ -16,3 +16,7 @@
 .double-slash {
   color: #666;
 }
+
+.media-heading > small {
+  color: #999;
+}

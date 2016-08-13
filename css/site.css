@@ -81,6 +81,12 @@ a {
 .media-heading > a {
   color: inherit;
 }
+.media-heading > small {
+  font-weight: normal;
+}
+.media-heading > small > time {
+  font-style: italic;
+}
 header .site-motto {
   font-size: .95rem;
   letter-spacing: .1rem;
