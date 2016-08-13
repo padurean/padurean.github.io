@@ -55,6 +55,7 @@ footer.footer {
 }
 .javascript-avatar {
   background-image: url('/img/javascript-logo.svg');
+  opacity: .9;
 }
 .haskell-avatar {
   background-image: url('/img/haskell-logo.svg');
