@@ -27,6 +27,6 @@ article > h1 >small,
 }
 
 div.prism-show-language > div.prism-show-language-label {
-  color: #CFCFCF;
-  background-color: #333;
+  color: #aaa;
+  background-color: #111;
 }
