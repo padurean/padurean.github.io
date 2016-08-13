@@ -1,3 +1,14 @@
-.dark-grey h1 a, .dark-grey h2 a, .dark-grey h3 a, .dark-grey h4 a, .dark-grey h5 a {
+.dark-grey h1 a,
+.dark-grey h2 a,
+.dark-grey h3 a,
+.dark-grey h4 a,
+.dark-grey h5 a {
   color: #ff2e88;
+}
+.dark-grey h1 a:hover,
+.dark-grey h2 a:hover,
+.dark-grey h3 a:hover,
+.dark-grey h4 a:hover,
+.dark-grey h5 a:hover {
+  color: #fff;
 }
