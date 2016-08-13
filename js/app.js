@@ -2,6 +2,10 @@
 $(function() {
   $('footer').prepend(new Date().getFullYear());
 
+  setTimeout(showLangIconsAboveSnippets, 3000);
+});
+
+function showLangIconsAboveSnippets() {
   var langLabels =
     $('div.prism-show-language > div.prism-show-language-label');
   for (var i=0; i<langLabels.length; i++) {
@@ -9,9 +13,16 @@ $(function() {
     var lang = langLabel.text().toLowerCase();
     if (lang === 'scala') {
       langLabel.css('background-image', 'url("/img/scala-logo.svg")');
+      setCssForLangLabelWithImage(langLabel);
     } else if (lang === 'javascript') {
-      // TODO OGG
+      langLabel.css('background-image', 'url("/img/javascript-logo.svg")');
+      setCssForLangLabelWithImage(langLabel);
     }
   }
+}
 
-});
+  function setCssForLangLabelWithImage(langLabel) {
+    langLabel.css('padding-left', '1.5rem');
+    langLabel.css('background-size', '1.25rem 1.25rem');
+    langLabel.css('background', 'no-repeat .1rem .1rem');
+  }
