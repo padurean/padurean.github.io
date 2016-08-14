@@ -5,7 +5,7 @@ $(function() {
   setTimeout(showLangIconsAboveSnippets, 400);
 
   $('.opens_in_new').append(
-    '<span class="flip" style="display: inline-block;">&#8689;</span>'
+    '<span class="opens_in_new_symbol flip">&#8689;</span>'
   );
 });
 

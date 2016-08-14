@@ -35,3 +35,7 @@ div.prism-show-language > div.prism-show-language-label {
   padding: 0 .5rem;
   border: solid 1px #333;
 }
+
+.opens_in_new_symbol {
+  color: #777;
+}
