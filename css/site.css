@@ -120,3 +120,17 @@ img {
   margin: 2rem 0;
   width: 100%;
 }
+
+
+.flip,
+.opens_in_new {
+  -moz-transform: scaleX(-1);    /* Gecko */
+  -o-transform: scaleX(-1);      /* Opera */
+  -webkit-transform: scaleX(-1); /* Webkit */
+  transform: scaleX(-1);         /* Standard */
+  filter: FlipH;                 /* IE 6/7/8 */
+}
+
+.opens_in_new:after {
+  content: '&#8689;'
+}
