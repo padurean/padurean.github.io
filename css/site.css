@@ -135,3 +135,17 @@ img {
   font-size: 1.25rem;
   line-height: 1.25rem;
 }
+
+.wip-random-joke > .random-joke {
+  padding: .05rem .5rem;
+  letter-spacing: normal;
+}
+.wip-random-joke > .random-joke > .fa {
+  padding: 0.25rem;
+}
+
+.rounded-corners-just-a-bit {
+  -webkit-border-radius: .25rem;
+  -moz-border-radius: .25rem;
+  border-radius: .25rem;
+}

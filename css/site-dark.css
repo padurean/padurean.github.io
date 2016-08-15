@@ -39,3 +39,8 @@ div.prism-show-language > div.prism-show-language-label {
 .opens_in_new_symbol {
   color: #777;
 }
+
+.wip-random-joke > .random-joke {
+  color: #999;
+  background-color: #181818;
+}

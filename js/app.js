@@ -7,6 +7,20 @@ $(function() {
   $('.opens_in_new').append(
     '<span class="opens_in_new_symbol flip">&#8689;</span>'
   );
+
+  var wipRandomJokeElems = $(".wip-random-joke");
+  wipRandomJokeElems.click(function (event) {
+    event.preventDefault();
+    var wipRandomJokeElem = $(event.target);
+    var randomJokeElem = wipRandomJokeElem.find('.random-joke');
+    if(randomJokeElem.length) {
+      randomJokeElem[0].remove();
+    } else {
+      wipRandomJokeElem.append(
+        '<span class="random-joke"><i class="fa fa-angle-double-left"></i><i class="fa fa-exclamation-triangle"> </i> Not there yet dude :) still working on this.</span>'
+      );
+    }
+  });
 });
 
 function showLangIconsAboveSnippets() {
