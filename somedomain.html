@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script>
+      function accessPremiumContentGateway() {
+        var premiumContentGatewayUrl =
+          'https://account.devdemic.com/premium-content-gateway';
+
+        var referrer = document.referrer;
+        console.log('Referrer: ', referrer);
+        var hasExpectedReferrer =
+                referrer && referrer.indexOf(premiumContentGatewayUrl) === 0;
+        hasExpectedReferrer = true; // TODO OGG: remove
+
+        var isPremiumContentLocked = true;
+        var urlPieces = window.location.href.split('?');
+        for (var i=0; i<urlPieces.length; i++) {
+          if (urlPieces[i].indexOf('locked=false') === 0) {
+            isPremiumContentLocked = false;
+            break;
+          }
+        }
+
+        if (hasExpectedReferrer && !isPremiumContentLocked) {
+          document.body.style.display = 'block';
+        } else {
+          document.getElementsByTagName('body')[0].innerHTML =
+            '<div>Checking purchase status ...</div>';
+          document.body.style.display = 'block';
+
+          var token = 'XFF5Y7AOX5FG7OD7QQSTTJCSHQ'; // TODO OGG: this has to come prefilled from widget/snippet def
+          console.log('Redirecting to Paydemic Premium Content Gateway ...');
+          window.location.replace(premiumContentGatewayUrl + '/' + token);
+        }
+      }
+    </script>
+  </head>
+
+  <body onload="accessPremiumContentGateway();" style="display: none;">
+    <div>
+      Some Protected Content
+    </div>
+  </body>
+</html>
