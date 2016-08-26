@@ -2,6 +2,7 @@
   <head>
     <script>
       function accessPremiumContentGateway() {
+        // TODO OGG: the domain name has to come from widget/snippet def
         var premiumContentGatewayUrl =
           'https://account.devdemic.com/premium-content-gateway';
 
@@ -9,7 +10,7 @@
         console.log('Referrer: ', referrer);
         var hasExpectedReferrer =
                 referrer && referrer.indexOf(premiumContentGatewayUrl) === 0;
-        hasExpectedReferrer = true; // TODO OGG: remove
+        // hasExpectedReferrer = true; // TODO OGG: remove
 
         var isPremiumContentLocked = true;
         var urlPieces = window.location.href.split('?');
@@ -27,7 +28,7 @@
             '<div>Checking purchase status ...</div>';
           document.body.style.display = 'block';
 
-          var token = '7ADWJSLYGVDQHACDB23CQH6TLM'; // TODO OGG: this has to come prefilled from widget/snippet def
+          var token = 'XFF5Y7AOX5FG7OD7QQSTTJCSHQ'; // TODO OGG: this has to come prefilled from widget/snippet def
           console.log('Redirecting to Paydemic Premium Content Gateway ...');
           window.location.replace(premiumContentGatewayUrl + '/' + token);
         }
