@@ -20,13 +20,13 @@
         alert('ReferrerXXX: ' + referrer); // TODO OGG: remove
         if (isPremiumContentLocked && !referrer) {
           document.getElementsByTagName('body')[0].innerHTML =
-            '<div>Your browser is not supported.<br/>' +
+            '<div style="color: #111;">Your browser is not supported.<br/>' +
             'Please try using a different one (e.g. Google Chrome, Mozilla Firefox).<br/><br/>' +
-            '<span style="background-color: #eee;">If using Apple Safari on iOS and using other browser is not an option,<br/>' +
+            '<div style="background-color: #eee;">If using Apple Safari on iOS and using other browser is not an option,<br/>' +
             'please try setting ' +
-            '<i style="font-weight: 400">Settings &gt; Safari &gt; Block Cookies</i> ' +
-            'option to <em style="font-weight: 500">Always Allow</em><br/>' +
-            'and then reload this page.</span></div>';
+            '<em style="font-weight: bold">Settings &gt; Safari &gt; Block Cookies</em> ' +
+            'option to <em style="font-weight: bold">Always Allow</em><br/>' +
+            'and then reload this page.</div></div>';
           document.body.style.display = 'block';
         } else {
           var hasExpectedReferrer =
