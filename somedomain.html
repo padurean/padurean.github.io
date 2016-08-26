@@ -4,34 +4,45 @@
       function accessPremiumContentGateway() {
         // TODO OGG: the domain name has to come from widget/snippet def
         var premiumContentGatewayUrl =
-          'https://account.devdemic.com/premium-content-gateway';
-
-        var referrer = document.referrer;
-        console.log('Referrer: ', referrer);
-        alert('ReferrerXXX: ' + referrer); // TODO OGG: remove
-        var hasExpectedReferrer =
-                referrer && referrer.indexOf(premiumContentGatewayUrl) === 0;
-        // hasExpectedReferrer = true; // TODO OGG: remove
+                'https://account.devdemic.com/premium-content-gateway';
 
         var isPremiumContentLocked = true;
         var urlPieces = window.location.href.split('?');
-        for (var i=0; i<urlPieces.length; i++) {
-          if (urlPieces[i].indexOf('locked=false') === 0) {
+        for (var i = 0; i < urlPieces.length; i++) {
+          if (urlPieces[i].indexOf('paydemic-locked=false') === 0) {
             isPremiumContentLocked = false;
             break;
           }
         }
 
-        if (hasExpectedReferrer && !isPremiumContentLocked) {
+        var referrer = document.referrer;
+        console.log('Referrer: ', referrer);
+        alert('ReferrerXXX: ' + referrer); // TODO OGG: remove
+        if (isPremiumContentLocked && !referrer) {
+          document.getElementsByTagName('body')[0].innerHTML =
+            '<div>Your browser is not supported.<br/>' +
+            'Please try using a different one (e.g. Google Chrome, Mozilla Firefox).<br/><br/>' +
+            '<span style="background-color: #eee;">If using Apple Safari on iOS and using other browser is not an option,<br/>' +
+            'please try setting ' +
+            '<i style="font-weight: 400">Settings &gt; Safari &gt; Block Cookies</i> ' +
+            'option to <em style="font-weight: 500">Always Allow</em><br/>' +
+            'and then reload this page.</span></div>';
           document.body.style.display = 'block';
         } else {
-          document.getElementsByTagName('body')[0].innerHTML =
-            '<div>Checking purchase status ...</div>';
-          document.body.style.display = 'block';
+          var hasExpectedReferrer =
+            referrer && referrer.indexOf(premiumContentGatewayUrl) === 0;
 
-          var token = 'VM3NUVICABD37LGXIFNRF62OIQ'; // TODO OGG: this has to come prefilled from widget/snippet def
-          console.log('Redirecting to Paydemic Premium Content Gateway ...');
-          window.location.replace(premiumContentGatewayUrl + '/' + token);
+          if (hasExpectedReferrer && !isPremiumContentLocked) {
+            document.body.style.display = 'block';
+          } else {
+            document.getElementsByTagName('body')[0].innerHTML =
+                    '<div>Checking purchase status ...</div>';
+            document.body.style.display = 'block';
+
+            var token = 'VM3NUVICABD37LGXIFNRF62OIQ'; // TODO OGG: this has to come prefilled from widget/snippet def
+            console.log('Redirecting to Paydemic Premium Content Gateway ...');
+            window.location.replace(premiumContentGatewayUrl + '/' + token);
+          }
         }
       }
     </script>
