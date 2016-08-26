@@ -2,6 +2,20 @@
   <head>
     <script>
       function accessPremiumContentGateway() {
+        window.onbeforeunload = function (e) {
+          console.log('Onbeforeunload window.location.href: ', window.location.href);
+
+          var message = "Your confirmation message goes here.";
+          var e = e || window.event;
+          // For IE and Firefox
+          if (e) {
+            e.returnValue = message;
+          }
+
+          // For Safari
+          return message;
+        };
+
         // TODO OGG: the domain name has to come from widget/snippet def
         var premiumContentGatewayUrl =
                 'https://account.devdemic.com/premium-content-gateway';
