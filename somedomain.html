@@ -5,30 +5,24 @@
         // TODO OGG: the domain name has to come from widget/snippet def
         var premiumContentGatewayUrl =
                 'https://account.devdemic.com/premium-content-gateway';
-
-        var premiumContentLocked = true;
-        var urlPieces = window.location.href.split('?');
-        for (var i = 0; i < urlPieces.length; i++) {
-          if (urlPieces[i].indexOf('paydemic-locked=false') === 0) {
-            premiumContentLocked = false;
-            break;
-          }
-        }
+        var premiumContentLocked =
+                window.location.href.indexOf('paydemic-locked=false') < 0;
 
         var referrer = document.referrer;
         console.log('Referrer: ', referrer);
-        alert('ReferrerXXX: ' + referrer); // TODO OGG: remove
+//        alert('ReferrerXXX: ' + referrer); // TODO OGG: remove
         if (!premiumContentLocked && !referrer) {
           document.getElementsByTagName('body')[0].innerHTML =
-            '<div style="color: #111; padding: 1rem; font-family: Arial, Helvetica, sans-serif;"><span style="color: darkorange; font-weight: bold;">Oops! Your web browser is probably not supported.</span><br/><br/>' +
-            'Please try one of the following:<br>' +
-            '1. Close this tab/page and use a new one to navigate again to the desired content.<br/>' +
-            '2. If the problem persists, use another web browser - e.g. Chrome (Mobile/Desktop), Firefox (Mobile/Desktop) or Safari (Desktop)<br/><br/>' +
+            '<div style="color: #111; padding: 1rem; font-family: Arial, Helvetica, sans-serif;">' +
+            '<span style="color: darkorange; font-weight: bold;">Oops! Your web browser is probably not supported.</span><br/><br/>' +
+            // TODO OGG: the href value needs to be the finalUrl (no paydemic-locked query param!)
+            '<a href="http://purecore.ro/somedomain.html" style="color: #009688;">Try Again</a><br><br>' +
+            'If the problem persists, try using another web browser - e.g. Chrome (Mobile/Desktop), Firefox (Mobile/Desktop) or Safari (Desktop)<br/><br/>' +
             '<div style="background-color: #eee; padding: 1rem;">If using Safari on iOS and using another browser is not an option,<br/>' +
             'please try setting ' +
             '<em style="font-weight: bold">Settings &gt; Safari &gt; Block Cookies</em> ' +
-            'option to <em style="font-weight: bold">Always Allow</em>.<br/>' +
-            'Then close this tab/page and use a new one to navigate again to the desired content.</div></div>';
+            'option to <em style="font-weight: bold">Always Allow</em> then try again.</div>' +
+            '</div>';
           document.body.style.display = 'block';
         } else {
           var hasExpectedReferrer =
@@ -38,7 +32,7 @@
             document.body.style.display = 'block';
           } else {
             document.getElementsByTagName('body')[0].innerHTML =
-                    '<div>Checking purchase status ...</div>';
+                    '<div>Checking content availability ...</div>';
             document.body.style.display = 'block';
 
             var token = 'Y4UJ34SXEBFCFN6SJQPVLLNTEE'; // TODO OGG: this has to come prefilled from widget/snippet def
