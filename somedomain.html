@@ -21,12 +21,14 @@
         if (!premiumContentLocked && !referrer) {
           document.getElementsByTagName('body')[0].innerHTML =
             '<div style="color: #111; padding: 1rem; font-family: Arial, Helvetica, sans-serif;"><span style="color: darkorange; font-weight: bold;">Oops! Your web browser is probably not supported.</span><br/><br/>' +
-            'Please try using a different one (e.g. Google Chrome, Mozilla Firefox, ...).<br/><br/>' +
-            '<div style="background-color: #eee; padding: 1rem;">If using Apple Safari on iOS and using other browser is not an option,<br/>' +
+            'Please try one of the following:<br>' +
+            '1. Close this tab/page and use a new one to navigate again to the desired content.' +
+            '2. If the problem persists, use a different web browser - e.g. Chrome (Mobile/Desktop), Firefox (Mobile/Desktop) or Safari (Desktop)<br/><br/>' +
+            '<div style="background-color: #eee; padding: 1rem;">If using Safari on iOS and using other browser is not an option,<br/>' +
             'please try setting ' +
             '<em style="font-weight: bold">Settings &gt; Safari &gt; Block Cookies</em> ' +
             'option to <em style="font-weight: bold">Always Allow</em>.<br/>' +
-            'Then reopen this page in a newtab/page (just refreshing this page will not work).</div></div>';
+            'Then close this tab/page and use a new one to navigate again to the desired content.</div></div>';
           document.body.style.display = 'block';
         } else {
           var hasExpectedReferrer =
