@@ -6,11 +6,11 @@
         var premiumContentGatewayUrl =
                 'https://account.devdemic.com/premium-content-gateway';
 
-        var isPremiumContentLocked = true;
+        var premiumContentLocked = true;
         var urlPieces = window.location.href.split('?');
         for (var i = 0; i < urlPieces.length; i++) {
           if (urlPieces[i].indexOf('paydemic-locked=false') === 0) {
-            isPremiumContentLocked = false;
+            premiumContentLocked = false;
             break;
           }
         }
@@ -18,7 +18,7 @@
         var referrer = document.referrer;
         console.log('Referrer: ', referrer);
         alert('ReferrerXXX: ' + referrer); // TODO OGG: remove
-        if (isPremiumContentLocked && !referrer) {
+        if (!premiumContentLocked && !referrer) {
           document.getElementsByTagName('body')[0].innerHTML =
             '<div style="color: #111; padding: 1rem;">Your browser is not supported.<br/>' +
             'Please try using a different one (e.g. Google Chrome, Mozilla Firefox, ...).<br/><br/>' +
@@ -32,7 +32,7 @@
           var hasExpectedReferrer =
             referrer && referrer.indexOf(premiumContentGatewayUrl) === 0;
 
-          if (hasExpectedReferrer && !isPremiumContentLocked) {
+          if (hasExpectedReferrer && !premiumContentLocked) {
             document.body.style.display = 'block';
           } else {
             document.getElementsByTagName('body')[0].innerHTML =
