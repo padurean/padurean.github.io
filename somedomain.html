@@ -1,47 +1,7 @@
 <html>
   <head>
-    <script>
-      function accessPremiumContentGateway() {
-        // TODO OGG: the domain name has to come from widget/snippet def
-        var premiumContentGatewayUrl =
-                'https://account.devdemic.com/premium-content-gateway';
-        var premiumContentLocked =
-                window.location.href.indexOf('paydemic-locked=false') < 0;
-
-        var referrer = document.referrer;
-        console.log('Referrer: ', referrer);
-//        alert('ReferrerXXX: ' + referrer); // TODO OGG: remove
-        if (!premiumContentLocked && !referrer) {
-          document.getElementsByTagName('body')[0].innerHTML =
-            '<div style="color: #111; padding: 1rem; font-family: Arial, Helvetica, sans-serif;">' +
-            '<span style="color: darkorange; font-weight: bold;">Oops! Can not access content.</span><br/><br/>' +
-            // TODO OGG: the href value needs to be the finalUrl (no paydemic-locked query param!)
-            '<a href="http://purecore.ro/somedomain.html" style="color:#009688;font-weight:bold;font-size:1.25rem;text-decoration:none;">' +
-            'Click Here<span style="color:#666;"> to Try Again</span></a><br/><br/>' +
-            'If the problem persists, try using another web browser.<br/><br/>' +
-            '<div style="background-color: #eee; padding: 1rem;">If using Safari on iOS and using another browser is not an option, ' +
-            'please try setting <br/><em style="font-weight: bold">Settings &gt; Safari &gt; Block Cookies</em> ' +
-            'option to <em style="font-weight: bold">Always Allow</em> and try again.</div>' +
-            '</div>';
-          document.body.style.display = 'block';
-        } else {
-          var hasExpectedReferrer =
-            referrer && referrer.indexOf(premiumContentGatewayUrl) === 0;
-
-          if (hasExpectedReferrer && !premiumContentLocked) {
-            document.body.style.display = 'block';
-          } else {
-            document.getElementsByTagName('body')[0].innerHTML =
-                    '<div>Checking content availability ...</div>';
-            document.body.style.display = 'block';
-
-            var token = 'Y4UJ34SXEBFCFN6SJQPVLLNTEE'; // TODO OGG: this has to come prefilled from widget/snippet def
-            console.log('Redirecting to Paydemic Premium Content Gateway ...');
-            window.location.replace(premiumContentGatewayUrl + '/' + token);
-          }
-        }
-      }
-    </script>
+    <noscript><meta http-equiv="refresh" content="0;url=http://enable-javascript.com"></noscript>
+    <script>function accessPremiumContentGateway() {var premiumContentLocked =window.location.href.indexOf('paydemic-locked=false') < 0;var referrer = document.referrer;console.log('Referrer: ', referrer);if (!premiumContentLocked && !referrer) {document.getElementsByTagName('body')[0].innerHTML ='<div style="color: #111; padding: 1rem; font-family: Arial, Helvetica, sans-serif;"><span style="color: darkorange; font-weight: bold;">Oops! Can not access content.</span><br/><br/><a href="http://purecore.ro/somedomain.html" style="color:#009688;font-weight:bold;font-size:1.25rem;text-decoration:none;">Click Here<span style="color:#666;"> to Try Again</span></a><br/><br/>If the problem persists, try using another web browser.<br/><br/><div style="background-color: #eee; padding: 1rem;">If using Safari on iOS and using another browser is not an option, please try setting <br/><em style="font-weight: bold">Settings &gt; Safari &gt; Block Cookies</em> option to <em style="font-weight: bold">Always Allow</em> and try again.</div></div>';document.body.style.display = 'block';} else {var hasExpectedReferrer =referrer && referrer.indexOf('https://account.devdemic.com/premium-content-gateway') === 0;if (hasExpectedReferrer && !premiumContentLocked) {document.body.style.display = 'block';} else {document.getElementsByTagName('body')[0].innerHTML ='<div>Checking content availability ...</div>';document.body.style.display = 'block';console.log('Redirecting to Paydemic Premium Content Gateway ...');window.location.replace('https://account.devdemic.com/premium-content-gateway/CZ2BNRTKBJBRLP3CWADXFR5R34');}}}</script>
   </head>
 
   <body onload="accessPremiumContentGateway();" style="display: none;">
