@@ -1,22 +1,22 @@
 <html>
 <head>
-    <title>Content Protected HTML</title>
+    <title>Optionally Content-Protected HTML</title>
 </head>
 <body>
 <div id="main-container">
-    Some protected content here
+    Main Container content <span style="color: #999">(before &lt;script&gt; element)</span>
 </div>
-Some text before
+First Text Node <span style="color: #999">(before &lt;script&gt; element)</span>
 <div id="secondary-container">
-    Some other protected content here
+    Secondary Container content <span style="color: #999">(before &lt;script&gt; element)</span>
 </div>
 <script src="https://resources.devdemic.com/js/test-content-protect.js?protect=true" id="paydemic-content-protect-script"></script>
-<div id="tertiary-container-after">
-    Some tertiary-after protected content here
+<div id="tertiary-container">
+    Tertiary Container content <span style="color: #999">(after &lt;script&gt; element)</span>
 </div>
-<div id="fourthiary-container-after">
-    Some fourthiary-after protected content here
+<div id="fourth-container">
+    Fourth Container content <span style="color: #999">(after &lt;script&gt; element)</span>
 </div>
-Some text after
+Second Text Node <span style="color: #999">(after &lt;script&gt; element)</span>
 </body>
 </html>
