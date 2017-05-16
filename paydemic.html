@@ -138,6 +138,16 @@
 <script src="/js/jquery-3.1.0.min.js"></script>
 <script src="/js/prism.js" async=""></script>
 <script src="/js/app.js" async=""></script>
-<script src="/paydemic-js/iframeResizer.contentWindow.min.js"></script>
+<script src="/paydemic-js/iframeResizer.min.js"></script>
+<script>
+  var paydemicAdsIframeJqElem;
+  jqPaydemicHost = jQuery.noConflict();
+  jqPaydemicHost(function( $ ) {
+      // Code using $ as usual goes here; the actual jQuery object is jqPaydemic
+      paydemicAdsIframeJqElem = $('#paydemic-ads-iframe');
+      var iFrameResizeOpts = { log: true };
+      paydemicAdsIframeJqElem.iFrameResize(iFrameResizeOpts);
+  });
+</script>
 </body>
 </html>
