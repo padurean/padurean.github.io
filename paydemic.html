@@ -140,14 +140,8 @@
 <script src="/js/app.js" async=""></script>
 <script src="/paydemic-js/iframeResizer.min.js"></script>
 <script>
-  var paydemicAdsIframeJqElem;
   $(function() {
-    paydemicAdsIframeJqElem = $('#paydemic-ads-iframe');
-    var iFrameResizeOpts = {
-      log: true,
-      warningTimeout: 0
-    };
-    paydemicAdsIframeJqElem.iFrameResize(iFrameResizeOpts);
+    iFrameResize({ warningTimeout: 0 }, document.getElementById('paydemic-ads-iframe'));
   });
 </script>
 </body>
