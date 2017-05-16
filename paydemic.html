@@ -143,7 +143,10 @@
   var paydemicAdsIframeJqElem;
   $(function() {
     paydemicAdsIframeJqElem = $('#paydemic-ads-iframe');
-    var iFrameResizeOpts = { log: true };
+    var iFrameResizeOpts = {
+      log: true,
+      warningTimeout: 0
+    };
     paydemicAdsIframeJqElem.iFrameResize(iFrameResizeOpts);
   });
 </script>
