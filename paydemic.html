@@ -141,12 +141,10 @@
 <script src="/paydemic-js/iframeResizer.min.js"></script>
 <script>
   var paydemicAdsIframeJqElem;
-  jqPaydemicHost = jQuery.noConflict();
-  jqPaydemicHost(function( $ ) {
-      // Code using $ as usual goes here; the actual jQuery object is jqPaydemic
-      paydemicAdsIframeJqElem = $('#paydemic-ads-iframe');
-      var iFrameResizeOpts = { log: true };
-      paydemicAdsIframeJqElem.iFrameResize(iFrameResizeOpts);
+  $(function() {
+    paydemicAdsIframeJqElem = $('#paydemic-ads-iframe');
+    var iFrameResizeOpts = { log: true };
+    paydemicAdsIframeJqElem.iFrameResize(iFrameResizeOpts);
   });
 </script>
 </body>
