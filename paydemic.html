@@ -140,9 +140,14 @@
 <script src="/js/app.js" async=""></script>
 <script src="https://resources.devdemic.com/js/iframe-resizer/iframeResizer.min.js"></script>
 <script>
+  // with jQuery:
   $(function() {
     iFrameResize({ warningTimeout: 0 }, document.getElementById('paydemic-ads-iframe'));
   });
+  // without jQuery:
+  // document.addEventListener("DOMContentLoaded", function(event) { 
+  //   iFrameResize({ warningTimeout: 0 }, document.getElementById('paydemic-ads-iframe'));
+  // });
 </script>
 </body>
 </html>
