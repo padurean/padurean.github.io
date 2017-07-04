@@ -42,6 +42,9 @@ footer.footer {
   font-weight: normal;
 }
 
+.dark-grey .avatarholder {
+  border-color: #282828;
+}
 .avatarholder {
   width: 6rem;
   height: 6rem;
