@@ -25,7 +25,7 @@ $(function() {
 
 function showLangIconsAboveSnippets() {
   var langLabels =
-    $('div.prism-show-language > div.prism-show-language-label');
+  $('div.prism-show-language > div.prism-show-language-label');
   for (var i=0; i<langLabels.length; i++) {
     var langLabel = $(langLabels[i]);
     var lang = langLabel.text().toLowerCase();
@@ -42,9 +42,9 @@ function showLangIconsAboveSnippets() {
   }
 }
 
-  function setCssForLangLabelWithImage(langLabel) {
-    langLabel.css('padding-left', '1.75rem');
-    langLabel.css('background-size', '1.25rem 1.25rem');
-    langLabel.css('background-repeat', 'no-repeat');
-    langLabel.css('background-position', '.1rem .1rem');
-  }
+function setCssForLangLabelWithImage(langLabel) {
+  langLabel.css('padding-left', '1.75rem');
+  langLabel.css('background-size', '1.25rem 1.25rem');
+  langLabel.css('background-repeat', 'no-repeat');
+  langLabel.css('background-position', '.1rem .1rem');
+}
