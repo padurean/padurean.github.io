@@ -29,14 +29,17 @@ function showLangIconsAboveSnippets() {
   for (var i=0; i<langLabels.length; i++) {
     var langLabel = $(langLabels[i]);
     var lang = langLabel.text().toLowerCase();
-    if (lang === 'scala') {
-      langLabel.css('background-image', 'url("/img/scala-logo.svg")');
+    if (lang === 'haskell') {
+      langLabel.css('background-image', 'url("../img/haskell-logo.svg")');
+      setCssForLangLabelWithImage(langLabel);
+    } else if (lang === 'scala') {
+      langLabel.css('background-image', 'url("../img/scala-logo.svg")');
       setCssForLangLabelWithImage(langLabel);
     } else if (lang === 'javascript') {
-      langLabel.css('background-image', 'url("/img/javascript-logo.svg")');
+      langLabel.css('background-image', 'url("../img/javascript-logo.svg")');
       setCssForLangLabelWithImage(langLabel);
     } else if (lang === 'html') {
-      langLabel.css('background-image', 'url("/img/html-logo.svg")');
+      langLabel.css('background-image', 'url("../img/html-logo.svg")');
       setCssForLangLabelWithImage(langLabel);
     }
   }
