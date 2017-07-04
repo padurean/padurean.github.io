@@ -1,149 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PureCore.ro | FunctionalProgramming.ro - Some Scala -related blog post</title>
-    <meta name="description"
-          content="Some Scala -related blog post (at) Ogg's Blog - Valentin Padurean on programming - ">
-    <meta name="author" content="Ogg (Valentin Padurean)">
-    <meta name="keywords"
-          content="Ogg, Valentin, Padurean, programming, coding, functional, Scala">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/prism.css">
-    <link rel="stylesheet" href="/css/hack.css">
-    <link rel="stylesheet" href="/css/dark-grey.css">
-    <link rel="stylesheet" href="/css/site.css">
-    <link rel="stylesheet" href="/css/site-dark.css">
-    <script src="/js/webfont.js" type="text/javascript" async=""></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PureCore.ro | FunctionalProgramming.ro - Some Scala -related blog post</title>
+  <meta name="description"
+  content="Some Scala -related blog post (at) Ogg's Blog - Valentin Padurean on programming - ">
+  <meta name="author" content="Ogg (Valentin Padurean)">
+  <meta name="keywords"
+  content="Ogg, Valentin, Padurean, programming, coding, functional, Scala">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/prism.css">
+  <link rel="stylesheet" href="/css/hack.css">
+  <link rel="stylesheet" href="/css/dark-grey.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site-dark.css">
+  <script src="/js/webfont.js" type="text/javascript" async=""></script>
 </head>
 <body class="hack dark-grey" cz-shortcut-listen="true">
-<div class="main container">
+  <div class="main container">
     <header>
-        <h1>
-            Ogg's Blog |
-            <a href="/about.html">About</a>
-        </h1>
-        <p class="site-motto">
-            <a href="http://purecore.ro">PureCore.ro</a> <span class="double-slash">//</span>
-            <a href="http://functionalprogramming.ro" class="wip-random-joke">FunctionalProgramming.ro</a>
-        </p>
+      <h1>
+        Ogg's Blog |
+        <a href="/about.html">About</a>
+      </h1>
+      <p class="site-motto">
+        <a href="http://purecore.ro">PureCore.ro</a> <span class="double-slash">//</span>
+        <a href="http://functionalprogramming.ro" class="wip-random-joke">FunctionalProgramming.ro</a>
+      </p>
     </header>
     <article class="page-content">
-        <h1>
-            Some Scala -related blog post
-            <br/><small>@ <time>2016-08-13</time></small>
-        </h1>
-        <section>
-            <h2>Food for thought</h2>
-            <p>
-                Very simply put, the idea behind backpressure is the ability to say "hey slow down!".
-                Let's start with an example that has nothing to do with software:
-                Imagine you own a factory that produces doughnuts (lucky you!) and just signed a contract
-                with the largest grocery chain in the Northeast US.
-                To increase output, you decided to overhaul your existing factory and open a new one.
-                Late Monday evening you get a text "Emergency! Get to the factory now!".
-                It turns out doughnuts were being produced 5% faster than they could be glazed and packaged.
-                Needless to say, there was a big, tasty mess to clean up, one of the factories had to be
-                temporarily shut down, and you couldn't fulfill your contract.
-                <br/><br/>
-                Misconfiguration can literally wreak havoc. To make matters worse, the glazer couldn't react
-                by signalling "hey you, slow down!". Even if it could, it didn't have a way to hold on to
-                some extra doughnuts or throw them into a plain donut bin while things slowed down.
-                Being able to signal backpressure and handle temporary bursts is critical in building resilient systems.
-                <br/><br/>
-                Today we'll demonstrate backpressure in Akka Streams (note this is not an <a href="http://doc.akka.io/docs/akka/2.4/scala/stream/stream-introduction.html" target="_blank" class="opens_in_new">intro to Akka Streams</a> itself).
-            </p>
-        </section>
-        <section>
-            <h2>Basic Layout</h2>
-            <p>
-                Our examples will follow the structure shown below:
-                <img src="http://2ivc9q2m0zajpk0cz1zc598z.wpengine.netdna-cdn.com/wp-content/uploads/blog/2016/08/akkastreamstopology.png"/>
-                We'll produce a single sequence of integers (source), transform it by computing the factorial of each integer,
-                print them to standard output (flow), and also write out the sequence to two files (broadcast to sinks).
-                The following code does exactly that (please check out this
-                <a href="https://github.com/skapadia/akka-streams-backpressure">Github repo</a>
-                and use <code>sbt run</code> or fire up your favorite IDE):
-            </p>
+      <h1>
+        Some Scala -related blog post
+        <br/><small>@ <time>2016-08-13</time></small>
+      </h1>
+      <section>
+        <h2>Food for thought</h2>
+        <p>
+          Very simply put, the idea behind backpressure is the ability to say "hey slow down!".
+          Let's start with an example that has nothing to do with software:
+          Imagine you own a factory that produces doughnuts (lucky you!) and just signed a contract
+          with the largest grocery chain in the Northeast US.
+          To increase output, you decided to overhaul your existing factory and open a new one.
+          Late Monday evening you get a text "Emergency! Get to the factory now!".
+          It turns out doughnuts were being produced 5% faster than they could be glazed and packaged.
+          Needless to say, there was a big, tasty mess to clean up, one of the factories had to be
+          temporarily shut down, and you couldn't fulfill your contract.
+          <br/><br/>
+          Misconfiguration can literally wreak havoc. To make matters worse, the glazer couldn't react
+          by signalling "hey you, slow down!". Even if it could, it didn't have a way to hold on to
+          some extra doughnuts or throw them into a plain donut bin while things slowed down.
+          Being able to signal backpressure and handle temporary bursts is critical in building resilient systems.
+          <br/><br/>
+          Today we'll demonstrate backpressure in Akka Streams (note this is not an <a href="http://doc.akka.io/docs/akka/2.4/scala/stream/stream-introduction.html" target="_blank" class="opens_in_new">intro to Akka Streams</a> itself).
+        </p>
+      </section>
+      <section>
+        <h2>Basic Layout</h2>
+        <p>
+          Our examples will follow the structure shown below:
+          <img src="http://2ivc9q2m0zajpk0cz1zc598z.wpengine.netdna-cdn.com/wp-content/uploads/blog/2016/08/akkastreamstopology.png"/>
+          We'll produce a single sequence of integers (source), transform it by computing the factorial of each integer,
+          print them to standard output (flow), and also write out the sequence to two files (broadcast to sinks).
+          The following code does exactly that (please check out this
+          <a href="https://github.com/skapadia/akka-streams-backpressure">Github repo</a>
+          and use <code>sbt run</code> or fire up your favorite IDE):
+        </p>
 
-            <pre class="language-javascript"><code>
-function showLangIconsAboveSnippets() {
-  var langLabels =
-    $('div.prism-show-language > div.prism-show-language-label');
-  for (var i=0; i&lt;langLabels.length; i++) {
-    var langLabel = $(langLabels[i]);
-    var lang = langLabel.text().toLowerCase();
-    if (lang === 'scala') {
-      langLabel.css('background-image', 'url("/img/scala-logo.svg")');
-      setCssForLangLabelWithImage(langLabel);
-    } else if (lang === 'javascript') {
-      langLabel.css('background-image', 'url("/img/javascript-logo.svg")');
-      setCssForLangLabelWithImage(langLabel);
-    }
-  }
-}
-            </code></pre>
+        <pre class="language-javascript"><code>
+          function showLangIconsAboveSnippets() {
+            var langLabels =
+            $('div.prism-show-language > div.prism-show-language-label');
+            for (var i=0; i&lt;langLabels.length; i++) {
+              var langLabel = $(langLabels[i]);
+              var lang = langLabel.text().toLowerCase();
+              if (lang === 'scala') {
+                langLabel.css('background-image', 'url("/img/scala-logo.svg")');
+                setCssForLangLabelWithImage(langLabel);
+              } else if (lang === 'javascript') {
+                langLabel.css('background-image', 'url("/img/javascript-logo.svg")');
+                setCssForLangLabelWithImage(langLabel);
+              }
+            }
+          }
+        </code></pre>
 
-            <pre class="language-html"><code>
-&lt;span&gt;Some text&lt;span&gt;
-            </code></pre>
+        <pre class="language-html"><code>
+          &lt;span&gt;Some text&lt;span&gt;
+        </code></pre>
 
-            <pre class="language-scala"><code>
-object StreamApp  {
+        <pre class="language-scala"><code>
+          object StreamApp  {
 
-  def lineSink(filename: String): Sink[String, Future[IOResult]] = {
-    Flow[String]
-      .alsoTo(Sink.foreach(s => println(s"$filename: $s")))
-      .map(s => ByteString(s + "\n"))
-      .toMat(FileIO.toFile(new File(filename)))(Keep.right)
-  }
+            def lineSink(filename: String): Sink[String, Future[IOResult]] = {
+              Flow[String]
+              .alsoTo(Sink.foreach(s => println(s"$filename: $s")))
+              .map(s => ByteString(s + "\n"))
+              .toMat(FileIO.toFile(new File(filename)))(Keep.right)
+            }
 
-  def main(args: Array[String]): Unit = {
+            def main(args: Array[String]): Unit = {
 
-    implicit val system = ActorSystem("streamapp")
-    implicit val materializer = ActorMaterializer()
+              implicit val system = ActorSystem("streamapp")
+              implicit val materializer = ActorMaterializer()
 
-    val source: Source[Int, NotUsed] = Source(1 to 100)
-    val factorials: Source[BigInt, NotUsed] =
-      source.scan(BigInt(1))((acc, next) => acc * next)
-    val sink1 = lineSink("factorial1.txt")
-    val sink2 = lineSink("factorial2.txt")
-    val slowSink2 = Flow[String].via(Flow[String]
-      .throttle(1, 1.second, 1, ThrottleMode.shaping))
-      .toMat(sink2)(Keep.right)
-    val bufferedSink2 = Flow[String].buffer(50, OverflowStrategy.dropNew)
-      .via(Flow[String]
-      .throttle(1, 1.second, 1, ThrottleMode.shaping))
-      .toMat(sink2)(Keep.right)
+              val source: Source[Int, NotUsed] = Source(1 to 100)
+              val factorials: Source[BigInt, NotUsed] =
+              source.scan(BigInt(1))((acc, next) => acc * next)
+              val sink1 = lineSink("factorial1.txt")
+              val sink2 = lineSink("factorial2.txt")
+              val slowSink2 = Flow[String].via(Flow[String]
+              .throttle(1, 1.second, 1, ThrottleMode.shaping))
+              .toMat(sink2)(Keep.right)
+              val bufferedSink2 = Flow[String].buffer(50, OverflowStrategy.dropNew)
+              .via(Flow[String]
+              .throttle(1, 1.second, 1, ThrottleMode.shaping))
+              .toMat(sink2)(Keep.right)
 
-    val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit b =>
-      import GraphDSL.Implicits._
+              val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit b =>
+                import GraphDSL.Implicits._
 
-      val bcast = b.add(Broadcast[String](2))
-      factorials.map(_.toString) ~> bcast.in
-      bcast.out(0) ~> sink1
-      bcast.out(1) ~> sink2
-      ClosedShape
-    })
+                val bcast = b.add(Broadcast[String](2))
+                factorials.map(_.toString) ~> bcast.in
+                bcast.out(0) ~> sink1
+                bcast.out(1) ~> sink2
+                ClosedShape
+              })
 
-    g.run()
-  }
-}
-            </code></pre>
+              g.run()
+            }
+          }
+        </code></pre>
 
-        </section>
+      </section>
     </article>
     <footer>
-        <b style="font-family: sans-serif;">&copy;</b> Ogg
-        <small>(Valentin Padurean)</small>
+      <b style="font-family: sans-serif;">&copy;</b> Ogg
+      <small>(Valentin Padurean)</small>
     </footer>
 
     <script src="/js/jquery-3.1.0.min.js"></script>
     <script src="/js/prism.js" async=""></script>
     <script src="/js/app.js" async=""></script>
-</div>
+  </div>
 </body>
 </html>
