@@ -14,6 +14,7 @@
 .dark-grey h3 a:hover,
 .dark-grey h4 a:hover,
 .dark-grey h5 a:hover {
+  background-color: #cc6300;
   color: #fff;
 }
 
