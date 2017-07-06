@@ -5,7 +5,8 @@
 .dark-grey h4 a,
 .dark-grey h5 a {
   /*color: #ff2e88;*/
-  color: #e66f00;
+  /*color: #e66f00;*/
+  color: #37bb33;
   border-bottom: 0 none;
 }
 .dark-grey a:hover,
@@ -14,7 +15,7 @@
 .dark-grey h3 a:hover,
 .dark-grey h4 a:hover,
 .dark-grey h5 a:hover {
-  background-color: #cc6300;
+  background-color: #37bb33;
   color: #fff;
 }
 
@@ -27,7 +28,7 @@
 }
 .media-heading > a:hover {
   background-color: transparent;
-  color: #e66f00;
+  color: #37bb33;
 }
 
 article > h1 >small,
