@@ -1,9 +1,16 @@
+a:hover {
+  background-color: #cc6300;
+}
+
+.dark-grey a,
 .dark-grey h1 a,
 .dark-grey h2 a,
 .dark-grey h3 a,
 .dark-grey h4 a,
 .dark-grey h5 a {
-  color: #ff2e88;
+  /*color: #ff2e88;*/
+  color: #e66f00;
+  border-bottom: 0 none;
 }
 .dark-grey h1 a:hover,
 .dark-grey h2 a:hover,
