@@ -15,8 +15,8 @@
 .dark-grey h3 a:hover,
 .dark-grey h4 a:hover,
 .dark-grey h5 a:hover {
-  background-color: #37bb33;
-  color: #fff;
+  background-color: transparent;
+  border-bottom: solid 1px #37bb33;
 }
 
 .double-slash {
