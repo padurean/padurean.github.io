@@ -1,15 +1,3 @@
-a:hover {
-  background-color: #cc6300;
-  color: #fff;
-}
-.media-heading > a {
-  color: #fff;
-}
-.media-heading > a:hover {
-  background-color: transparent;
-  color: #e66f00;
-}
-
 .dark-grey a,
 .dark-grey h1 a,
 .dark-grey h2 a,
@@ -31,6 +19,14 @@ a:hover {
 
 .double-slash {
   color: #666;
+}
+
+.media-heading > a {
+  color: #fff;
+}
+.media-heading > a:hover {
+  background-color: transparent;
+  color: #e66f00;
 }
 
 article > h1 >small,
