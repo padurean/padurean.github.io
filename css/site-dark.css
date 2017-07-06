@@ -1,5 +1,13 @@
 a:hover {
   background-color: #cc6300;
+  color: #fff;
+}
+.media-heading > a {
+  color: #fff;
+}
+.media-heading > a:hover {
+  background-color: transparent;
+  color: #e66f00;
 }
 
 .dark-grey a,
@@ -12,6 +20,7 @@ a:hover {
   color: #e66f00;
   border-bottom: 0 none;
 }
+.dark-grey a:hover,
 .dark-grey h1 a:hover,
 .dark-grey h2 a:hover,
 .dark-grey h3 a:hover,
