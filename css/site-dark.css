@@ -1,9 +1,8 @@
-.hack header {
-  background-image: url('../img/purecore.ro.svg');
-  background-repeat: no-repeat;
-  background-size: 5rem;
-  padding-left: 6.5rem;
-
+.hack header .header-logo-link > img {
+  float: left;
+  width: 5.5rem;
+  height: 5.5rem;
+  margin: 0 1rem 0 0;
 }
 
 .dark-grey a,
