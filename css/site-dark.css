@@ -1,8 +1,8 @@
 .hack header .header-logo-link > img {
   float: left;
-  width: 5.5rem;
-  height: 5.5rem;
-  margin: 0 1rem 0 0;
+  width: 6rem;
+  height: 6rem;
+  margin: -.5rem 1rem 0 0;
 }
 
 .dark-grey a,
