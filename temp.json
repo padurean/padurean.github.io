@@ -1,0 +1,28 @@
+--BehaviorFaultSuite
+test("should report available flex as non-zero when in Fault") {
+    val faulted = assetNoOutages(Available).copy(currentState = BehaviorFault)
+
+    faulted
+      .update(createValidSignals(faulted, startTime, activePower = AbsolutePowerKW(1000)))
+      .checkUpdate(flexPositiveCapacity = RelativePowerKW(300D))
+  }
+
+--DBStorage
+  def fetchAssets(): Future[Seq[AssetRow]] =
+    database.value.run(AssetTable.all.filter(_.id === 2L).result)
+
+--productionStandard.StateMachine
+def signalStatus(stm: StateMachine): Seq[AssetOutputSignal] = {
+    println(s"stm pos / neg capacity: ${stm.data.positiveCapacity.kilowatts}kW / ${stm.data.negativeCapacity.kilowatts}kW")
+--productionStandard.StateMachineData
+    lazy val positiveCapacity = {
+    val scheduled = signals.scheduleView.values
+    println(s"stmdata - basepoint: ${this.basepoint}")
+
+--productionStandard.testExtensions.checkForEvent
+        if (expected == null || isEqual) {
+              true
+            } else {
+              println(s"Actual: $actual\nExpected: $expected")
+              false
+            }

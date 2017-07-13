@@ -2,8 +2,19 @@
   padding: 20px 10px;
 }
 
+.hack header .header-logo-link > img {
+  float: left;
+  width: 6rem;
+  height: 6rem;
+  margin: -.5rem 1rem 0 0;
+}
+
 .hack h1 {
   padding-top: 0;
+}
+
+.hack h2:before {
+  content: '';
 }
 
 .example {
@@ -43,7 +54,7 @@ footer.footer {
 }
 
 .dark-grey .avatarholder {
-  border-color: #282828;
+  border: 1px solid #282828;
 }
 .avatarholder {
   width: 6.25rem;
@@ -51,7 +62,14 @@ footer.footer {
   line-height: 5rem;
   font-size: 5rem;
   background-repeat: no-repeat;
-  background-size: 4.75rem 4.75rem;
+  background-size: 4.75rem;
+}
+.avatarholder.smaller {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 4rem;
+  background-size: 3rem;
 }
 .scala-avatar {
   background-image: url('../img/scala-logo.svg');
@@ -140,15 +158,26 @@ img {
 }
 
 .wip-random-joke > .random-joke {
-  padding: .05rem .5rem;
   letter-spacing: normal;
+  color: #999;
+  background-color: #181818;
 }
 .wip-random-joke > .random-joke > .fa {
-  padding: 0.25rem;
+  padding: 0 0 0 0.5rem;
 }
 
 .rounded-corners-just-a-bit {
   -webkit-border-radius: .25rem;
   -moz-border-radius: .25rem;
   border-radius: .25rem;
+}
+
+.btn {
+  padding: .5rem 1rem;
+}
+.btn > .fa.left {
+  margin-right: .5rem;
+}
+.fa.large {
+  font-size: 1.25rem;
 }
