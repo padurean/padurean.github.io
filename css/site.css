@@ -111,6 +111,9 @@ article > h1 > small,
   font-weight: normal;
   white-space: nowrap;
 }
+time {
+  white-space: nowrap;
+}
 article > h1 > small > time,
 .media-heading > small > time {
   font-style: italic;
