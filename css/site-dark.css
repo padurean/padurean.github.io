@@ -66,6 +66,10 @@ div.prism-show-language > div.prism-show-language-label {
   border: solid 1px #333;
 }
 
+.dark-grey pre code {
+    color: #6089B4;
+}
+
 .opens_in_new_symbol {
   color: #777;
 }
