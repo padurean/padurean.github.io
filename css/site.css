@@ -178,9 +178,10 @@ img {
 .btn {
   padding: .5rem 1rem;
 }
+
 .btn > .fa.left {
-  margin-right: .5rem;
+   margin-right: .5rem; 
 }
-.fa.large {
-  font-size: 1.25rem;
+.fa.medium {
+  font-size: 1.1rem;
 }

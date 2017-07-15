@@ -33,22 +33,22 @@ function expandColapseAll(expandCollapseElem) {
       articleBodyElem.parents('article').find('.expand-collapse');
     if (collapsed) {
       articleBodyElem.fadeIn();
-      expandCollapseIconElem.removeClass('fa-plus-square-o collapsed');
-      expandCollapseIconElem.addClass('fa-minus-square-o');
+      expandCollapseIconElem.removeClass('fa-angle-right collapsed');
+      expandCollapseIconElem.addClass('fa-angle-down');
     } else {
       articleBodyElem.fadeOut();
-      expandCollapseIconElem.removeClass('fa-minus-square-o');
-      expandCollapseIconElem.addClass('fa-plus-square-o collapsed');
+      expandCollapseIconElem.removeClass('fa-angle-down');
+      expandCollapseIconElem.addClass('fa-angle-right collapsed');
     }
   });
   
   if (collapsed) {
-    iconElem.removeClass('fa-plus collapsed');
-    iconElem.addClass('fa-minus');
+    iconElem.removeClass('fa-angle-double-right collapsed');
+    iconElem.addClass('fa-angle-double-down');
     labelElem.text('Collapse All Chapters');
   } else {
-    iconElem.removeClass('fa-minus');
-    iconElem.addClass('fa-plus collapsed');
+    iconElem.removeClass('fa-angle-double-down');
+    iconElem.addClass('fa-angle-double-right collapsed');
     labelElem.text('Expand All Chapters');
   }
 }
@@ -74,12 +74,12 @@ function expandColapse(expandCollapseElem) {
     expandCollapseElem.parents('article').find('.article-body');
   if (expandCollapseElem.hasClass('collapsed')) {
     articleBodyElem.fadeIn();
-    expandCollapseElem.removeClass('fa-plus-square-o collapsed');
-    expandCollapseElem.addClass('fa-minus-square-o');
+    expandCollapseElem.removeClass('fa-angle-right collapsed');
+    expandCollapseElem.addClass('fa-angle-down');
   } else {
     articleBodyElem.fadeOut();
-    expandCollapseElem.removeClass('fa-minus-square-o');
-    expandCollapseElem.addClass('fa-plus-square-o collapsed');
+    expandCollapseElem.removeClass('fa-angle-down');
+    expandCollapseElem.addClass('fa-angle-right collapsed');
   }
 }
 
