@@ -74,3 +74,13 @@ div.prism-show-language > div.prism-show-language-label {
   cursor: pointer;
   color: #666;
 }
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #9872A2;
+}
