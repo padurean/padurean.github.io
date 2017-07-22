@@ -17,7 +17,7 @@ comments:
   branch: "master"
 
   # Text to use as the commit message or pull request title. Accepts placeholders.
-  commitMessage: "Add Staticman comment for page {options.slug}"
+  commitMessage: "{options.slug} page - New comment (from Staticman)"
 
   # (*) REQUIRED
   #
