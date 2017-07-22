@@ -164,6 +164,40 @@ object StreamApp  {
         </code></pre>
 
       </section>
+
+
+      <br><br>
+      <section class="comments-section">
+
+        <h2>Comments</h2>
+        <ul id="comments-wrapper">
+          <li>
+            Some comment here
+            <br/><small>@ <time pubdate datetime="2009-08-13">2016-08-13</time></small>
+          </li>
+          <li>
+            Some other comment here
+            <br/><small>@ <time pubdate datetime="2009-08-13">2016-08-14</time></small>
+          </li>
+        </ul>
+
+        <br><br>
+        <h2>Add a Comment</h2>
+        <form method="POST" action="https://api.staticman.net/v2/entry/padurean/padurean.github.io/master/comments">
+          <input name="options[redirect]" type="hidden" value="https://purecore.ro/posts/sample-post.html#comment-added">
+          <!-- e.g. "2016-01-02-this-is-a-post" -->
+          <input name="options[slug]" type="hidden" value="sample-post">
+          <label><input name="fields[name]" type="text">Name</label>
+          <label><input name="fields[email]" type="email">E-mail</label>
+          <label><textarea name="fields[message]"></textarea>Message</label>
+          
+          <button type="submit">Submit your comment</button>
+        </form>
+        <a name="comment-added" id="comment-added"></a>
+        
+      </section>
+
+
     </article>
     <footer>
       <b style="font-family: sans-serif;">&copy;</b> Ogg
