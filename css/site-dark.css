@@ -31,6 +31,10 @@
   color: #666;
 }
 
+.dark-grey i.refresh-comments {
+  color: #37bb33;
+}
+
 .dark-grey .btn.btn-default.btn-ghost,
 .dark-grey .btn.btn-default.btn-ghost:hover,
 .dark-grey .btn.btn-default.btn-ghost:focus {
@@ -87,4 +91,15 @@ div.prism-show-language > div.prism-show-language-label {
 .token.symbol,
 .token.deleted {
     color: #9872A2;
+}
+
+.comments-section input,
+.comments-section textarea {
+  background-color: transparent;
+  color: #37bb33;
+  border: solid 1px #333;
+}
+
+.comment-added-message {
+  color: #37bb33;
 }

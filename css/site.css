@@ -188,3 +188,44 @@ img {
 .fa.large {
   font-size: 1.25rem;
 }
+
+ul.comments-wrapper > li {
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+ul.comments-wrapper > li:after {
+    content: "";
+}
+
+.comments-section input,
+.comments-section textarea {
+  width: 16rem;
+  max-width: 90%;
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  line-height: 1.1rem;
+  padding: .25rem;
+  font-family: Menlo,Monaco,'Lucida Console',Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,'Courier New',monospace,serif;
+}
+.comments-section textarea {
+  width: 30rem;
+  min-height: 6rem;
+}
+
+.comment-added-message {
+  margin: .5rem 0 1rem 0;
+}
+
+i.refresh-comments {
+  cursor: pointer;
+  padding: .25rem;
+}
+
+.faster-spin {
+  -webkit-animation: fa-spin 1.2s infinite linear;
+  animation: fa-spin 1.2s infinite linear;
+}
+
+.invisible {
+  opacity: 0;
+}

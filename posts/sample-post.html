@@ -166,39 +166,65 @@ object StreamApp  {
       </section>
 
 
-      <br><br>
+      <br/>
+      <hr class="grey-text" />
       <section class="comments-section">
 
-        <h2>Comments</h2>
-        <ul id="comments-wrapper">
+        <h2>
+          <i class="fa fa-comments-o large left" aria-hidden="true"></i>
+          Comments
+          <i class="fa fa-refresh medium left refresh-comments" aria-hidden="true"></i>
+        </h2>
+        <ul id="comments-wrapper" class="comments-wrapper">
           <li>
+            <span class="grey-text">
+              <i class="fa fa-comment-o medium left" aria-hidden="true"></i>
+              John Doe:
+            </span><br/>
             Some comment here
-            <br/><small>@ <time pubdate datetime="2009-08-13">2016-08-13</time></small>
+            <br/><small class="grey-text">@ <time pubdate datetime="2009-08-13">2016-08-13</time></small>
           </li>
           <li>
+            <span class="grey-text">
+              <i class="fa fa-comment-o medium left" aria-hidden="true"></i>
+              G.I. Jane:
+            </span><br/>
             Some other comment here
-            <br/><small>@ <time pubdate datetime="2009-08-13">2016-08-14</time></small>
+            <br/><small class="grey-text">@ <time pubdate datetime="2009-08-13">2016-08-14</time></small>
           </li>
         </ul>
 
-        <br><br>
+        <br>
         <h2>Add a Comment</h2>
         <form method="POST" action="https://api.staticman.net/v2/entry/padurean/padurean.github.io/master/comments">
           <input name="options[redirect]" type="hidden" value="http://purecore.ro/posts/sample-post.html#comment-added">
           <!-- e.g. "2016-01-02-this-is-a-post" -->
           <input name="options[slug]" type="hidden" value="sample-post">
-          <label><input name="fields[name]" type="text">Name</label>
-          <label><input name="fields[email]" type="email">E-mail</label>
-          <label><textarea name="fields[message]"></textarea>Message</label>
+          <input id="commenter-name" name="fields[name]" type="text" placeholder="Your Name" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Name is required')"><br/>
+          <!-- <input id="commenter-email" name="fields[email]" type="email" placeholder="Your Email"><br/> -->
+          <textarea id="commenter-message" name="fields[message]" placeholder="Your Comment" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Comment is required')"></textarea><br/>
           
-          <button type="submit">Submit your comment</button>
+          <!-- TODO OGG:
+            - list the comments dynamically  
+          -->
+          <a name="comment-added" id="comment-added"></a>
+          <button type="submit" class="btn btn-default btn-ghost">
+            <i class="fa fa-comment medium left" aria-hidden="true"></i>
+            <span class="btn-label">Add your comment</span>
+          </button>
+          <div id="comment-added-message" class="comment-added-message invisible">
+            <i class="fa fa-info-circle medium left" aria-hidden="true"></i>
+            Thanks. Your comment has been submitted for moderation.
+          </div>
         </form>
-        <a name="comment-added" id="comment-added"></a>
 
       </section>
 
 
     </article>
+
+    <br/><br/>
+
     <footer>
       <b style="font-family: sans-serif;">&copy;</b> Ogg
       <small>(Valentin Padurean)</small>
@@ -208,5 +234,29 @@ object StreamApp  {
     <script src="/js/prism.js" async=""></script>
     <script src="/js/app.js" async=""></script>
   </div>
+
+  <script type="text/javascript">
+  function anchorActions() {
+    var hashParam = window.location.hash;
+    if (hashParam && hashParam === "#comment-added") {
+      var commentAddedMsgJqElem = $('#comment-added-message');
+       commentAddedMsgJqElem.removeClass('invisible');
+      removeHash();
+      setTimeout(function() {  commentAddedMsgJqElem.fadeTo('slow', 0); }, 9000);
+    } else {
+      $('#comment-added-message').addClass('invisible');
+    }
+  }
+  function customInit() {
+    $('.refresh-comments').click(refreshComments);
+    refreshComments();
+  }
+  function refreshComments() {
+    var jqElem = $(this);
+    jqElem.addClass('faster-spin');
+    setTimeout(function() { jqElem.removeClass('faster-spin') }, 5000);
+  }
+  </script>
+
 </body>
 </html>

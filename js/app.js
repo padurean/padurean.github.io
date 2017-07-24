@@ -12,6 +12,12 @@ $(function() {
   $('.expand-collapse-all').each(attachExpandCollapseAll);
   $('.post-section-title').each(attachExpandCollapseForTitle);
   $('.wip-random-joke').each(attachShowWiPMessage);
+  if (typeof anchorActions === "function") {
+    setTimeout(anchorActions, 2000);
+  }
+  if (typeof customInit === "function") {
+    customInit();
+  }
 });
 
 function attachExpandCollapseAll(i, obj) {
@@ -128,4 +134,23 @@ function setCssForLangLabelWithImage(langLabel) {
   langLabel.css('background-size', '1.25rem 1.25rem');
   langLabel.css('background-repeat', 'no-repeat');
   langLabel.css('background-position', '.1rem .1rem');
+}
+
+function removeHash () { 
+    var scrollV, scrollH, loc = window.location;
+    if ("replaceState" in history) {
+      history.replaceState("", document.title, loc.pathname + loc.search);
+    } else if ("pushState" in history) {
+        history.pushState("", document.title, loc.pathname + loc.search);
+    } else {
+        // Prevent scrolling by storing the page's current scroll offset
+        scrollV = document.body.scrollTop;
+        scrollH = document.body.scrollLeft;
+
+        loc.hash = "";
+
+        // Restore the scroll offset, should be flicker free
+        document.body.scrollTop = scrollV;
+        document.body.scrollLeft = scrollH;
+    }
 }
