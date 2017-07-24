@@ -13,7 +13,7 @@ $(function() {
   $('.post-section-title').each(attachExpandCollapseForTitle);
   $('.wip-random-joke').each(attachShowWiPMessage);
   if (typeof anchorActions === "function") {
-    setTimeout(anchorActions, 2000);
+    setTimeout(anchorActions, 1000);
   }
   if (typeof customInit === "function") {
     customInit();
