@@ -20,9 +20,7 @@ function getCommentAndUpdateView(
 				[ nameMessageTimestamp[0] ].concat(nameMessageTimestamp[1].split('date:'));
 			var commentName = nameMessageTimestamp[0].trim();
 			var commentMessage = nameMessageTimestamp[1].trim();
-			commentMessage =
-				commentMessage.replace(/\r?\n/g, '<br/>');
-			console.log('commentMessage', commentMessage);
+			commentMessage = commentMessage.replace(/"/g, '').replace(/\\r?\\n/g, '<br/>');
 			var commentDate = new Date(nameMessageTimestamp[2] * 1000).toLocaleString();
 			var commentHtml =
 				'<li>\n' +
