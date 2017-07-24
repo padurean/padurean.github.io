@@ -60,14 +60,14 @@ function refreshComments(jqElem, commentsWrapperJqElem) {
         }
       } else {
         commentsWrapperJqElem.html(
-          '<li><em class="grey-text">No comments</em></li>');
+          '<li><i class="grey-text">No comments</i></li>');
         jqElem.removeClass('faster-spin');
       }
     })
     .fail(function(error) {
       console.log('refreshComments error', error);
       commentsWrapperJqElem.html(
-        '<li><em class="grey-text">Unable to load comments</em></li>');
+        '<li><i class="grey-text">Unable to load comments</i></li>');
       jqElem.removeClass('faster-spin');
     });
 }
