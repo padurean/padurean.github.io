@@ -12,11 +12,11 @@ $(function() {
   $('.expand-collapse-all').each(attachExpandCollapseAll);
   $('.post-section-title').each(attachExpandCollapseForTitle);
   $('.wip-random-joke').each(attachShowWiPMessage);
-  if (typeof anchorActions === "function") {
-    anchorActions();
-  }
   if (typeof customInit === "function") {
     customInit();
+  }
+  if (typeof anchorActions === "function") {
+    anchorActions();
   }
 });
 

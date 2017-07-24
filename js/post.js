@@ -10,60 +10,57 @@ function anchorActions() {
 	}
 }
 
-function getCommentAndUpdateView(
-	filePath, iItem, itemsLength, jqElem, commentsWrapperJqElem) {
-	$.ajax({
-		url: filePath,
-		cache: true
-	})
-		.done(function(commentData) {
-			var nameMessageTimestamp =
-				commentData.split('name:')[1].split('message:');
-			nameMessageTimestamp =
-				[ nameMessageTimestamp[0] ].concat(nameMessageTimestamp[1].split('date:'));
-			var commentName = nameMessageTimestamp[0].trim();
-			var commentMessage = nameMessageTimestamp[1].trim();
-			commentMessage = commentMessage.replace(/"/g, '').replace(/\\r?\\n/g, '<br/>');
-			var commentDate = new Date(nameMessageTimestamp[2] * 1000).toLocaleString();
-			var commentHtml =
-				'<li>\n' +
-				'\t<span class="grey-text">\n' +
-				'\t\t<i class="fa fa-comment-o medium left" aria-hidden="true"></i>\n' +
-				'\t\t' + commentName + ':\n' +
-				'\t</span><br/>\n' +
-				'\t' + commentMessage + '\n' +
-				'\t<br/><small class="grey-text">' +
-				'<time pubdate datetime="'+commentDate+'">'+commentDate+'</time></small>\n'+
-				'</li>\n'
-			if (iItem === 1) {
-				commentsWrapperJqElem.html(commentHtml);
-			} else {
-				commentsWrapperJqElem.append(commentHtml);
-			}
-			if (iItem === itemsLength - 1) {
-				jqElem.removeClass('faster-spin');
-			}
-		})
-		.fail(function(error) {
-			console.log('failed to load comment ' + filePath, error);
-		});
+function updateCommentsView(commentsArguments, jqElem, commentsWrapperJqElem) {
+	var commentsHtml = [];
+	for(var iComment = 0; iComment < commentsArguments.length; iComment++) {
+		var commentResponse = commentsArguments[iComment];
+		if (commentResponse[1] !== 'success') continue;
+		var nameMessageTimestamp =
+			commentResponse[0].split('name:')[1].split('message:');
+		nameMessageTimestamp =
+			[ nameMessageTimestamp[0] ].concat(nameMessageTimestamp[1].split('date:'));
+		var commentName = nameMessageTimestamp[0].trim();
+		var commentMessage = nameMessageTimestamp[1].trim();
+		commentMessage = commentMessage.replace(/"/g, '').replace(/\\r?\\n/g, '<br/>');
+		var commentDate = new Date(nameMessageTimestamp[2] * 1000).toLocaleString();
+		commentsHtml.push(
+			'<li>\n' +
+			'\t<span class="grey-text">\n' +
+			'\t\t<i class="fa fa-comment-o medium left" aria-hidden="true"></i>\n' +
+			'\t\t' + commentName + ':\n' +
+			'\t</span><br/>\n' +
+			'\t' + commentMessage + '\n' +
+			'\t<br/><small class="grey-text">' +
+			'<time pubdate datetime="'+commentDate+'">'+commentDate+'</time></small>\n'+
+			'</li>\n'
+		);
+	}
+	commentsWrapperJqElem.html(commentsHtml.join(''));
+	jqElem.removeClass('faster-spin');
 }
 function refreshComments(jqElem, commentsWrapperJqElem) {
   jqElem.addClass('faster-spin');
 
 	var folderPath = '/comments/sample-post/';
-	$.ajax({
-		url: folderPath,
-		cache: false
-	})
+	$.ajax({ url: folderPath, cache: false })
     .done(function(data) {
       if (data && data.indexOf('<li') > 0) {
-        var items = data.split('<ul>')[1].split('</ul')[0].split('href="');
+				var items = data.split('<ul>')[1].split('</ul')[0].split('href="');
+				var jqXhrs = [];
         for (var iItem = 1; iItem < items.length; iItem++) {
-          var filePath = folderPath + items[iItem].split('"')[0];
-          getCommentAndUpdateView(
-						filePath, iItem, items.length, jqElem, commentsWrapperJqElem);
-        }
+					var filePath = folderPath + items[iItem].split('"')[0];
+					jqXhrs.push($.ajax({ url: filePath, cache: false }));
+				}
+				$.when.apply($, jqXhrs)
+					.done(function() {
+						updateCommentsView(arguments, jqElem, commentsWrapperJqElem);
+					})
+					.fail(function(error) {
+						console.log('refreshComments contents error', error);
+						commentsWrapperJqElem.html(
+							'<li><i class="grey-text">Unable to load comments</i></li>');
+						jqElem.removeClass('faster-spin');
+					});
       } else {
         commentsWrapperJqElem.html(
           '<li><i class="grey-text">No comments</i></li>');
