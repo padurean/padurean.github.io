@@ -14,7 +14,7 @@ function getCommentAndUpdateView(
 	filePath, iItem, itemsLength, jqElem, commentsWrapperJqElem) {
 	$.ajax({
 		url: filePath,
-		cache: false
+		cache: true
 	})
 		.done(function(commentData) {
 			var nameMessageTimestamp =
