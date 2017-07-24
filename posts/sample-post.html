@@ -176,32 +176,15 @@ object StreamApp  {
           <i class="fa fa-refresh medium left refresh-comments" aria-hidden="true"></i>
         </h2>
         <ul id="comments-wrapper" class="comments-wrapper">
-          <li>
-            <span class="grey-text">
-              <i class="fa fa-comment-o medium left" aria-hidden="true"></i>
-              John Doe:
-            </span><br/>
-            Some comment here
-            <br/><small class="grey-text">@ <time pubdate datetime="2009-08-13">2016-08-13</time></small>
-          </li>
-          <li>
-            <span class="grey-text">
-              <i class="fa fa-comment-o medium left" aria-hidden="true"></i>
-              G.I. Jane:
-            </span><br/>
-            Some other comment here
-            <br/><small class="grey-text">@ <time pubdate datetime="2009-08-13">2016-08-14</time></small>
-          </li>
+          <li><i class="grey-text">Loading comments ...</i></li>
         </ul>
 
         <br>
         <h2>Add a Comment</h2>
         <form method="POST" action="https://api.staticman.net/v2/entry/padurean/padurean.github.io/master/comments">
           <input name="options[redirect]" type="hidden" value="http://purecore.ro/posts/sample-post.html#comment-added">
-          <!-- e.g. "2016-01-02-this-is-a-post" -->
-          <input name="options[slug]" type="hidden" value="sample-post">
+          <input id="options-slug" name="options[slug]" type="hidden" value="sample-post">
           <input id="commenter-name" name="fields[name]" type="text" placeholder="Your Name" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Name is required')"><br/>
-          <!-- <input id="commenter-email" name="fields[email]" type="email" placeholder="Your Email"><br/> -->
           <textarea id="commenter-message" name="fields[message]" placeholder="Your Comment" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Comment is required')"></textarea><br/>
           
           <!-- TODO OGG:
@@ -231,32 +214,10 @@ object StreamApp  {
     </footer>
 
     <script src="/js/jquery-3.1.0.min.js"></script>
-    <script src="/js/prism.js" async=""></script>
-    <script src="/js/app.js" async=""></script>
+    <script src="/js/prism.js"></script>
+    <script src="/js/post.js"></script>
+    <script src="/js/app.js"></script>
   </div>
-
-  <script type="text/javascript">
-  function anchorActions() {
-    var hashParam = window.location.hash;
-    if (hashParam && hashParam === "#comment-added") {
-      var commentAddedMsgJqElem = $('#comment-added-message');
-       commentAddedMsgJqElem.removeClass('invisible');
-      removeHash();
-      setTimeout(function() {  commentAddedMsgJqElem.fadeTo('slow', 0); }, 10000);
-    } else {
-      $('#comment-added-message').addClass('invisible');
-    }
-  }
-  function customInit() {
-    $('.refresh-comments').click(refreshComments);
-    refreshComments();
-  }
-  function refreshComments() {
-    var jqElem = $(this);
-    jqElem.addClass('faster-spin');
-    setTimeout(function() { jqElem.removeClass('faster-spin') }, 5000);
-  }
-  </script>
 
 </body>
 </html>

@@ -13,7 +13,7 @@ $(function() {
   $('.post-section-title').each(attachExpandCollapseForTitle);
   $('.wip-random-joke').each(attachShowWiPMessage);
   if (typeof anchorActions === "function") {
-    setTimeout(anchorActions, 1000);
+    anchorActions();
   }
   if (typeof customInit === "function") {
     customInit();
@@ -154,3 +154,16 @@ function removeHash () {
         document.body.scrollLeft = scrollH;
     }
 }
+
+function escapeHtml(maybeHtml) {
+  return $('<div/>').text(maybeHtml).html();
+}
+
+function trimValueListener() {
+  var currJqElem = $(this);
+  var currVal = currJqElem.val();
+  currVal = currVal && currVal.trim();
+  currVal = currVal && escapeHtml(currVal);
+  currJqElem.val(currVal || '');
+}
+
