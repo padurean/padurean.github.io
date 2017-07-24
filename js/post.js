@@ -53,7 +53,7 @@ function refreshComments(jqElem, commentsWrapperJqElem) {
 				}
 				$.when.apply($, jqXhrs)
 					.done(function() {
-						updateCommentsView(arguments, jqElem, commentsWrapperJqElem);
+						updateCommentsView(jqXhrs.length > 1 ? arguments : [arguments], jqElem, commentsWrapperJqElem);
 					})
 					.fail(function(error) {
 						console.log('refreshComments contents error', error);
