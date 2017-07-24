@@ -12,7 +12,10 @@ function anchorActions() {
 
 function getCommentAndUpdateView(
 	filePath, iItem, itemsLength, jqElem, commentsWrapperJqElem) {
-	$.get(filePath)
+	$.ajax({
+		url: filePath,
+		cache: false
+	})
 		.done(function(commentData) {
 			var nameMessageTimestamp =
 				commentData.split('name:')[1].split('message:');
@@ -49,7 +52,10 @@ function refreshComments(jqElem, commentsWrapperJqElem) {
   jqElem.addClass('faster-spin');
 
 	var folderPath = '/comments/sample-post/';
-  $.get(folderPath)
+	$.ajax({
+		url: folderPath,
+		cache: false
+	})
     .done(function(data) {
       if (data && data.indexOf('<li') > 0) {
         var items = data.split('<ul>')[1].split('</ul')[0].split('href="');
