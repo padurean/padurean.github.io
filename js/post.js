@@ -21,17 +21,20 @@ function updateCommentsView(commentsArguments, jqElem, commentsWrapperJqElem) {
 			[ nameMessageTimestamp[0] ].concat(nameMessageTimestamp[1].split('date:'));
 		var commentName = nameMessageTimestamp[0].trim();
 		var commentMessage = nameMessageTimestamp[1].trim();
-		commentMessage = commentMessage.replace(/"/g, '').replace(/\\r?\\n/g, '<br/>');
+		commentMessage = commentMessage
+			.replace(/^(\\r?\\n)+|^\s+|^"|^'|"$|'$|\s+$|(\\r?\\n)+$/g, '')
+			.replace(/\\r?\\n/g, '<br>');
+		commentMessage = markdownifier.makeHtml(commentMessage);
+
 		var commentDate = new Date(nameMessageTimestamp[2] * 1000).toLocaleString();
 		commentsHtml.push(
 			'<li>\n' +
-			'\t<span class="grey-text">\n' +
-			'\t\t<i class="fa fa-comment-o medium left" aria-hidden="true"></i>\n' +
-			'\t\t' + commentName + ':\n' +
-			'\t</span><br/>\n' +
-			'\t' + commentMessage + '\n' +
-			'\t<br/><small class="grey-text">' +
+			'\t<small class="grey-text-darker">' +
 			'<time pubdate datetime="'+commentDate+'">'+commentDate+'</time></small>\n'+
+			'\t<br>\n' +
+			'\t<i class="fa fa-comment-o fa-flip-horizontal grey-text medium left" aria-hidden="true"></i>\n' +
+			'\t<span class="grey-text">' + commentName + ':</span>\n' +
+			'\t<br/>' + commentMessage + '\n' +
 			'</li>\n'
 		);
 	}
@@ -79,7 +82,17 @@ function refreshCommentsListener() {
   refreshComments($(this), $('#comments-wrapper'), $('#options-slug').val());
 }
 
+var markdownifier;
 function customInit() {
+	markdownifier = new showdown.Converter({
+		simpleLineBreaks: true,
+		simplifiedAutoLink: true,
+		excludeTrailingPunctuationFromURLs: true,
+		openLinksInNewWindow: true,
+		ghMentions: true
+	});
+	markdownifier.setFlavor('github');
+
 	var refreshCommentsElem = $('.refresh-comments');
 	refreshCommentsElem.click(refreshCommentsListener);
 	refreshComments(refreshCommentsElem, $('#comments-wrapper'), $('#options-slug').val());

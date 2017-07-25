@@ -229,3 +229,8 @@ i.refresh-comments {
 .invisible {
   opacity: 0;
 }
+
+.hack .comments-wrapper > li > p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}

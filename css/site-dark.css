@@ -30,6 +30,9 @@
 .dark-grey .grey-text {
   color: #666;
 }
+.dark-grey .grey-text-darker {
+  color: #555;
+}
 
 .dark-grey i.refresh-comments {
   color: #37bb33;

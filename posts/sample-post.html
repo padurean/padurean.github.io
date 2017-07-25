@@ -166,30 +166,16 @@ object StreamApp  {
       </section>
 
 
-      <br/>
-      <hr class="grey-text" />
+      <br/><br/>
       <section class="comments-section">
 
-        <h2>
-          <i class="fa fa-comments-o large left" aria-hidden="true"></i>
-          Comments
-          <i class="fa fa-refresh medium left refresh-comments" aria-hidden="true"></i>
-        </h2>
-        <ul id="comments-wrapper" class="comments-wrapper">
-          <li><i class="grey-text">Loading comments ...</i></li>
-        </ul>
-
-        <br>
         <h2>Add a Comment</h2>
         <form method="POST" action="https://api.staticman.net/v2/entry/padurean/padurean.github.io/master/comments">
           <input name="options[redirect]" type="hidden" value="http://purecore.ro/posts/sample-post.html#comment-added">
           <input id="options-slug" name="options[slug]" type="hidden" value="sample-post">
           <input id="commenter-name" name="fields[name]" type="text" placeholder="Your Name" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Name is required')"><br/>
-          <textarea id="commenter-message" name="fields[message]" placeholder="Your Comment" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Comment is required')"></textarea><br/>
+          <textarea id="commenter-message" name="fields[message]" placeholder="Your Comment (some GFM works, @mentions too)" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Comment is required')"></textarea><br/>
           
-          <!-- TODO OGG:
-            - list the comments dynamically  
-          -->
           <a name="comment-added" id="comment-added"></a>
           <button type="submit" class="btn btn-default btn-ghost">
             <i class="fa fa-comment medium left" aria-hidden="true"></i>
@@ -201,12 +187,21 @@ object StreamApp  {
           </div>
         </form>
 
+        <h2>
+          <i class="fa fa-comments-o large left" aria-hidden="true"></i>
+          Comments
+          <i class="fa fa-refresh medium left refresh-comments" aria-hidden="true"></i>
+        </h2>
+        <ul id="comments-wrapper" class="comments-wrapper">
+          <li><i class="grey-text">Loading comments ...</i></li>
+        </ul>
+
       </section>
 
 
     </article>
 
-    <br/><br/>
+    <br/><br/><br/>
 
     <footer>
       <b style="font-family: sans-serif;">&copy;</b> Ogg
@@ -215,6 +210,7 @@ object StreamApp  {
 
     <script src="/js/jquery-3.1.0.min.js"></script>
     <script src="/js/prism.js"></script>
+    <script src="/js/showdown-1.7.1.min.js"></script>
     <script src="/js/post.js"></script>
     <script src="/js/app.js"></script>
   </div>
