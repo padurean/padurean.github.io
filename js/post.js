@@ -38,51 +38,51 @@ function updateCommentsView(commentsArguments, jqElem, commentsWrapperJqElem) {
 	commentsWrapperJqElem.html(commentsHtml.join(''));
 	jqElem.removeClass('faster-spin');
 }
-function refreshComments(jqElem, commentsWrapperJqElem) {
+function refreshComments(jqElem, commentsWrapperJqElem, slug) {
   jqElem.addClass('faster-spin');
-
-	var folderPath = '/comments/sample-post/';
-	$.ajax({ url: folderPath, cache: false })
-    .done(function(data) {
-      if (data && data.indexOf('<li') > 0) {
-				var items = data.split('<ul>')[1].split('</ul')[0].split('href="');
+	var apiPath =
+		'https://api.github.com/repos/padurean/padurean.github.io/contents/comments/' + slug;
+	$.ajax({ url: apiPath, cache: false })
+    .done(function(comments) {
+			if (comments.length > 0) {
 				var jqXhrs = [];
-        for (var iItem = 1; iItem < items.length; iItem++) {
-					var filePath = folderPath + items[iItem].split('"')[0];
-					jqXhrs.push($.ajax({ url: filePath, cache: false }));
+        for (var iComment = 0; iComment < comments.length; iComment++) {
+					var filePath = '/' + comments[iComment].path;
+					var fileExt = filePath.split('.').pop();
+					if (fileExt && fileExt.toLowerCase() === 'yml')
+						jqXhrs.push($.ajax({ url: filePath, cache: false }));
 				}
 				$.when.apply($, jqXhrs)
 					.done(function() {
 						updateCommentsView(jqXhrs.length > 1 ? arguments : [arguments], jqElem, commentsWrapperJqElem);
 					})
 					.fail(function(error) {
-						console.log('refreshComments contents error', error);
+						console.error('refreshComments contents error', error);
 						commentsWrapperJqElem.html(
 							'<li><i class="grey-text">Unable to load comments</i></li>');
 						jqElem.removeClass('faster-spin');
 					});
-      } else {
+			} else {
         commentsWrapperJqElem.html(
           '<li><i class="grey-text">No comments</i></li>');
         jqElem.removeClass('faster-spin');
       }
     })
     .fail(function(error) {
-      console.log('refreshComments error', error);
+      console.error('refreshComments error', error);
       commentsWrapperJqElem.html(
         '<li><i class="grey-text">Unable to load comments</i></li>');
       jqElem.removeClass('faster-spin');
     });
 }
 function refreshCommentsListener() {
-  refreshComments($(this), $('#comments-wrapper'));
+  refreshComments($(this), $('#comments-wrapper'), $('#options-slug').val());
 }
 
-var commentJqElem;
 function customInit() {
 	var refreshCommentsElem = $('.refresh-comments');
 	refreshCommentsElem.click(refreshCommentsListener);
-	refreshComments(refreshCommentsElem, $('#comments-wrapper'));
+	refreshComments(refreshCommentsElem, $('#comments-wrapper'), $('#options-slug').val());
 
 	$('#commenter-name').change(trimValueListener);
 	$('#commenter-message').change(trimValueListener);
