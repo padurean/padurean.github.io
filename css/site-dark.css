@@ -101,6 +101,9 @@ div.prism-show-language > div.prism-show-language-label {
     color: #9872A2;
 }
 
+.comments-section {
+  border-top: dashed 1px #333;
+}
 .comments-section input,
 .comments-section textarea {
   background-color: transparent;
@@ -110,4 +113,13 @@ div.prism-show-language > div.prism-show-language-label {
 
 .comment-added-message {
   color: #37bb33;
+}
+
+.dark-grey strong {
+  color: inherit;
+}
+.dark-grey .alert-info,
+.dark-grey .alert-success {
+  color: #37bb33;
+  border-color: #37bb33;
 }

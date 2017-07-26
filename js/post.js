@@ -1,12 +1,12 @@
 function anchorActions() {
 	var hashParam = window.location.hash;
+	var commentAddedMsgJqElems = $('.comment-added-message');
 	if (hashParam && hashParam === "#comment-added") {
-		var commentAddedMsgJqElem = $('#comment-added-message');
-		commentAddedMsgJqElem.removeClass('invisible');
+		commentAddedMsgJqElems.removeClass('invisible');
 		removeHash();
-		setTimeout(function() {  commentAddedMsgJqElem.fadeTo('slow', 0); }, 10000);
+		setTimeout(function() {  commentAddedMsgJqElems.fadeTo('slow', 0); }, 10000);
 	} else {
-		$('#comment-added-message').addClass('invisible');
+		commentAddedMsgJqElems.addClass('invisible');
 	}
 }
 

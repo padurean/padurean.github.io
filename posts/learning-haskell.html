@@ -63,7 +63,14 @@
           </header>
           <section class="article-body">
             <p>
-              What is functional programming detailed explanation and introduction goes here
+              Programming with Functions - duh! :) - function in the math sense:
+              <div class="alert alert-info">
+                <i class="fa fa-info-circle large" aria-hidden="true"></i>
+                <b><i>Function</i></b> =
+                A relation or <b>mapping</b> between a set of <b>inputs</b> and
+                a set of <b>outputs</b>.
+              </div>
+              <!-- TODO OGG: continue -->
             </p>
           </section>
         </article>
@@ -696,6 +703,44 @@
       </section>
       <br/>
 
+
+      <br/>
+      <section class="comments-section">
+
+        <a name="comment-added" id="comment-added"></a>
+        <div class="comment-added-message invisible">
+          <i class="fa fa-info-circle medium left" aria-hidden="true"></i>
+          Thanks. Your comment has been submitted for moderation.
+        </div>
+        <h2>
+          <i class="fa fa-comments-o large left" aria-hidden="true"></i>
+          Comments
+          <i class="fa fa-refresh medium left refresh-comments" aria-hidden="true"></i>
+        </h2>
+        <ul id="comments-wrapper" class="comments-wrapper">
+          <li><i class="grey-text">Loading comments ...</i></li>
+        </ul>
+
+        <br/>
+        <h2>Add a Comment</h2>
+        <form method="POST" action="https://api.staticman.net/v2/entry/padurean/padurean.github.io/master/comments">
+          <input name="options[redirect]" type="hidden" value="http://purecore.ro/posts/learning-haskell.html#comment-added">
+          <input id="options-slug" name="options[slug]" type="hidden" value="learning-haskell">
+          <input id="commenter-name" name="fields[name]" type="text" placeholder="Your Name" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Name is required')"><br/>
+          <textarea id="commenter-message" name="fields[message]" placeholder="Your Comment (some GFM works, @mentions too)" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Comment is required')"></textarea><br/>
+          
+          <button type="submit" class="btn btn-default btn-ghost">
+            <i class="fa fa-comment medium left" aria-hidden="true"></i>
+            <span class="btn-label">Add your comment</span>
+          </button>
+          <div class="comment-added-message invisible">
+            <i class="fa fa-info-circle medium left" aria-hidden="true"></i>
+            Thanks. Your comment has been submitted for moderation.
+          </div>
+        </form>
+
+      </section>
+
     
     </section>
     <footer>
@@ -705,6 +750,8 @@
 
     <script src="/js/jquery-3.1.0.min.js"></script>
     <script src="/js/prism.js"></script>
+    <script src="/js/js-yaml.min.js"></script>
+    <script src="/js/showdown-1.7.1.min.js"></script>
     <script src="/js/post.js"></script>
     <script src="/js/app.js"></script>
   </div>

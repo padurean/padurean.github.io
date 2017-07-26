@@ -231,6 +231,17 @@ i.refresh-comments {
 }
 
 .hack .comments-wrapper > li > p {
-  margin-top: 0;
-  margin-bottom: 1.25rem;
+  margin: 0;
+}
+.large {
+  font-size: 1.25rem;
+}
+.alert > .fa.large {
+  font-size: 1.5rem; 
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+.hack code:after, .hack code:before {
+  content: '';
 }
