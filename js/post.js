@@ -15,18 +15,13 @@ function updateCommentsView(commentsArguments, jqElem, commentsWrapperJqElem) {
 	for(var iComment = 0; iComment < commentsArguments.length; iComment++) {
 		var commentResponse = commentsArguments[iComment];
 		if (commentResponse[1] !== 'success') continue;
-		var nameMessageTimestamp =
-			commentResponse[0].split('name:')[1].split('message:');
-		nameMessageTimestamp =
-			[ nameMessageTimestamp[0] ].concat(nameMessageTimestamp[1].split('date:'));
-		var commentName = nameMessageTimestamp[0].trim();
-		var commentMessage = nameMessageTimestamp[1].trim();
-		commentMessage = commentMessage
+		var yamlDoc = jsyaml.load(commentResponse[0]);
+		var commentName = yamlDoc.name;
+		var commentMessage = yamlDoc.message
 			.replace(/^(\\r?\\n)+|^\s+|^"|^'|"$|'$|\s+$|(\\r?\\n)+$/g, '')
 			.replace(/\\r?\\n/g, '<br>');
 		commentMessage = markdownifier.makeHtml(commentMessage);
-
-		var commentDate = new Date(nameMessageTimestamp[2] * 1000).toLocaleString();
+		var commentDate = new Date(yamlDoc.date * 1000).toLocaleString();
 		commentsHtml.push(
 			'<li>\n' +
 			'\t<small class="grey-text-darker">' +

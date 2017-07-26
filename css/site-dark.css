@@ -72,9 +72,14 @@ div.prism-show-language > div.prism-show-language-label {
   padding: 0 .5rem;
   border: solid 1px #333;
 }
+.dark-grey .comments-wrapper pre {
+  margin: 0;
+}
 
-.dark-grey pre code {
-    color: #6089B4;
+.dark-grey pre code,
+.dark-grey .comments-wrapper code
+{
+  color: #6089B4;
 }
 
 .opens_in_new_symbol {
