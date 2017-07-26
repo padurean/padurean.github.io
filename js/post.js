@@ -36,6 +36,12 @@ function updateCommentsView(commentsArguments, jqElem, commentsWrapperJqElem) {
 	commentsWrapperJqElem.html(commentsHtml.join(''));
 	jqElem.removeClass('faster-spin');
 }
+function updateNoCommentsView(jqElem, commentsWrapperJqElem, isError) {
+	var noCommentsMsg = isError ? 'Unable to load comments' : 'No comments yet';
+	commentsWrapperJqElem.html(
+		'<li><i class="grey-text">' + noCommentsMsg + '</i></li>');
+	jqElem.removeClass('faster-spin');
+}
 function refreshComments(jqElem, commentsWrapperJqElem, slug) {
   jqElem.addClass('faster-spin');
 	var apiPath =
@@ -56,21 +62,15 @@ function refreshComments(jqElem, commentsWrapperJqElem, slug) {
 					})
 					.fail(function(error) {
 						console.error('refreshComments contents error', error);
-						commentsWrapperJqElem.html(
-							'<li><i class="grey-text">Unable to load comments</i></li>');
-						jqElem.removeClass('faster-spin');
+						updateNoCommentsView(jqElem, commentsWrapperJqElem, true);
 					});
 			} else {
-				commentsWrapperJqElem.html(
-					'<li><i class="grey-text">No comments</i></li>');
-				jqElem.removeClass('faster-spin');
+				updateNoCommentsView(jqElem, commentsWrapperJqElem);
 			}
     })
     .fail(function(error) {
-      console.error('refreshComments error', error);
-      commentsWrapperJqElem.html(
-        '<li><i class="grey-text">Unable to load comments</i></li>');
-      jqElem.removeClass('faster-spin');
+			console.error('refreshComments error', error);
+			updateNoCommentsView(jqElem, commentsWrapperJqElem, true);
     });
 }
 function refreshCommentsListener() {
