@@ -163,7 +163,6 @@ function trimValueListener() {
   var currJqElem = $(this);
   var currVal = currJqElem.val();
   currVal = currVal && currVal.trim();
-  currVal = currVal && escapeHtml(currVal);
   currJqElem.val(currVal || '');
 }
 
