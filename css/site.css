@@ -241,6 +241,9 @@ i.refresh-comments {
   margin-right: 1rem;
   vertical-align: middle;
 }
+.alert {
+  padding: .5rem .75rem;
+}
 
 .hack code:after, .hack code:before {
   content: '';
