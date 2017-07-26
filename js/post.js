@@ -42,14 +42,14 @@ function refreshComments(jqElem, commentsWrapperJqElem, slug) {
 		'https://api.github.com/repos/padurean/padurean.github.io/contents/comments/' + slug;
 	$.ajax({ url: apiPath, cache: false })
     .done(function(comments) {
-			if (comments.length > 0) {
-				var jqXhrs = [];
-        for (var iComment = 0; iComment < comments.length; iComment++) {
-					var filePath = '/' + comments[iComment].path;
-					var fileExt = filePath.split('.').pop();
-					if (fileExt && fileExt.toLowerCase() === 'yml')
-						jqXhrs.push($.ajax({ url: filePath, cache: false }));
-				}
+			var jqXhrs = [];
+			for (var iComment = 0; iComment < comments.length; iComment++) {
+				var filePath = '/' + comments[iComment].path;
+				var fileExt = filePath.split('.').pop();
+				if (fileExt && fileExt.toLowerCase() === 'yml')
+					jqXhrs.push($.ajax({ url: filePath, cache: false }));
+			}
+			if (jqXhrs.length > 0) {
 				$.when.apply($, jqXhrs)
 					.done(function() {
 						updateCommentsView(jqXhrs.length > 1 ? arguments : [arguments], jqElem, commentsWrapperJqElem);
@@ -61,10 +61,10 @@ function refreshComments(jqElem, commentsWrapperJqElem, slug) {
 						jqElem.removeClass('faster-spin');
 					});
 			} else {
-        commentsWrapperJqElem.html(
-          '<li><i class="grey-text">No comments</i></li>');
-        jqElem.removeClass('faster-spin');
-      }
+				commentsWrapperJqElem.html(
+					'<li><i class="grey-text">No comments</i></li>');
+				jqElem.removeClass('faster-spin');
+			}
     })
     .fail(function(error) {
       console.error('refreshComments error', error);
