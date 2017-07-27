@@ -103,6 +103,7 @@ div.prism-show-language > div.prism-show-language-label {
 
 .comments-section {
   border-top: dashed 1px #333;
+  border-bottom: dashed 1px #333;
 }
 .comments-section input,
 .comments-section textarea {

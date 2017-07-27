@@ -29,7 +29,7 @@ function updateCommentsView(commentsArguments, jqElem, commentsWrapperJqElem) {
 			'\t<br>\n' +
 			'\t<i class="fa fa-comment-o fa-flip-horizontal grey-text medium left" aria-hidden="true"></i>\n' +
 			'\t<span class="grey-text">' + commentName + ':</span>\n' +
-			'\t<br/>' + commentMessage + '\n' +
+			'\t<br>' + commentMessage + '\n' +
 			'</li>\n'
 		);
 	}

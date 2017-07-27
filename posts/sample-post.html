@@ -36,7 +36,7 @@
     <article class="page-content">
       <h1>
         Some Scala -related blog post
-        <br/><small>@ <time pubdate datetime="2009-08-13">2016-08-13</time></small>
+        <br><small>@ <time pubdate datetime="2009-08-13">2016-08-13</time></small>
       </h1>
       <section>
         <h2>Food for thought</h2>
@@ -50,12 +50,12 @@
           It turns out doughnuts were being produced 5% faster than they could be glazed and packaged.
           Needless to say, there was a big, tasty mess to clean up, one of the factories had to be
           temporarily shut down, and you couldn't fulfill your contract.
-          <br/><br/>
+          <br><br>
           Misconfiguration can literally wreak havoc. To make matters worse, the glazer couldn't react
           by signalling "hey you, slow down!". Even if it could, it didn't have a way to hold on to
           some extra doughnuts or throw them into a plain donut bin while things slowed down.
           Being able to signal backpressure and handle temporary bursts is critical in building resilient systems.
-          <br/><br/>
+          <br><br>
           Today we'll demonstrate backpressure in Akka Streams (note this is not an <a href="http://doc.akka.io/docs/akka/2.4/scala/stream/stream-introduction.html" target="_blank" class="opens_in_new">intro to Akka Streams</a> itself).
         </p>
       </section>
@@ -166,7 +166,7 @@ object StreamApp  {
       </section>
 
 
-      <br/>
+      <br>
       <section class="comments-section">
 
         <a name="comment-added" id="comment-added"></a>
@@ -183,13 +183,13 @@ object StreamApp  {
           <li><i class="grey-text">Loading comments ...</i></li>
         </ul>
 
-        <br/>
+        <br>
         <h2>Add a Comment</h2>
         <form method="POST" action="https://api.staticman.net/v2/entry/padurean/padurean.github.io/master/comments">
           <input name="options[redirect]" type="hidden" value="http://purecore.ro/posts/sample-post.html#comment-added">
           <input id="options-slug" name="options[slug]" type="hidden" value="sample-post">
-          <input id="commenter-name" name="fields[name]" type="text" placeholder="Your Name" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Name is required')"><br/>
-          <textarea id="commenter-message" name="fields[message]" placeholder="Your Comment (some GFM works, @mentions too)" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Comment is required')"></textarea><br/>
+          <input id="commenter-name" name="fields[name]" type="text" placeholder="Your Name" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Name is required')"><br>
+          <textarea id="commenter-message" name="fields[message]" placeholder="Your Comment (some GFM works, @mentions too)" required oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Comment is required')"></textarea><br>
           
           <button type="submit" class="btn btn-default btn-ghost">
             <i class="fa fa-comment fa-flip-horizontal medium left" aria-hidden="true"></i>
@@ -206,7 +206,7 @@ object StreamApp  {
 
     </article>
 
-    <br/><br/><br/>
+    <br><br><br>
 
     <footer>
       <b style="font-family: sans-serif;">&copy;</b> Ogg
