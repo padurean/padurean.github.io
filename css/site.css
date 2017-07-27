@@ -254,9 +254,12 @@ i.refresh-comments {
 }
 
 .twa {
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 1.25rem;
+  width: 1.25rem;
   background-size: 1.2em 1.2em;
+  margin: 0 0 0 -.1rem;
+  background-repeat: no-repeat;
+  background-position: center bottom;
   -webkit-filter: grayscale(25%); /* Safari 6.0 - 9.0 */
   filter: grayscale(25%);
   opacity: .85;
