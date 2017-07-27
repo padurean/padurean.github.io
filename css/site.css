@@ -182,9 +182,11 @@ img {
 .btn > .fa.left {
    margin-right: .5rem; 
 }
+.medium,
 .fa.medium {
   font-size: 1.1rem;
 }
+.large,
 .fa.large {
   font-size: 1.25rem;
 }
@@ -233,9 +235,7 @@ i.refresh-comments {
 .hack .comments-wrapper > li > p {
   margin: 0;
 }
-.large {
-  font-size: 1.25rem;
-}
+
 .alert > .fa.large {
   font-size: 1.5rem; 
   margin-right: 1rem;
