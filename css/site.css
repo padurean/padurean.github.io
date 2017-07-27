@@ -190,6 +190,10 @@ img {
 .fa.large {
   font-size: 1.25rem;
 }
+.xl,
+.fa.xl {
+  font-size: 1.5rem;
+}
 
 ul.comments-wrapper > li {
   margin-bottom: 1rem;
