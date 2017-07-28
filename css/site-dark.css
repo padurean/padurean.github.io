@@ -124,3 +124,10 @@ div.prism-show-language > div.prism-show-language-label {
   color: #37bb33;
   border-color: #37bb33;
 }
+
+.hack h3:before,
+.hack h4:before,
+.hack h5:before,
+.hack h6:before {
+  color: #666;
+}
