@@ -308,3 +308,7 @@ i.refresh-comments {
 .btn.expand-collapse-all {
   min-width: 14rem;
 }
+
+.fa.fa-fw.expand-collapse {
+  width: .75rem;
+}
