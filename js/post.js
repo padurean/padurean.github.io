@@ -88,6 +88,16 @@ function customInit() {
 	});
 	markdownifier.setFlavor('github');
 
+	var optionsRedirectElem = $('#options-redirect');
+	var initialOptionsRedirect = optionsRedirectElem.val();
+	if (window.location.origin) {
+		optionsRedirectElem.val(
+			initialOptionsRedirect.replace('https://purecore.ro', window.location.origin));
+	} else if (window.location.host) {
+		optionsRedirectElem.val(
+			initialOptionsRedirect.replace('purecore.ro', window.location.host));
+	}
+
 	var refreshCommentsElem = $('.refresh-comments');
 	refreshCommentsElem.click(refreshCommentsListener);
 	refreshComments(refreshCommentsElem, $('#comments-wrapper'), $('#options-slug').val());
