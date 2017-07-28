@@ -200,6 +200,11 @@ img {
    text-align: left;
 }
 
+.left-w-margin,
+.fa.left-w-margin {
+  margin-right: .5rem;
+}
+
 .medium,
 .fa.medium {
   font-size: 1.1rem;
