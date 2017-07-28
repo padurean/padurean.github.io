@@ -216,6 +216,13 @@ img {
   font-size: 1.5rem;
 }
 
+.hack em {
+  font-style: italic;
+}
+.hack em:after, .hack em:before {
+  content: "";
+}
+
 .hack p {
   margin: .5rem 0;
 }
