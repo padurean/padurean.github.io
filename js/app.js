@@ -109,11 +109,14 @@ function showWiPMessage(wipRandomJokeElem) {
 
 function showLangIconsAboveSnippets() {
   var langLabels =
-  $('div.prism-show-language > div.prism-show-language-label');
+    $('div.prism-show-language > div.prism-show-language-label');
   for (var i=0; i<langLabels.length; i++) {
     var langLabel = $(langLabels[i]);
     var lang = langLabel.text().toLowerCase();
-    if (lang === 'haskell') {
+    if (lang === 'go') {
+      langLabel.css('background-image', 'url("../img/gopher-logo.svg")');
+      setCssForLangLabelWithImage(langLabel);
+    } else if (lang === 'haskell') {
       langLabel.css('background-image', 'url("../img/haskell-logo.svg")');
       setCssForLangLabelWithImage(langLabel);
     } else if (lang === 'scala') {
