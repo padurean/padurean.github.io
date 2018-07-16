@@ -1,3 +1,3 @@
-## PureCore.ro / FunctionalProgramming.ro
+## PureCore.ro
 
 Ogg's blog on programming.
