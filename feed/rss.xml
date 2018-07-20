@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Markedista</title>
+        <link>https://padurean.github.io/markedista/</link>
+        <description>Static Blog Generator based on npm, marked and jsdom</description>
+        <lastBuildDate>Fri, 20 Jul 2018 16:57:25 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Markedista</generator>
+        <image>
+            <title>Markedista</title>
+            <url>https://padurean.github.io/markedista/images/markedista-logotype.png</url>
+            <link>https://padurean.github.io/markedista/</link>
+        </image>
+        <copyright>2018, Valentin Padurean</copyright>
+        <category>Tech</category>
+        <category>Static Blog Generator</category>
+        <category>Markdown</category>
+        <atom:link href="https://padurean.github.io/markedista/feed/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Learning Haskell]]></title>
+            <link>https://padurean.github.io/markedista/posts/8-eighth-post/</link>
+            <guid>https://padurean.github.io/markedista/posts/8-eighth-post/</guid>
+            <pubDate>Fri, 13 Jul 2018 16:03:00 GMT</pubDate>
+            <description><![CDATA[Minimalist tutorial on getting started with Haskell]]></description>
+            <content:encoded><![CDATA[Minimalist tutorial on getting started with Haskell]]></content:encoded>
+            <author>padureanvalentin@yahoo.com (Valentin Padurean)</author>
+            <media:thumbnail url="https://padurean.github.io/markedista/images/haskell-logo.png">
+            </media:thumbnail>
+        </item>
+    </channel>
+</rss>
