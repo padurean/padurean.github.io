@@ -1,4 +1,0 @@
-_id: 0f7c6120-724c-11e7-a45a-3114f0323905
-name: Ogg Mobile 2
-message: "Here's some javascript syntax attempt:\r\n```javascript\r\nfunction showLangIconsAboveSnippets() {\r\n  var langLabels =\r\n  $('div.prism-show-language > div.prism-show-language-label');\r\n  for (var i=0; i<langLabels.length; i++) {\r\n    var langLabel = $(langLabels[i]);\r\n    var lang = langLabel.text().toLowerCase();\r\n    if (lang === 'haskell') {\r\n      langLabel.css('background-image', 'url(\"../img/haskell-logo.svg\")');\r\n      setCssForLangLabelWithImage(langLabel);\r\n    } else if (lang === 'scala') {\r\n      langLabel.css('background-image', 'url(\"../img/scala-logo.svg\")');\r\n      setCssForLangLabelWithImage(langLabel);\r\n    } else if (lang === 'javascript') {\r\n      langLabel.css('background-image', 'url(\"../img/javascript-logo.svg\")');\r\n      setCssForLangLabelWithImage(langLabel);\r\n    }\r\n  }\r\n}\r\n```"
-date: 1501105666

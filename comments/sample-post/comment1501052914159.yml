@@ -1,4 +1,0 @@
-_id: 3ca46600-71d1-11e7-b597-5f8c890efa0b
-name: Ogg
-message: "@padurean I see no reason why this doesn't work:\r\n`val bcast = b.add(Broadcast[String](2))`"
-date: 1501052914
