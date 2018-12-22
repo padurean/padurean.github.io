@@ -70,9 +70,6 @@ hr {
 body > header {
   margin: 0 0 3em 0;
 }
-body > header .btn-go-home {
-  font-size: 2em;
-}
 body > header .hamburger {
   position: absolute;
   top: 2rem;
@@ -151,17 +148,39 @@ body > footer {
   margin: 4em 0;
   color: #606060;
 }
-body > header .markdista-logotype {
+body > header .markedista-logotype {
   font-size: 1.5em;
   letter-spacing: -.15em;
 }
 body > header .markedista-logotext {
   margin-left: .25em;
 }
+body > header .purecore-logo {
+  display: inline-block;
+  min-width: 6.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  font-size: 2em;
+  background-image: url('./images/logo/purecore-logo.svg');
+  background-repeat: no-repeat;
+  background-size: 6.5em;
+  background-position: 0 .5em;
+}
 body > footer > a {
   margin-right: 1em;
 }
-body > footer .markdista-logotype {
+body > footer .purecore-logo {
+  display: inline-block;
+  min-width: 7.75em;
+  line-height: 2.25em;
+  font-size: 1em;
+  background-image: url('./images/logo/purecore-logo.svg');
+  background-repeat: no-repeat;
+  background-size: 7em;
+  background-position: 0 .5em;
+  margin-right: 0;
+}
+body > footer .markedista-logotype {
   font-size: 1.5em;
   letter-spacing: -.15em;
 }
@@ -656,10 +675,6 @@ a.hide, a.btn.hide {
 }
 /* Breakpoint: iPhone 6/7/8+ */
 @media only screen and (max-width: 414px) {
-  body > header .btn-go-home {
-    font-size: 1.9em;
-    line-height: 1.9em;
-  }
   body > header .nav-main {
     width: 100%;
     right: 0;

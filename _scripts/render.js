@@ -36,7 +36,7 @@ const config = {
   // channel categories used when generating the site feed xml
   siteCategories: [ 'Tech', 'Static Blog Generator', 'Markdown' ],
   imagesDirPath: 'images',
-  logoImgFileName: 'markedista-logotype.png',
+  logoImgFileName: 'logo/purecore-logo.svg',
   enc: 'utf8',
   ignoreFiles: [ '.gitkeep' ],
   postsPerPage: 3,
@@ -45,7 +45,7 @@ const config = {
     collapseWhitespace: true
   },
   // !make sure it has the trailing slash /
-  baseUrl: 'https://padurean.github.io/markedista/',
+  baseUrl: 'https://purecore.ro/',
   social: {
     twitter: 'vpadure',
     facebook: 'vpadurean',
@@ -504,7 +504,7 @@ function generateRssFeed() {
     link: 'https://github.com/padurean'
   }
   const feed = new Feed({
-    title: 'Markedista',
+    title: 'PureCore.ro',
     description: 'Static Blog Generator based on npm, marked and jsdom',
     id: config.baseUrl,
     link: config.baseUrl,
@@ -731,6 +731,10 @@ function prepareJsdom(headHtml, headerHtml, footerHtml, layoutHtml, homePath, cs
   aboutPageLinkElems.setAttribute('href', `${homePath}/about/`)
 
   const footerElem = document.querySelector('footer')
+  const footerBtnGoHomeElems = footerElem.querySelector('.btn-go-home')
+  if (footerBtnGoHomeElems) {
+    footerBtnGoHomeElems.setAttribute('href', `${homePath}/`)
+  }
   const socialIconLinksElem = footerElem.querySelector('.social-icon-links')
   const githubIconElem = socialIconLinksElem.querySelector('.github-icon-link')
   const githubIconPath = githubIconElem.getAttribute('src')

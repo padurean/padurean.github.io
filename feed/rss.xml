@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <channel>
-        <title>Markedista</title>
-        <link>https://padurean.github.io/markedista/</link>
+        <title>PureCore.ro</title>
+        <link>https://purecore.ro/</link>
         <description>Static Blog Generator based on npm, marked and jsdom</description>
-        <lastBuildDate>Sat, 22 Dec 2018 16:56:49 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 22 Dec 2018 22:45:39 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Markedista</generator>
         <image>
-            <title>Markedista</title>
-            <url>https://padurean.github.io/markedista/images/markedista-logotype.png</url>
-            <link>https://padurean.github.io/markedista/</link>
+            <title>PureCore.ro</title>
+            <url>https://purecore.ro/images/logo/purecore-logo.svg</url>
+            <link>https://purecore.ro/</link>
         </image>
         <copyright>2018, Valentin Padurean</copyright>
         <category>Tech</category>
         <category>Static Blog Generator</category>
         <category>Markdown</category>
-        <atom:link href="https://padurean.github.io/markedista/feed/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://purecore.ro/feed/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
-            <link>https://padurean.github.io/markedista/posts/HelloWorld/</link>
-            <guid>https://padurean.github.io/markedista/posts/HelloWorld/</guid>
+            <link>https://purecore.ro/posts/00001-HelloWorld/</link>
+            <guid>https://purecore.ro/posts/00001-HelloWorld/</guid>
             <pubDate>Sat, 22 Dec 2018 16:42:56 GMT</pubDate>
             <description><![CDATA[Hello from Săcele, Brașov, Romania!]]></description>
             <content:encoded><![CDATA[Hello from Săcele, Brașov, Romania!]]></content:encoded>
