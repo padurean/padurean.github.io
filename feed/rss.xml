@@ -4,12 +4,12 @@
         <title>PureCore.ro</title>
         <link>https://purecore.ro/</link>
         <description>Static Blog Generator based on npm, marked and jsdom</description>
-        <lastBuildDate>Sat, 22 Dec 2018 23:06:31 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 22 Dec 2018 23:15:01 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Markedista</generator>
         <image>
             <title>PureCore.ro</title>
-            <url>https://purecore.ro/images/logo/purecore-logo.png</url>
+            <url>https://purecore.ro/images/logo/purecore-logotype.png</url>
             <link>https://purecore.ro/</link>
         </image>
         <copyright>2018, Valentin Padurean</copyright>
