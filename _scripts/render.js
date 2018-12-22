@@ -36,7 +36,7 @@ const config = {
   // channel categories used when generating the site feed xml
   siteCategories: [ 'Tech', 'Static Blog Generator', 'Markdown' ],
   imagesDirPath: 'images',
-  logoImgFileName: 'logo/purecore-logo.svg',
+  logoImgFileName: 'logo/purecore-logo.png',
   enc: 'utf8',
   ignoreFiles: [ '.gitkeep' ],
   postsPerPage: 3,
