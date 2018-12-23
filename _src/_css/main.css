@@ -158,25 +158,25 @@ body > header .markedista-logotext {
 body > header .purecore-logo {
   display: inline-block;
   min-width: 6.5em;
-  height: 2.5em;
-  line-height: 2.5em;
-  font-size: 2em;
+  height: 1.9em;
+  line-height: 1.9em;
+  font-size: 1.9em;
   background-image: url('./images/logo/purecore-logo.svg');
   background-repeat: no-repeat;
   background-size: 6.5em;
-  background-position: 0 .5em;
+  background-position: 0 .6em;
 }
 body > footer > a {
   margin-right: 1em;
 }
 body > footer .purecore-logo {
   display: inline-block;
-  min-width: 7.75em;
-  line-height: 2.25em;
+  min-width: 6.75em;
+  line-height: 2em;
   font-size: 1em;
   background-image: url('./images/logo/purecore-logo.svg');
   background-repeat: no-repeat;
-  background-size: 7em;
+  background-size: 6.25em;
   background-position: 0 .5em;
   margin-right: 0;
 }
