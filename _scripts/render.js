@@ -501,7 +501,7 @@ function generateRssFeed() {
   const author = {
     name: 'Valentin Padurean',
     email: 'padureanvalentin@yahoo.com',
-    link: 'https://github.com/padurean'
+    link: 'https://purecore.ro/'
   }
   const feed = new Feed({
     title: 'PureCore.ro',
