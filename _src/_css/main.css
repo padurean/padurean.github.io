@@ -180,6 +180,11 @@ body > footer .purecore-logo {
   background-position: 0 .5em;
   margin-right: 0;
 }
+body > footer .made-with {
+  font-size: .9em;
+  margin-top: 1.75em;
+  color: #909090;
+}
 body > footer .markedista-logotype {
   font-size: 1.5em;
   letter-spacing: -.15em;
