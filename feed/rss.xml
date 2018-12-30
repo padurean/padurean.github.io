@@ -4,7 +4,7 @@
         <title>PureCore.ro</title>
         <link>https://purecore.ro/</link>
         <description>Static Blog Generator based on npm, marked and jsdom</description>
-        <lastBuildDate>Wed, 26 Dec 2018 14:27:13 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 Dec 2018 21:52:09 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Markedista</generator>
         <image>
@@ -19,8 +19,8 @@
         <atom:link href="https://purecore.ro/feed/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
-            <link>https://purecore.ro/posts/00001-HelloWorld/</link>
-            <guid>https://purecore.ro/posts/00001-HelloWorld/</guid>
+            <link>https://purecore.ro/posts/2018-12-22-hello-world/</link>
+            <guid>https://purecore.ro/posts/2018-12-22-hello-world/</guid>
             <pubDate>Sat, 22 Dec 2018 16:42:56 GMT</pubDate>
             <description><![CDATA[Hello from Săcele, Brașov, Romania!]]></description>
             <content:encoded><![CDATA[Hello from Săcele, Brașov, Romania!]]></content:encoded>
