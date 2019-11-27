@@ -181,7 +181,7 @@ body > header .purecore-logo {
   background-image: url('./images/logo/purecore-logo.svg');
   background-repeat: no-repeat;
   background-size: 6.25em;
-  background-position: 0 .6em;
+  background-position: 0 .525em;
 }
 body > footer > a {
   margin-right: 1em;
@@ -194,7 +194,7 @@ body > footer .purecore-logo {
   background-image: url('./images/logo/purecore-logo.svg');
   background-repeat: no-repeat;
   background-size:6.25em;
-  background-position: 0 .5em;
+  background-position: 0 .35em;
   margin-right: 0;
 }
 body > footer .made-with {
