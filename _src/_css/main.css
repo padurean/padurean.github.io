@@ -181,20 +181,20 @@ body > header .purecore-logo {
   background-image: url('./images/logo/purecore-logo.svg');
   background-repeat: no-repeat;
   background-size: 6.25em;
-  background-position: 0 .5em;
+  background-position: 0 .66em;
 }
 body > footer > a {
   margin-right: 1em;
 }
 body > footer .purecore-logo {
   display: inline-block;
-  min-width: 6.75em;
+  min-width: 6.5em;
   line-height: 2em;
   font-size: 1em;
   background-image: url('./images/logo/purecore-logo.svg');
   background-repeat: no-repeat;
-  background-size:6.25em;
-  background-position: 0 .35em;
+  background-size:6em;
+  background-position: 0 .5em;
   margin-right: 0;
 }
 body > footer .made-with {
