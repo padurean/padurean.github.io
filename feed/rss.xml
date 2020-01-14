@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>PureCore.ro</title>
         <link>https://purecore.ro/</link>
         <description>Static Blog Generator based on npm, marked and jsdom</description>
-        <lastBuildDate>Sun, 24 Nov 2019 22:16:28 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 14 Jan 2020 12:19:15 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Markedista</generator>
         <image>
@@ -12,7 +12,7 @@
             <url>https://purecore.ro/images/logo/purecore-logotype.png</url>
             <link>https://purecore.ro/</link>
         </image>
-        <copyright>2019, Valentin Padurean</copyright>
+        <copyright>2020, Valentin Padurean</copyright>
         <category>Tech</category>
         <category>Static Blog Generator</category>
         <category>Markdown</category>
