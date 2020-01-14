@@ -13,6 +13,9 @@ body {
 }
 a {
   text-decoration: none;
+  color: #5a64d8;
+}
+a:hover {
   color: orangered;
 }
 .accent-color {
@@ -315,7 +318,7 @@ body > footer .markedista-logotext {
 }
 .share-btns-container > img {
   margin-right: .25em;
-  background-color: orangered;
+  background-color: #5a64d8;
 }
 .share-btns-container img {
   width: 1em;
@@ -327,7 +330,7 @@ body > footer .markedista-logotext {
   width: 1.5em;
   height: 1.5em;
   margin-right: .5em;
-  border: 1px solid orangered;
+  border: 1px solid #5a64d8;
   border-radius: 3px;
   box-shadow: 0 1px 1px #cfcbc9;
 }
@@ -336,7 +339,7 @@ body > footer .markedista-logotext {
   font-size: .6em;
   top: -3.1em;
   left: -4.1em;
-  color: orangered;
+  color: #5a64d8;
   text-transform: uppercase;
 }
 .page-nav {
@@ -439,13 +442,9 @@ a.btn.goto-page.current {
 .tags-container.on-full-post {
   margin: .25em 0 0 .75em;
 }
-.tags-container a {
-  color: #5a64d8;
-}
 .tags-container a.filtered-tag-link,
 a.filtered-tag-link {
   background-color: yellow;
-  color: orangered;
 }
 .clear-floats {
   clear: both;
@@ -537,7 +536,7 @@ a.btn-clear-tags {
   padding-top: 1.25em;
 }
 svg {
-  fill: orangered;
+  fill: #5a64d8;
 }
 a.show, a.btn.show {
   background-image: url('./images/eye-slash.svg');
