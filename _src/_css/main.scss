@@ -23,7 +23,7 @@ a {
   text-decoration: none;
   color: $mainColor;
 }
-a:hover {
+a:hover, a:hover * {
   color: $accentColor;
 }
 .accent-color {
