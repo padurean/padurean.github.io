@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
     <channel>
         <title>PureCore.ro</title>
         <link>https://purecore.ro/</link>
         <description>Static Blog Generator based on npm, marked and jsdom</description>
-        <lastBuildDate>Wed, 03 Jun 2020 14:18:03 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Jul 2020 13:22:25 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Markedista</generator>
         <image>
@@ -18,22 +18,18 @@
         <category>Markdown</category>
         <atom:link href="https://purecore.ro/feed/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Hello, World Two!]]></title>
-            <link>https://purecore.ro/posts/2020-01-14-hello-world-two/</link>
-            <guid>https://purecore.ro/posts/2020-01-14-hello-world-two/</guid>
-            <pubDate>Tue, 14 Jan 2020 12:42:56 GMT</pubDate>
-            <description><![CDATA[Hello again from Săcele, Brașov, Romania!]]></description>
-            <content:encoded><![CDATA[Hello again from Săcele, Brașov, Romania!]]></content:encoded>
+            <title><![CDATA[Interface implementations with injectable definitions in Go]]></title>
+            <link>https://purecore.ro/posts/2020-07-28-interface-implementations-with-injectable-definitions-in-go/</link>
+            <guid>https://purecore.ro/posts/2020-07-28-interface-implementations-with-injectable-definitions-in-go/</guid>
+            <pubDate>Tue, 28 Jul 2020 12:00:34 GMT</pubDate>
+            <description><![CDATA[Make use of Go's structural typing and support for first-class functions to mock dependencies in unit tests with custom behaviour injectable when needed only for what is needed, without writing an entire mock implementation]]></description>
+            <content:encoded><![CDATA[Make use of Go's structural typing and support for first-class functions to mock dependencies in unit tests with custom behaviour injectable when needed only for what is needed, without writing an entire mock implementation]]></content:encoded>
             <author>padureanvalentin@yahoo.com (Valentin Padurean)</author>
-        </item>
-        <item>
-            <title><![CDATA[Hello, World!]]></title>
-            <link>https://purecore.ro/posts/2018-12-22-hello-world/</link>
-            <guid>https://purecore.ro/posts/2018-12-22-hello-world/</guid>
-            <pubDate>Sat, 22 Dec 2018 16:42:56 GMT</pubDate>
-            <description><![CDATA[Hello from Săcele, Brașov, Romania!]]></description>
-            <content:encoded><![CDATA[Hello from Săcele, Brașov, Romania!]]></content:encoded>
-            <author>padureanvalentin@yahoo.com (Valentin Padurean)</author>
+            <media:thumbnail url="https://purecore.ro/images/gopher-purecore.svg">
+            </media:thumbnail>
+            <media:title type="plain">Interface implementations with injectable definitions in Go</media:title>
+            <media:description type="plain">Make use of Go&apos;s structural typing and support for first-class functions to mock dependencies in unit tests with custom behaviour injectable when needed only for what is needed, without writing an entire mock implementation</media:description>
+            <media:rating>nonadult</media:rating>
         </item>
     </channel>
 </rss>

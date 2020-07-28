@@ -257,7 +257,9 @@ function setEmbeddedVideoHeight() {
 }
 
 function customizeContent() {
+  $('li:has(input[type="checkbox"])').addClass('todo-item no-p');
   $('li:has(p > input[type="checkbox"])').addClass('todo-item');
+  $('li:has(input[type="checkbox"][checked])').addClass('done');
   $('li:has(p > input[type="checkbox"][checked])').addClass('done');
 }
 
