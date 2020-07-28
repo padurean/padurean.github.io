@@ -31,11 +31,11 @@ exported fields of type `func`
 
 that are counterparts for each function exposed by the interface,
 
-so that all that the definitions of the interface functions have
+so that all that the definitions of the interface methods have
 to do is to delegate to these fields of type `func`.
 
 This provides a way for each piece of code that uses the interface to directly
-inject (into it's implementation) different definitions for any of it's functions.
+inject (into it's implementation) different definitions for any of it's methods.
 
 # <span class="violet">&#9781;</span> Example
 
@@ -46,7 +46,7 @@ A books library that allows saving author's books in a Redis database.
 Create a folder named `injectable-method-definitions`, `cd` into it and initialize
 it as a Go module by running `go mod init injectable-method-definitions`.
 
-Then create the tree of folders and files:
+Then create the following tree of folders and files:
 
 ```
 internal
@@ -275,6 +275,36 @@ func main() {
 - `db_test.go` and `library_test.go` code injects "mock" behaviour for the `DB`
 interface by setting custom functions as values for the `PingF`, `SetF` and
 `GetF` fields of the `RedisClient` implementation
+
+### Running the tests and checking their code coverage:
+
+```console
+    ➤ go test ./internal/... -count=1 -coverprofile=coverage.txt -covermode=atomic
+    ok      injectable-method-definitions/internal/books    0.099s  coverage: 100.0% of statements
+    ok      injectable-method-definitions/internal/db       0.200s  coverage: 100.0% of statements
+
+    ➤ go tool cover -func=coverage.txt
+    injectable-method-definitions/internal/books/library.go:11:     AddBooks        100.0%
+    injectable-method-definitions/internal/books/library.go:16:     GetBooks        100.0%
+    injectable-method-definitions/internal/db/db.go:25:             NewRedisClient  100.0%
+    injectable-method-definitions/internal/db/db.go:41:             Ping            100.0%
+    injectable-method-definitions/internal/db/db.go:46:             Set             100.0%
+    injectable-method-definitions/internal/db/db.go:51:             Get             100.0%
+    total:                                                          (statements)    100.0%
+```
+
+### Running the main code:
+
+1. Install Redis on your machine - e.g. on macOS: `brew install redis`
+2. Start the Redis server - e.g. on macOS: `redis-server /usr/local/etc/redis.conf`
+3. Run the main code:
+
+```console
+    ➤ go run main.go
+    Henry Hazlitt's books:
+    Economics in One Lesson
+    The Failure of the 'New Economics': An Analysis of the Keynesian Fallacies
+```
 
 <br><br>
 
