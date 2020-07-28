@@ -27,11 +27,8 @@ close to 100% as possible is aimed for.
 # <span class="green">&#9730;</span> Solution
 
 Abstracting function(alitie)s away through interfaces who's implementations have
-exported fields of type `func`
-
-that are counterparts for each function exposed by the interface,
-
-so that all that the definitions of the interface methods have
+exported fields of type `func` that are counterparts for each function exposed by
+the interface, so that all that the definitions of the interface methods have
 to do is to delegate to these functions stored as fields.
 
 This provides a way to inject different definitions for any of the interface
