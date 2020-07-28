@@ -34,6 +34,19 @@ to do is to delegate to these functions stored as fields.
 This provides a way to inject different definitions for any of the interface
 (implementation) methods.
 
+Since Go uses [structural typing](https://en.wikipedia.org/wiki/Structural_type_system)
+on methods to determine compatibility of a type with an interface, one could define
+it's own interface with only the subset of methods that are used from a (3rd party)
+library and the `struct` exposed by the library will "automatically" be implementing it.
+In the example below this case is not presented, but it would basically mean that the
+signatures of all methods in the `DB` interface perfectly match the ones of the methods
+exposed by the `Client` struct exported by the [go-redis](https://github.com/go-redis/redis)
+library. The methods of the `DB` interface in the example below differ from their counterparts
+from the _go-redis_ library in the return type: they return plain Go `error` instead of
+_go-redis_-specific types and the reson for this is to minimize the code coupling
+to the 3rd party library.
+
+
 # <span class="violet">&#9781;</span> Example
 
 A books library that allows storing and loading authors and books using a Redis database.
