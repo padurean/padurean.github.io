@@ -32,14 +32,14 @@ exported fields of type `func`
 that are counterparts for each function exposed by the interface,
 
 so that all that the definitions of the interface methods have
-to do is to delegate to these fields of type `func`.
+to do is to delegate to these functions stored as fields.
 
-This provides a way for each piece of code that uses the interface to directly
-inject (into it's implementation) different definitions for any of it's methods.
+This provides a way to inject different definitions for any of the interface
+(implementation) methods.
 
 # <span class="violet">&#9781;</span> Example
 
-A books library that allows saving author's books in a Redis database.
+A books library that allows storing and loading authors and books using a Redis database.
 
 ## Boilerplate
 
