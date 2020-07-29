@@ -26,7 +26,7 @@ close to 100% as possible is aimed for.
 
 # <span class="green">&#9730;</span> Solution
 
-Abstracting function(alitie)s away through interfaces who's implementations have
+Abstracting function(alitie)s away through interfaces whose implementations have
 exported fields of type `func` that are counterparts for each function exposed by
 the interface, so that all that the definitions of the interface methods have
 to do is to delegate to these functions stored as fields.
@@ -40,7 +40,7 @@ it's own interface with only the subset of methods that are used from a (3rd par
 library and the `struct` exposed by the library will "automatically" be implementing it.
 In the example below this case is not presented, but it would basically mean that the
 signatures of all methods in the `DB` interface perfectly match the ones of the methods
-exposed by the `Client` struct exported by the [go-redis](https://github.com/go-redis/redis)
+from the `Client` struct exported by the [go-redis](https://github.com/go-redis/redis)
 library. The methods of the `DB` interface in the example below differ from their counterparts
 from the _go-redis_ library in the return type: they return plain Go `error` instead of
 _go-redis_-specific types and the reson for this is to minimize the code coupling
