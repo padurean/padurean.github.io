@@ -49,7 +49,7 @@ from the <code>go-redis</code> library in the return type: they return plain Go 
 <code>go-redis</code>-specific types and the reson for this is to minimize the code coupling
 to the third-party library.
 </p>
-Anyway, if such an approach is prefered, then a separate mock implementation of the interface is
+Anyway, if such an approach is preferred, then a separate mock implementation of the interface is
 needed; to be used exclusively for unit testing. The approach presented in this article
 could then be applied to the mock implementation. This would still have the advantage that
 only one mock implementation is needed, instead of multiple ones (for different tests scenarios).
