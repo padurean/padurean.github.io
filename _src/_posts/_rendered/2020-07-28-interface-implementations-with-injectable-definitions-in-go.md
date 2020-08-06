@@ -34,18 +34,26 @@ to do is to delegate to these functions stored as fields.
 This provides a way to inject different definitions for any of the interface
 (implementation) methods.
 
-Since Go uses [structural typing](https://en.wikipedia.org/wiki/Structural_type_system)
+<div class="side-note">
+<p>Since Go uses <a href="https://en.wikipedia.org/wiki/Structural_type_system">structural typing</a>
 on methods to determine compatibility of a type with an interface, one could define
-it's own interface with only the subset of methods that are used from a (3rd party)
+one's own interface with only the subset of methods that are used from a (3rd party)
 library and the `struct` exposed by the library will "automatically" be implementing it.
+</p>
+<p>
 In the example below this case is not presented, but it would basically mean that the
 signatures of all methods in the `DB` interface perfectly match the ones of the methods
-from the `Client` struct exported by the [go-redis](https://github.com/go-redis/redis)
+from the `Client` struct exported by the <a href="https://github.com/go-redis/redis">go-redis</a>
 library. The methods of the `DB` interface in the example below differ from their counterparts
 from the _go-redis_ library in the return type: they return plain Go `error` instead of
 _go-redis_-specific types and the reson for this is to minimize the code coupling
 to the 3rd party library.
-
+</p>
+Anyway, if such an approach is prefered, then a separate mock implementation of the interface is
+needed; to be used exclusively for unit testing. The approach presented in this article
+could then be applied to the mock implementation. This would still have the advantage that
+only one mock implementation is needed, instead of multiple ones (for different tests scenarios).
+</div>
 
 # <span class="violet">&#9781;</span> Example
 
