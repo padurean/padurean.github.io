@@ -289,18 +289,18 @@ interface by setting custom functions as values for the `PingF`, `SetF` and
 ### Running the tests and checking their code coverage:
 
 ```console
-    ➤ go test ./internal/... -count=1 -coverprofile=coverage.txt -covermode=atomic
-    ok      injectable-method-definitions/internal/books    0.099s  coverage: 100.0% of statements
-    ok      injectable-method-definitions/internal/db       0.200s  coverage: 100.0% of statements
+  ➤ go test ./internal/... -count=1 -coverprofile=coverage.txt -covermode=atomic
+  ok      injectable-method-definitions/internal/books    0.099s  coverage: 100.0% of statements
+  ok      injectable-method-definitions/internal/db       0.200s  coverage: 100.0% of statements
 
-    ➤ go tool cover -func=coverage.txt
-    injectable-method-definitions/internal/books/library.go:11:     AddBooks        100.0%
-    injectable-method-definitions/internal/books/library.go:16:     GetBooks        100.0%
-    injectable-method-definitions/internal/db/db.go:25:             NewRedisClient  100.0%
-    injectable-method-definitions/internal/db/db.go:41:             Ping            100.0%
-    injectable-method-definitions/internal/db/db.go:46:             Set             100.0%
-    injectable-method-definitions/internal/db/db.go:51:             Get             100.0%
-    total:                                                          (statements)    100.0%
+  ➤ go tool cover -func=coverage.txt
+  injectable-method-definitions/internal/books/library.go:11:     AddBooks        100.0%
+  injectable-method-definitions/internal/books/library.go:16:     GetBooks        100.0%
+  injectable-method-definitions/internal/db/db.go:25:             NewRedisClient  100.0%
+  injectable-method-definitions/internal/db/db.go:41:             Ping            100.0%
+  injectable-method-definitions/internal/db/db.go:46:             Set             100.0%
+  injectable-method-definitions/internal/db/db.go:51:             Get             100.0%
+  total:                                                          (statements)    100.0%
 ```
 
 ### Running the main code:
