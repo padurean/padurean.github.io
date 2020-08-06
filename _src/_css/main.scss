@@ -2,12 +2,16 @@ $whiteColor: #fff;
 $textColor: #262626;
 $accentColor: orangered;
 $mainColorLightest: #f3f3fc;
+$mainColorLightestAlpha75: #f3f3fcbf;
 $mainColorLighterABit: #6e78dd;
 $mainColor: #5a64d8;
 $shadowColor: #cfcbc9;
 $green: #01B27D;
 $blue: #007CC2;
 $yelloworange: #FFC502;
+
+$borderRadiusLarge: 6px;
+$borderRadiusSmall: 3px;
 
 .green {
   color: $green;
@@ -53,7 +57,7 @@ code, code.hljs {
   font-size: 1.1em;
 }
 .hljs {
-  border-radius: 6px;
+  border-radius: $borderRadiusLarge;
   padding: .75em;
   color: #4A5159;
   background-color: transparent;
@@ -213,7 +217,7 @@ body > header .nav-main {
   overflow-y: auto;
   background-color: $accentColor;
   background: linear-gradient(#ff4500, #9198e5);
-  border-radius: 0 0 6px 6px;
+  border-radius: 0 0 $borderRadiusLarge $borderRadiusLarge;
   color: $whiteColor;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -343,7 +347,7 @@ body > footer .markedista-logotext {
   width: 100%;
   height: auto;
   margin-top: .75em;
-  border-radius: 6px;
+  border-radius: $borderRadiusLarge;
 }
 .post-summary-template-section,
 .other-post-summary-template-section {
@@ -361,7 +365,7 @@ body > footer .markedista-logotext {
   margin-right: .5em;
   border: 1px solid $mainColorLightest;
   box-shadow: 0 2px 2px $shadowColor;
-  border-radius: 3px;
+  border-radius: $borderRadiusSmall;
 }
 .full-post {
   margin-bottom: 3.5em;
@@ -390,10 +394,18 @@ body > footer .markedista-logotext {
   max-width: 100%;
   /* percent relative to viewport height */
   max-height: 80vh;
-  border-radius: 6px;
+  border-radius: $borderRadiusLarge;
 }
 .full-post .post-body img.smaller {
   max-height: 40vh;
+}
+.side-note {
+  background-color: $mainColorLightestAlpha75;
+  border: 1px solid $green;
+  border-radius: $borderRadiusLarge;
+  padding: 1em;
+  margin-left:1em;
+  margin-right:1em;
 }
 .share-btns-container {
   display: inline-block;
@@ -416,7 +428,7 @@ body > footer .markedista-logotext {
   height: 1.5em;
   margin-right: .5em;
   border: 1px solid $mainColor;
-  border-radius: 3px;
+  border-radius: $borderRadiusSmall;
   box-shadow: 0 1px 1px $shadowColor;
 }
 .share-btns-container .copy-link-tooltip {
@@ -436,7 +448,7 @@ body > footer .markedista-logotext {
 a.btn {
   display: inline-block;
   border: 1px solid $mainColor;
-  border-radius: 3px;
+  border-radius: $borderRadiusSmall;
   padding: .25em .75em;
   margin-right: 1em;
   color: $mainColor;
@@ -542,14 +554,14 @@ a.filtered-tag-link {
   overflow-y: auto;
   padding: .5em 0 .5em .75em;
   margin-bottom: .5em;
-  border-radius: 6px;
+  border-radius: $borderRadiusLarge;
   background-color: $mainColorLightest;
   box-shadow: inset 0 -3px 2px #e2e0df;
 }
 .tags-filter-view a.btn {
   white-space: nowrap;
   border: none;
-  border-radius: 6px 0 0 6px;
+  border-radius: $borderRadiusLarge 0 0 $borderRadiusLarge;
   margin-top: .25em;
   margin-bottom: .25em;
   background-color: $mainColor;
@@ -647,7 +659,7 @@ a.hide, a.btn.hide {
   background-size: 10em;
   background-repeat: no-repeat;
   background-position: center 4.5em;
-  border-radius: 6px;
+  border-radius: $borderRadiusLarge;
   padding: .25em .5em;
   box-shadow: 0 3px 2px $shadowColor;
 }
@@ -664,7 +676,7 @@ a.hide, a.btn.hide {
 .related-posts,
 .newest-posts {
   border: 2px solid $mainColorLightest;
-  border-radius: 6px;
+  border-radius: $borderRadiusLarge;
   box-shadow: 0 3px 2px $shadowColor;
 }
 .newest-posts {
@@ -863,7 +875,7 @@ a.hide, a.btn.hide {
   body > header .nav-main ul {
     margin: 0 1rem;
     padding: .75em 1em;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 $borderRadiusLarge $borderRadiusLarge;
   }
 }
 /* Breakpoint: iPhone 5/SE */

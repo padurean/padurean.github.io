@@ -376,6 +376,14 @@ body > footer .markedista-logotext {
 .full-post .post-body img.smaller {
   max-height: 40vh; }
 
+.side-note {
+  background-color: #f3f3fcbf;
+  border: 1px solid #01B27D;
+  border-radius: 6px;
+  padding: 1em;
+  margin-left: 1em;
+  margin-right: 1em; }
+
 .share-btns-container {
   display: inline-block;
   min-width: 11em;
