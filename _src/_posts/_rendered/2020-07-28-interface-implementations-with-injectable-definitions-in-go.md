@@ -18,7 +18,7 @@ close to 100% as possible is aimed for.
 
 - [x] easily writing unit tests for your code
 - [x] getting up to 100% code coverage
-- [x] without using a 3rd party library
+- [x] without using a third-party library
 - [x] without resorting to ["monkey patching"](https://bou.ke/blog/monkey-patching-in-go/)
 - [x] without writing complete mock implementations
 - [x] overriding (injecting) only the needed behaviours
@@ -37,8 +37,8 @@ This provides a way to inject different definitions for any of the interface
 <div class="side-note">
 <p>Since Go uses <a href="https://en.wikipedia.org/wiki/Structural_type_system">structural typing</a>
 on methods to determine compatibility of a type with an interface, one could define
-one's own interface with only the subset of methods that are used from a (3rd party)
-library and the <code>struct</code> exposed by the library will automatically be implementing it.
+one's own interface with only the subset of methods that are used from a (third-party)
+library and the <code>struct</code> exposed by the library would automatically be implementing it.
 </p>
 <p>
 In the example below this case is not presented, but it would basically mean that the
@@ -47,7 +47,7 @@ from the <code>Client</code> struct exported by the <a href="https://github.com/
 library. The methods of the <code>DB</code> interface in the example below differ from their counterparts
 from the <code>go-redis</code> library in the return type: they return plain Go <code>error</code> instead of
 <code>go-redis</code>-specific types and the reson for this is to minimize the code coupling
-to the 3rd party library.
+to the third-party library.
 </p>
 Anyway, if such an approach is prefered, then a separate mock implementation of the interface is
 needed; to be used exclusively for unit testing. The approach presented in this article
