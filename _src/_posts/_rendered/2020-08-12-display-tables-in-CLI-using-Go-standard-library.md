@@ -1,6 +1,6 @@
 ---
 {
-  "date": "2020-08-12T15:40:55+03:00",
+  "date": "2020-08-12T19:52:15+03:00",
   "title": "Display tables in the CLI using just the Go standard library",
   "description": "Print data as minimalist plain-text tables using just the text/tabwriter package, without any third-party library",
   "tags": [ "Go", "CLI" ],
@@ -235,7 +235,7 @@ as can be seen in the example code and data from `main.go` where the `userToRows
 more than one row for one user (i.e. multiple permissions for databases and tables).
 
 **NOTE:** Basically the `PrintTable` only deals with `arrays` of `string`s delegating
-to the caller the responsability of converting the data to arrays of strings and of deciding
+to the caller the responsability of converting any data it has and also the one of deciding
 when the table ends (e.g. by keeping a counter while feeding the data through the callback).
 
 Running the code will show the following output:

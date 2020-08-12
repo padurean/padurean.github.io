@@ -4,7 +4,7 @@
         <title>PureCore.ro</title>
         <link>https://purecore.ro/</link>
         <description>Static Blog Generator based on npm, marked and jsdom</description>
-        <lastBuildDate>Wed, 12 Aug 2020 16:44:22 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Aug 2020 16:52:22 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Markedista</generator>
         <image>
@@ -21,7 +21,7 @@
             <title><![CDATA[Display tables in the CLI using just the Go standard library]]></title>
             <link>https://purecore.ro/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/</link>
             <guid>https://purecore.ro/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/</guid>
-            <pubDate>Wed, 12 Aug 2020 12:40:55 GMT</pubDate>
+            <pubDate>Wed, 12 Aug 2020 16:52:15 GMT</pubDate>
             <description><![CDATA[Print data as minimalist plain-text tables using just the text/tabwriter package, without any third-party library]]></description>
             <content:encoded><![CDATA[Print data as minimalist plain-text tables using just the text/tabwriter package, without any third-party library]]></content:encoded>
             <author>padureanvalentin@yahoo.com (Valentin Padurean)</author>
