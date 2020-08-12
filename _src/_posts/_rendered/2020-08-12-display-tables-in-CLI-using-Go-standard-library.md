@@ -14,8 +14,7 @@ Printing some data to the CLI, as a table, usually requires one of the following
 
 - fiddling with spaces and tabs to evenly align data and dealing with various edge
 cases, long strings etc.
-- using a third-party, which can result in a very good-looking results, except that
-sometimes you might not want bringing in an extra-dependency just for that
+- using a [third-party library](https://github.com/olekukonko/tablewriter), which can have the benefit of nice-looking results, but at the cost of bringing in an extra-dependency just for that
 
 # <span class="yelloworange">&#9873;</span> Goal
 
