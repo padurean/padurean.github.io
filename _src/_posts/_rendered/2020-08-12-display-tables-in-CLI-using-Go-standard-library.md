@@ -220,7 +220,7 @@ func userToRows(u *user) [][]string {
 
 ### Reading and running the code
 
-In the code above one can observe that the `PrintTable` functions is designed so
+In the code above one can observe that the `PrintTable` function is designed so
 that it takes the following params:
 
 - An `io.Writer` which can be, for example, `os.Stdout` if one wishes to print directly
@@ -233,8 +233,8 @@ two-dimensionality of it is that one might need to print multiple rows for a sin
 as can be seen in the example code and data from `main.go` where the `userToRows` function returns
 more than one row for one user (i.e. multiple permissions for databases and tables).
 
-**NOTE:** Basically the `PrintTable` only deals with `arrays` of `string`s delegating
-to the caller the responsability of converting any data it has and also the one of deciding
+**NOTE:** Basically the `PrintTable` function only deals with arrays of `string`s delegating
+to the caller the responsibility of converting any data it has and also the one of deciding
 when the table ends (e.g. by keeping a counter while feeding the data through the callback).
 
 Running the code will show the following output:
