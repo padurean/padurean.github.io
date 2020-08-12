@@ -233,13 +233,13 @@ two-dimensionality of it is that one might need to print multiple rows for a sin
 as can be seen in the example code and data from `main.go` where the `userToRows` function returns
 more than one row for one user (i.e. multiple permissions for databases and tables).
 
-**NOTE:** Basically the `PrintTable` function only deals with arrays of `string`s delegating
+&#128161; Basically the `PrintTable` function only deals with arrays of `string`s delegating
 to the caller the responsibility of converting any data it has and also the one of deciding
 when the table ends (e.g. by keeping a counter while feeding the data through the callback).
 
 Running the code will show the following output:
 
-```console
+```
 ➤ go run main.go
 4 user(s):
 
