@@ -1,0 +1,183 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="description" content="Print data as minimalist plain-text tables using just the text/tabwriter package, without any third-party library"><meta name="keywords" content="Go, CLI"><meta name="author" content="Valentin Padurean (Ogg)"><meta property="article:author" content="Valentin Padurean (Ogg)"><meta property="fb:app_id" content="355817918550120"><title>Display tables in the CLI using just the Go standard library</title><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@vpadure"><meta property="og:type" content="article"><link rel="canonical" href="https://purecore.ro/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/"><meta property="og:url" content="https://purecore.ro/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/"><meta property="og:title" content="Display tables in the CLI using just the Go standard library"><meta name="twitter:title" content="Display tables in the CLI using just the Go standard library"><meta property="og:description" content="Print data as minimalist plain-text tables using just the text/tabwriter package, without any third-party library"><meta name="twitter:description" content="Print data as minimalist plain-text tables using just the text/tabwriter package, without any third-party library"><meta property="og:image" content="https://purecore.ro/images/gopher-side_color.png"><meta property="og:image:secure_url" content="https://purecore.ro/images/gopher-side_color.png"><meta name="twitter:image" content="https://purecore.ro/images/gopher-side_color.png"><meta property="article:tag" content="Go"><meta property="article:tag" content="CLI"><link rel="shortcut icon" href="../../favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="../../images/icon-180.png"><meta name="msapplication-square70x70logo" content="../../images/icon-70-no-bg.png"><meta name="msapplication-square150x150logo" content="../../images/icon-150-no-bg.png"><meta name="msapplication-square310x310logo" content="../../images/icon-310-no-bg.png"><meta name="msapplication-wide310x150logo" content="../../images/icon-310x150-no-bg.png"><meta name="msapplication-TileColor" content="#ffffff"><link rel="alternate" type="application/rss+xml" title="PureCore.ro" href="https://purecore.ro/feed/rss.xml"><link rel="stylesheet" href="../../bundle-post.min.css?1"></head><body><header><div class="scroll-progress-container"><div class="scroll-progress-bar" id="scroll-progress-bar"></div></div><a href="../../" class="btn-go-home"><div class="purecore-logo">&nbsp;</div></a><div class="hamburger hamburger--spring-r"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div><div id="nav-main" class="nav-main" style="display: none;"><ul><li><a href="../../" class="home-page-link">Home</a></li><li><a href="../../about/" class="about-page-link">About</a></li><li class="social-icon-links-in-menu"><a href="https://github.com/padurean" title="GitHub"><img class="github-icon-link" alt="GitHub" src="../../images/github-square-white.svg"></a><a href="https://twitter.com/vpadure" title="Twitter"><img class="twitter-icon-link" alt="Twitter" src="../../images/twitter-square-white.svg"></a><a href="https://www.linkedin.com/in/vpadure/" title="LinkedIn"><img class="linkedin-icon-link" alt="LinkedIn" src="../../images/linkedin-white.svg"></a><a href="https://www.facebook.com/vpadurean" title="Facebook"><img class="facebook-icon-link" alt="Facebook" src="../../images/facebook-square-white.svg"></a></li></ul></div></header><article class="full-post"><header class="post-header"><img class="post-thumbnail" src="../../images/gopher-side_color.png"><h1 id="post-title" class="post-title">Display tables in the CLI using just the Go standard library</h1><div class="post-date-wrapper invisible"><span class="post-date-icon-wrapper">&nbsp;</span> <time id="post-date" class="post-date" datetime="2020-08-12T15:40:55+03:00">2020-08-12T15:40:55+03:00</time> <span class="post-ago">&nbsp;</span></div><img class="post-cover hidden" src=""></header><section id="post-body" class="post-body"><h1 id="☁-problem"><span class="orange">☁</span> Problem</h1><p>Printing some data to the CLI, as a table, usually requires one of the following</p><ul><li>fiddling with spaces and tabs to evenly align data and dealing with various edge cases, long strings etc.</li><li>using a third-party, which can result in a very good-looking results, except that sometimes you might not want bringing in an extra-dependency just for that</li></ul><h1 id="⚑-goal"><span class="yelloworange">⚑</span> Goal</h1><p>Printing tables to the CLI without fiddling with spaces, tabs etc. AND without using a third-party library.</p><h1 id="☂-solution"><span class="green">☂</span> Solution</h1><p>Use the <a href="https://golang.org/pkg/text/tabwriter/"><code>test/tabwriter</code> package</a> provided by <a href="https://golang.org/pkg/#stdlib">the Go standard library</a> and create a custom function around it that suits almost any scenario that doesn't require sophisticated output.</p><h1 id="☵-example"><span class="violet">☵</span> Example</h1><h2 id="boilerplate">Boilerplate</h2><p>Create a folder named <code>print-cli-tables</code>, <code>cd</code> into it and initialize it as a Go module by running <code>go mod init print-cli-tables</code>.</p><p>Then create the following tree of folders and files:</p><pre><code>printer
+   - table_printer.go
+main.go</code></pre><h2 id="code">Code</h2><h3 id="printertable_printergo"><u><i><code>printer/table_printer.go</code></i></u></h3><pre><code class="language-go">package printer
+
+import (
+  "fmt"
+  "io"
+  "strconv"
+  "strings"
+  "text/tabwriter"
+)
+
+// PrintTable ...
+func PrintTable(
+  w io.Writer,
+  caption string,
+  cols []string,
+  getNextRows func() (bool, [][]string),
+) {
+  nbCols := len(cols)
+  if nbCols == 0 {
+    return
+  }
+  if len(caption) &gt; 0 {
+    fmt.Fprintf(w, "%s:\n\n", caption)
+  }
+  tw := tabwriter.NewWriter(w, 0, 0, 2, ' ', 0)
+  colSep := "\t"
+  header := append([]string{"#"}, cols...)
+  fmt.Fprintf(tw, "%s%s\n", strings.Join(header, colSep), colSep)
+  var sb strings.Builder
+  i := 1
+  hasMore, rows := getNextRows()
+  for hasMore {
+    for iRow, row := range rows {
+      nbRowCols := len(row)
+      for j := 0; j &lt; nbCols; j++ {
+        if j &lt; nbRowCols {
+          sb.WriteString(row[j])
+        }
+        sb.WriteString(colSep)
+      }
+      iRowStr := ""
+      if iRow == 0 {
+        iRowStr = strconv.Itoa(i)
+      }
+      fmt.Fprintf(tw, "%s%s%s\n", iRowStr, colSep, sb.String())
+      sb.Reset()
+    }
+    i++
+    hasMore, rows = getNextRows()
+  }
+  _ = tw.Flush()
+}</code></pre><hr><h3 id="maingo"><u><i><code>main.go</code></i></u></h3><pre><code class="language-go">package main
+
+import (
+  "fmt"
+  "print-cli-tables/printer"
+  "strings"
+)
+
+type permission struct {
+  database         string
+  permission       string
+  tablePermissions map[string]string
+}
+
+type user struct {
+  username    string
+  email       string
+  permissions []*permission
+}
+
+var users = []*user{
+  &amp;user{
+    username: "user1",
+    email:    "user1@domain.com",
+    permissions: []*permission{
+      &amp;permission{
+        database: "db1",
+        tablePermissions: map[string]string{
+          "table1": "RW",
+          "table2": "R",
+        },
+      },
+      &amp;permission{
+        database:   "db2",
+        permission: "admin",
+      },
+    },
+  },
+  &amp;user{
+    username: "user2",
+    email:    "user2@domain.com",
+    permissions: []*permission{
+      &amp;permission{
+        database:   "db2",
+        permission: "RW",
+      },
+      &amp;permission{
+        database: "db3",
+        tablePermissions: map[string]string{
+          "table3": "R",
+        },
+      },
+    },
+  },
+  &amp;user{
+    username: "superadmin",
+    email:    "superadmin@domain.com",
+    permissions: []*permission{
+      &amp;permission{
+        database:   "*",
+        permission: "admin",
+      },
+    },
+  },
+  &amp;user{
+    username: "inactiveuser",
+    email:    "inactiveuser@domain.com",
+  },
+}
+
+func main() {
+  cols := []string{"User", "Email", "Database", "Table", "Permissions"}
+  i := 0
+  strBuilder := &amp;strings.Builder{}
+  printer.PrintTable(
+    strBuilder, // or just pass os.Stdout
+    fmt.Sprintf("%d user(s)", len(users)),
+    cols,
+    func() (bool, [][]string) {
+      if len(users)-1 &lt; i {
+        return false, nil
+      }
+      u := users[i]
+      i++
+      return true, userToRows(u)
+    })
+  fmt.Print(strBuilder.String())
+}
+
+func userToRows(u *user) [][]string {
+  var rows [][]string
+  if len(u.permissions) == 0 {
+    return [][]string{[]string{u.username, u.email, "-", "-", "-"}}
+  }
+  rows = make([][]string, 0, len(u.permissions))
+  for _, ps := range u.permissions {
+    if len(ps.tablePermissions) == 0 {
+      rows = append(rows, []string{"", "", ps.database, "*", ps.permission})
+      continue
+    }
+    first := false
+    for t, p := range ps.tablePermissions {
+      row := []string{"", "", "", t, p}
+      if first == false {
+        row[2] = ps.database
+        first = true
+      }
+      rows = append(rows, row)
+    }
+  }
+  rows[0][0] = u.username
+  rows[0][1] = u.email
+  return rows
+}</code></pre><h3 id="reading-and-running-the-code">Reading and running the code</h3><p>In the code above one can observe that the <code>PrintTable</code> functions is designed so that it takes the following params:</p><ul><li>An <code>io.Writer</code> which can be, for example, <code>os.Stdout</code> if one wishes to print directly to the CLI or <code>strings.Builder</code> if one wants to do something else with the output.</li><li>A caption for the table</li><li>The table heading (i.e. column names)</li><li>A callback function which returns a <code>bool</code> indicating whether there are more rows or not, a two-dimensional <code>array</code> of <code>string</code>s which holds the next(s) rows. The reason for the two-dimensionality of it is that one might need to print multiple rows for a single data item, as can be seen in the example code and data from <code>main.go</code> where the <code>userToRows</code> function returns more than one row for one user (i.e. multiple permissions for databases and tables).</li></ul><p><strong>NOTE:</strong> Basically the <code>PrintTable</code> only deals with <code>arrays</code> of <code>string</code>s delegating to the caller the responsability of converting the data to arrays of strings and of deciding when the table ends (e.g. by keeping a counter while feeding the data through the callback).</p><p>Running the code will show the following output:</p><pre><code class="language-console">➤ go run main.go
+4 user(s):
+
+#  User          Email                    Database  Table   Permissions
+1  user1         user1@domain.com         db1       table1  RW
+                                                    table2  R
+                                          db2       *       admin
+2  user2         user2@domain.com         db2       *       RW
+                                          db3       table3  R
+3  superadmin    superadmin@domain.com    *         *       admin
+4  inactiveuser  inactiveuser@domain.com  -         -       -</code></pre><p><br><br></p><h3 id="thanks-for-reading-this-☺"><span class="green">Thanks for reading this! ☺</span></h3></section></article><section id="tags-section" class="tags-section"><div id="share-btns-container" class="share-btns-container"><a id="btn-share-twitter" href="https://twitter.com/share?url=https://purecore.ro/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/&amp;text=%0ADisplay%20tables%20in%20the%20CLI%20using%20just%20the%20Go%20standard%20library%0A&amp;hashtags=Go%2CCLI" target="_blank" title="Share on Twitter"><img src="../../images/share-twitter.svg" alt="Twitter"> </a><a id="btn-share-facebook" href="https://www.facebook.com/sharer.php?u=https://purecore.ro/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/" target="_blank" title="Share on Facebook"><img src="../../images/share-facebook.svg" alt="Facebook"> </a><a id="btn-share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://purecore.ro/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/" target="_blank" title="Share on LinkedIn"><img src="../../images/share-linkedin.svg" alt="LinkedIn"> </a><a id="btn-share-copy-link" href="" target="_blank" title="Copy link to clipboard"><img src="../../images/share-link.svg" alt="Copy Link"> </a><span id="copy-link-tooltip" class="copy-link-tooltip" style="display: none;">copied</span></div><div id="tags-container" class="tags-container on-full-post"><a href="../../tags/?tags=Go"><span class="grey-text">#</span>Go</a> <a href="../../tags/?tags=CLI"><span class="grey-text">#</span>CLI</a></div><div class="clear-floats">&nbsp;</div></section><section id="page-nav" class="page-nav invisible"><a id="btn-older-post" class="btn with-icon left disabled" href="#"><span class="arrow-icon">&nbsp;</span> Older</a> <a id="btn-newer-post" class="btn with-icon right disabled" href="#">Newer <span class="arrow-icon">&nbsp;</span></a></section><section id="fb-comments-section" class="fb-comments-section"><div class="fb-comments" data-href="https://purecore.ro/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/" data-numposts="10"></div><div id="fb-root"></div><script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=137003210502238&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script></section><section id="related-and-newer-posts" class="related-and-newer-posts"><input type="hidden" name="tags" id="tags-input" value="Go,CLI"> <input type="hidden" name="post-id" id="post-id-input" value="2020-08-12-display-tables-in-CLI-using-Go-standard-library"><section id="other-post-summary-template-section" class="other-post-summary-template-section"><article class="post-summary"><a href="" class="post-link"><img class="post-thumbnail" src=""></a><a href="" class="post-link"><h1 class="post-title"></h1></a><div class="post-date-wrapper invisible"><span class="post-date-icon-wrapper">&nbsp;</span> <time class="post-date" datetime=""></time> <span class="post-ago"></span></div><a href="" class="post-link"><img class="post-cover" src=""></a><p class="post-description"></p><a class="post-read-more" href="#">▸ read more</a><div class="post-tags tags-container"></div><div class="clear-floats">&nbsp;</div></article></section><section id="related-posts" class="related-posts" style="display: none;"><header><span class="grey-text">▼</span> Related</header></section><section id="newest-posts" class="newest-posts" style="display: none;"><header><span class="grey-text">▼</span> Latest</header></section></section><div class="clear-floats">&nbsp;</div><footer><a href="../../" class="purecore-logo btn-go-home">&nbsp;</a> <span id="year-placeholder">2100</span> &nbsp;&nbsp; <a rel="alternate" type="application/rss+xml" href="https://purecore.ro/feed/rss.xml" class="subscribe-via-rss" title="Subscribe via RSS"><img src="../../images/rss.svg" alt="Subscribe via RSS"></a><div class="social-icon-links"><a href="https://github.com/padurean" title="GitHub"><img class="github-icon-link" alt="GitHub" src="../../images/github-square.svg"></a><a href="https://twitter.com/vpadure" title="Twitter"><img class="twitter-icon-link" alt="Twitter" src="../../images/twitter-square.svg"></a><a href="https://www.linkedin.com/in/vpadure/" title="LinkedIn"><img class="linkedin-icon-link" alt="LinkedIn" src="../../images/linkedin.svg"></a><a href="https://www.facebook.com/vpadurean" title="Facebook"><img class="facebook-icon-link" alt="Facebook" src="../../images/facebook-square.svg"></a></div><div class="clear-floats">&nbsp;</div><div class="made-with">made with <a href="https://github.com/padurean/markedista/"><span class="markedista-logotype">λλ</span><span class="markedista-logotext">arkedista</span></a></div></footer><script type="text/javascript" src="../../bundle-post.min.js?1"></script></body></html>
