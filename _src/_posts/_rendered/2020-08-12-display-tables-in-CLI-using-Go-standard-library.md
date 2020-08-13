@@ -4,7 +4,8 @@
   "title": "Display tables in the CLI using just the Go standard library",
   "description": "Print data as minimalist plain-text tables using just the text/tabwriter package, without any third-party library",
   "tags": [ "Go", "CLI" ],
-  "thumbnail": "images/gopher-side_color.png"
+  "thumbnail": "images/gopher-side_color.png",
+  "cover": "images/posts/2020-08-12-display-tables-in-CLI-using-Go-standard-library/cover.png"
 }
 ---
 
