@@ -13,13 +13,13 @@
 
 Printing some data to the CLI, as a table, usually requires one of the following
 
-- fiddling with spaces and tabs to evenly align data and dealing with various edge
+- [ ] fiddling with spaces and tabs to evenly align data and dealing with various edge
 cases, long strings etc.
-- using a [third-party library](https://github.com/olekukonko/tablewriter), which can have the benefit of nice-looking results, but at the cost of bringing in an extra-dependency just for that
+- [ ] using a [third-party library](https://github.com/olekukonko/tablewriter), which can have the benefit of nice-looking results, but at the cost of bringing in an extra-dependency just for that
 
 # <span class="yelloworange">&#9873;</span> Goal
 
-Printing tables to the CLI without fiddling with spaces, tabs etc. AND without using a third-party library.
+- [x] Printing tables to the CLI without fiddling with spaces, tabs etc. AND without using a third-party library.
 
 # <span class="green">&#9730;</span> Solution
 

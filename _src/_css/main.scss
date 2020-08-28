@@ -9,6 +9,8 @@ $shadowColor: #cfcbc9;
 $green: #01B27D;
 $blue: #007CC2;
 $yelloworange: #FFC502;
+$darkerOrange: #e03c00;
+$darkerGreen: #00a372;
 
 $borderRadiusLarge: 6px;
 $borderRadiusSmall: 3px;
@@ -134,13 +136,13 @@ hr {
 li.todo-item {
   list-style-type: none;
   margin-left: -1.5em;
-  color: $accentColor;
+  color: $darkerOrange;
 }
 li.todo-item.no-p {
   margin-left: -2em;
 }
 li.todo-item.done {
-  color: $green;
+  color: $darkerGreen;
 }
 table {
   border-spacing: 0;

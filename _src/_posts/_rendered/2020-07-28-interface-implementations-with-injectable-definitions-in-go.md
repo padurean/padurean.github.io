@@ -11,7 +11,7 @@
 
 # <span class="orange">&#9729;</span> Problem
 
-Writing unit tests for your code is not simple, especially if code coverage as
+- [ ] Writing unit tests for your code is not simple, especially if code coverage as
 close to 100% as possible is aimed for.
 
 # <span class="yelloworange">&#9873;</span> Goal
