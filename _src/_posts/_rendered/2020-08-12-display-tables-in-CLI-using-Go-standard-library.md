@@ -229,7 +229,7 @@ to the CLI or `strings.Builder` if one wants to do something else with the outpu
 - A caption for the table
 - The table heading (i.e. column names)
 - A callback function which returns a `bool` indicating whether there are more rows or not,
-a two-dimensional `array` of `string`s which holds the next(s) rows. The reason for the
+a two-dimensional `array` of `string`s which holds the next row(s). The reason for the
 two-dimensionality of it is that one might need to print multiple rows for a single data item,
 as can be seen in the example code and data from `main.go` where the `userToRows` function returns
 more than one row for one user (i.e. multiple permissions for databases and tables).
