@@ -1,7 +1,16 @@
 const fs = require('fs')
 const log = require('loglevel')
 log.setLevel(log.levels.WARN/*DEBUG*/)
+
 const marked = require('marked')
+const renderer = {
+  // override checkbox rendering
+  checkbox(checked) {
+    return `<input type="checkbox" ${checked ? 'checked' : ''}>`;
+  }
+};
+marked.use({ renderer });
+
 const frontmatter = require('yaml-front-matter')
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
