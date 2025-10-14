@@ -57,7 +57,8 @@ a:hover, a:hover > .post-title {
 }
 
 code, code.hljs {
-  font-size: 1.1em;
+  font-size: .925em;
+  line-height: 1.275em;
 }
 .hljs {
   border-radius: $borderRadiusLarge;
