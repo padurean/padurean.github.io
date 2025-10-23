@@ -48,7 +48,7 @@ const config = {
   logoImgFileName: 'logo/purecore-logotype.png',
   enc: 'utf8',
   ignoreFiles: [ '.gitkeep' ],
-  postsPerPage: 3,
+  postsPerPage: 10,
   minifyHtmlOpts: {
     removeComments: true,
     collapseWhitespace: true
