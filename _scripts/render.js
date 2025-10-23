@@ -62,9 +62,9 @@ const config = {
     linkedin: 'vpadure'
   },
   cssFiles: {
-    main: { name: 'bundle-main.min.css', version: 1 },
-    post: { name: 'bundle-post.min.css', version: 1 },
-    postWithGallery: { name: 'bundle-post-with-gallery.min.css', version: 1 }
+    main: { name: 'bundle-main.min.css', version: 2 },
+    post: { name: 'bundle-post.min.css', version: 2 },
+    postWithGallery: { name: 'bundle-post-with-gallery.min.css', version: 2 }
   },
   jsFiles: {
     main: { name: 'bundle-main.min.js', version: 1 },
