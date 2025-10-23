@@ -4,7 +4,7 @@
         <title>PureCore.ro</title>
         <link>https://purecore.ro/</link>
         <description>Static Blog Generator based on npm, marked and jsdom</description>
-        <lastBuildDate>Sat, 27 Sep 2025 13:40:19 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Oct 2025 20:26:48 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Markedista</generator>
         <image>
@@ -17,6 +17,15 @@
         <category>Static Blog Generator</category>
         <category>Markdown</category>
         <atom:link href="https://purecore.ro/feed/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[GoSMig: a tiny, type-safe way to build your own SQL database migration CLI in Go]]></title>
+            <link>https://purecore.ro/posts/2025-10-23-gosmig-sql-database-migrations-written-in-go/</link>
+            <guid>https://purecore.ro/posts/2025-10-23-gosmig-sql-database-migrations-written-in-go/</guid>
+            <pubDate>Thu, 23 Oct 2025 20:07:19 GMT</pubDate>
+            <description><![CDATA[Write SQL database migrations in Go with strong typing, zero non-stdlib dependencies, and build your own migration CLI with minimal boilerplate. database/sql and sqlx supported out of the box.]]></description>
+            <content:encoded><![CDATA[Write SQL database migrations in Go with strong typing, zero non-stdlib dependencies, and build your own migration CLI with minimal boilerplate. database/sql and sqlx supported out of the box.]]></content:encoded>
+            <author>padureanvalentin@yahoo.com (Valentin Padurean)</author>
+        </item>
         <item>
             <title><![CDATA[COVID-19 pandemic: Visual data explorer using Python and Streamlit]]></title>
             <link>https://purecore.ro/posts/2021-12-31-covid-pandemic-streamlit-visual-data-explorer/</link>
