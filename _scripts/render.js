@@ -195,11 +195,6 @@ function renderMarkdownAndUpdateDom(logPrefix, meta, document, elements) {
   elements.postIdInputElem.setAttribute('value', meta.name)
   log.info(`${logPrefix} - Rendering markdown and injecting HTML ...`.info)
   elements.bodyElem.innerHTML = marked.parse(meta.__content)
-  const siteUrlForFbComments = !meta.gallery ?
-    state.dom.siteUrlForFbComments :
-    state.dom.siteUrlForFbCommentsPostPageWithGallery
-  elements.fbCommentsElem.setAttribute(
-    'data-href', `${siteUrlForFbComments}${config.htmlOutputDirPath}/${meta.name}/`)
 }
 
 function disableBtn(btnElem) {
@@ -809,7 +804,7 @@ function selectElementsForPage(doc) {
   }
 }
 
-function selectElementsForPostPage(document, fbCommentsElem) {
+function selectElementsForPostPage(document) {
   return {
     headElem: document.querySelector('head'),
     metaDescriptionElem: document.querySelector('meta[name="description"]'),
@@ -839,7 +834,6 @@ function selectElementsForPostPage(document, fbCommentsElem) {
     tagsElem: document.querySelector('#tags-container'),
     tagsInputElem: document.querySelector('#tags-input'),
     postIdInputElem: document.querySelector('#post-id-input'),
-    fbCommentsElem: fbCommentsElem
   }
 }
 
@@ -898,9 +892,6 @@ function prepareDom() {
     `../../${config.jsFiles.post.name}?${config.jsFiles.post.version}`,
     true)
   const documentPostPage = documentDomPostPage.window.document
-  const fbCommentsElem = documentPostPage.querySelector('.fb-comments')
-  let siteUrlForFbComments = fbCommentsElem.getAttribute('data-href')
-  siteUrlForFbComments += (siteUrlForFbComments.endsWith('/') ? '' : '/')
   documentPostPage.querySelector('#other-post-summary-template-section').append(JSDOM.fragment(postSummaryHtml))
 
   const documentDomPostPageWithGallery = prepareJsdom(
@@ -913,9 +904,6 @@ function prepareDom() {
     `../../${config.jsFiles.postWithGallery.name}?${config.jsFiles.postWithGallery.version}`,
     true)
   const documentPostPageWithGallery = documentDomPostPageWithGallery.window.document
-  const fbCommentsElemPostPageWithGallery = documentPostPageWithGallery.querySelector('.fb-comments')
-  let siteUrlForFbCommentsPostPageWithGallery = fbCommentsElemPostPageWithGallery.getAttribute('data-href')
-  siteUrlForFbCommentsPostPageWithGallery += (siteUrlForFbCommentsPostPageWithGallery.endsWith('/') ? '' : '/')
   documentPostPageWithGallery.querySelector('#other-post-summary-template-section').append(JSDOM.fragment(postSummaryHtml))
 
   state.dom = {
@@ -937,12 +925,10 @@ function prepareDom() {
     postSummaryHtml: postSummaryHtml,
 
     documentDomPostPage: documentDomPostPage,
-    siteUrlForFbComments: siteUrlForFbComments,
-    elementsPostPage: selectElementsForPostPage(documentPostPage, fbCommentsElem),
+    elementsPostPage: selectElementsForPostPage(documentPostPage),
 
     documentDomPostPageWithGallery: documentDomPostPageWithGallery,
-    siteUrlForFbCommentsPostPageWithGallery: siteUrlForFbCommentsPostPageWithGallery,
-    elementsPostPageWithGallery: selectElementsForPostPage(documentPostPageWithGallery, fbCommentsElemPostPageWithGallery)
+    elementsPostPageWithGallery: selectElementsForPostPage(documentPostPageWithGallery)
   }
 }
 

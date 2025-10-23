@@ -48,24 +48,29 @@
     <a id="btn-older-post" class="btn with-icon left disabled" href="#"><span class="arrow-icon">&nbsp;</span> Older</a>
     <a id="btn-newer-post" class="btn with-icon right disabled" href="#">Newer <span class="arrow-icon">&nbsp;</span></a>
   </section>
-  <section id="fb-comments-section" class="fb-comments-section">
-    <!-- BEGIN Facebook comments plugin:
-          replace these with your own (also the js.src value which contains your app ID)
-    -->
-    <div class="fb-comments" data-href="https://purecore.ro" data-numposts="10">
-    </div>
-    <div id="fb-root"></div>
-    <script>
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=137003210502238&autoLogAppEvents=1';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+
+  <section id="giscus-comments-section" class="giscus-comments-section">
+  <!-- BEGIN giscus comments plugin section -->
+    <div class="giscus"></div>
+    <script src="https://giscus.app/client.js"
+      data-repo="padurean/padurean.github.io"
+      data-repo-id="MDEwOlJlcG9zaXRvcnkyMDAxMzM4Mw=="
+      data-category="Announcements"
+      data-category-id="DIC_kwDOATFhR84Cv9Q8"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="light"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
     </script>
-    <!-- END Facebook comments plugin -->
+  <!-- END giscus comments plugin section -->
   </section>
+
   <section id="related-and-newer-posts" class="related-and-newer-posts">
     <input type="hidden" name="tags" id="tags-input" value="">
     <input type="hidden" name="post-id" id="post-id-input" value="">
