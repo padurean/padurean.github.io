@@ -199,7 +199,7 @@ Examples:
 
 - Apply all pending migrations:
 
-    `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`up`**
+    `./migrate <db_url>` **`up`**
 
     ```console
     [x] Applied migration version 1
@@ -209,7 +209,7 @@ Examples:
 
 - Apply only the next migration:
 
-  `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`up-one`**
+  `./migrate <db_url>` **`up-one`**
 
   ```console
   [x] Applied migration version 3
@@ -218,7 +218,7 @@ Examples:
 
 - Roll back the latest migration:
 
-  `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`down`**
+  `./migrate <db_url>` **`down`**
 
   ```bash
   [x]-->[ ] Rolled back migration version 3
@@ -226,7 +226,7 @@ Examples:
 
 - Show status of all migrations:
 
-  `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`status`**
+  `./migrate <db_url>` **`status`**
 
   ```console
   VERSION     STATUS
@@ -237,7 +237,7 @@ Examples:
 
 - Show current DB version:
 
-  `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`version`**
+  `./migrate <db_url>` **`version`**
 
   ```console
   Current database version:
