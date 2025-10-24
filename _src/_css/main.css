@@ -431,6 +431,11 @@ body > footer .markedista-logotext {
   border-radius: 3px;
 }
 
+.post-summary > a.post-read-more {
+  color: orangered;
+  text-shadow: 0 1px 1px #cfcbc9;
+}
+
 .full-post {
   margin-bottom: 3.5em;
 }

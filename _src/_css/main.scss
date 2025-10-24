@@ -381,6 +381,10 @@ body > footer .markedista-logotext {
   box-shadow: 0 2px 2px $shadowColor;
   border-radius: $borderRadiusSmall;
 }
+.post-summary > a.post-read-more {
+  color: $accentColor;
+  text-shadow: 0 1px 1px $shadowColor;
+}
 .full-post {
   margin-bottom: 3.5em;
 }
