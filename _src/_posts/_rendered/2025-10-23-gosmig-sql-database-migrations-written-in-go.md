@@ -11,18 +11,18 @@
 
 ---
 
-If you’ve ever wanted a migration tool that feels like Go—small, explicit, type-safe, and database-agnostic—GoSMig hits a sweet spot. It doesn’t ship a full-featured binary. Instead, it gives you a minimal, well-typed core you can embed to build your own migration CLI with almost no boilerplate.
+If you’ve ever wanted a migration tool that feels like Go — small, explicit, type-safe, and database-agnostic — [**GoSMig**](https://github.com/padurean/gosmig) hits a sweet spot. It doesn’t ship a full-featured binary. Instead, it gives you a minimal, well-typed core you can embed to build your own migration CLI with almost no boilerplate.
 
-- Zero non-stdlib deps (only golang.org/x/term for pager support in status)
-- Works with database/sql or sqlx (and anything that implements a tiny interface)
+- Zero non-stdlib deps (only [golang.org/x/term](https://pkg.go.dev/golang.org/x/term) for pager support in status)
+- Works with [database/sql](https://pkg.go.dev/database/sql) or [sqlx](https://github.com/jmoiron/sqlx) (and anything that implements a tiny interface)
 - Transactional and non-transactional migrations
-- Built-in commands: up, up-one, down, status, version
+- Built-in commands: **`up`**, **`up-one`**, **`down`**, **`status`**, **`version`**
 - Strong validation, timeouts, and clean error messages
-- PostgreSQL integration tests and 100% test coverage badges to back it up
+- [PostgreSQL](https://www.postgresql.org) integration tests and 100% test coverage
 
 Repo: <https://github.com/padurean/gosmig>
 
-Note: GoSMig is a library, not a binary. You write a 30–60 line main() to define migrations and wire in your DB connection, and GoSMig handles the CLI parsing and command behavior for you.
+Note: [**GoSMig**](https://github.com/padurean/gosmig) is a library, not a binary. You write a 30–60 line `main()` to define migrations and wire in your DB connection, and [**GoSMig**](https://github.com/padurean/gosmig) handles the CLI parsing and command behavior for you.
 
 ## Why another migrations tool?
 
@@ -33,19 +33,19 @@ I wanted something that:
 - Lets me choose transactional or non-transactional migrations per step.
 - Gives me a small, composable core I can embed in any service.
 
-GoSMig is basically “bring your own CLI wrapper,” with a dead-simple API that stays out of your way.
+[**GoSMig**](https://github.com/padurean/gosmig) is basically “bring your own CLI wrapper,” with a dead-simple API that stays out of your way.
 
 ## TL;DR install
 
-```bash
+```console
 go get github.com/padurean/gosmig
 ```
 
 Go 1.25+ recommended.
 
-## A 60-second example (database/sql)
+## A 60-second example ([database/sql](https://pkg.go.dev/database/sql))
 
-Create a tiny main.go that defines migrations and a DB connector. You’ll end up with a custom binary like ./migrate.
+Create a tiny `main.go` that defines migrations and a DB connector. You’ll end up with a custom binary like `./migrate`.
 
 ```go
 package main
@@ -123,13 +123,13 @@ func connect(url string, timeout time.Duration) (*sql.DB, error) {
 
 Run it:
 
-```fish
+```console
 go run . postgres://user:pass@localhost:5432/dbname?sslmode=disable up
 ```
 
-## Using sqlx (optional)
+## Using [sqlx](https://github.com/jmoiron/sqlx) (optional)
 
-Prefer sqlx? Swap the DB type and define aliases to keep signatures tidy:
+Prefer [sqlx](https://github.com/jmoiron/sqlx)? Swap the DB type and define aliases to keep signatures tidy:
 
 ```go
 package main
@@ -183,63 +183,81 @@ func connectSQLX(url string, timeout time.Duration) (*sqlx.DB, error) {
 }
 ```
 
-Tip: The provided `gosmig.UpDownSQL` works for both database/sql and sqlx because it operates on `*sql.Tx`.
+Tip: The provided `gosmig.UpDownSQL` works for both [database/sql](https://pkg.go.dev/database/sql) and [sqlx](https://github.com/jmoiron/sqlx) because it operates on `*sql.Tx`.
 
 ## CLI commands you get “for free”
 
-Once you wire up main(), GoSMig handles argument parsing and runs the command:
+Once you wire up `main()`, [**GoSMig**](https://github.com/padurean/gosmig) handles argument parsing and runs the command:
 
-- up — apply all pending migrations
-- up-one — apply only the next migration
-- down — roll back the most recent applied migration
-- status — show all versions and whether they’re applied or pending (uses a pager when writing to stdout)
-- version — print the current database version
+- **`up`** — apply all pending migrations
+- **`up-one`** — apply only the next migration
+- **`down`** — roll back the most recent applied migration
+- **`status`** — show all versions and whether they’re applied or pending (uses a pager when writing to stdout)
+- **`version`** — print the current database version
 
 Examples:
 
-```console
-# apply everything
-./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable" up
-[x] Applied migration version 1
-[x] Applied migration version 2
-2 migration(s) applied
+- Apply all pending migrations:
 
-# apply just the next one
-./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable" up-one
-[x] Applied migration version 3
-1 migration(s) applied
+    `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`up`**
 
-# roll back the latest
-./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable" down
-[x]-->[ ] Rolled back migration version 3
+    ```console
+    [x] Applied migration version 1
+    [x] Applied migration version 2
+    2 migration(s) applied
+    ```
 
-# status (paginates if long and writing to stdout)
-./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable" status
-VERSION     STATUS
-3           [ ] PENDING
-2           [x] APPLIED
-1           [x] APPLIED
+- Apply only the next migration:
 
-# current db version
-./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable" version
-Current database version:
-2
-```
+  `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`up-one`**
+
+  ```console
+  [x] Applied migration version 3
+  1 migration(s) applied
+  ```
+
+- Roll back the latest migration:
+
+  `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`down`**
+
+  ```bash
+  [x]-->[ ] Rolled back migration version 3
+  ```
+
+- Show status of all migrations:
+
+  `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`status`**
+
+  ```console
+  VERSION     STATUS
+  3           [ ] PENDING
+  2           [x] APPLIED
+  1           [x] APPLIED
+  ```
+
+- Show current DB version:
+
+  `./migrate "postgres://user:pass@localhost:5432/db?sslmode=disable"` **`version`**
+
+  ```console
+  Current database version:
+  2
+  ```
 
 ## Internals in a nutshell
 
-GoSMig uses tiny, generic interfaces so anything that looks like database/sql can plug in:
+[**GoSMig**](https://github.com/padurean/gosmig) uses tiny, generic interfaces so anything that looks like [database/sql](https://pkg.go.dev/database/sql) can plug in:
 
-- DBRow, DBResult mirror stdlib shapes
-- DB and TX allow QueryRowContext/ExecContext/BeginTx/Commit/Rollback
+- `DBRow`, `DBResult` mirror stdlib shapes
+- `DB` and `TX` allow `QueryRowContext`/`ExecContext`/`BeginTx`/`Commit`/`Rollback`
 - Generics tie it together without reflection or magic
 
 There are two migration styles:
 
 - Transactional (`UpDown` with `*sql.Tx`) — best default; runs inside a transaction
-- Non-transactional (`UpDownNoTX` with `*sql.DB` or your DB type) — for things like PostgreSQL’s CREATE INDEX CONCURRENTLY
+- Non-transactional (`UpDownNoTX` with `*sql.DB` or your DB type) — for things like [PostgreSQL](https://www.postgresql.org)’s `CREATE INDEX CONCURRENTLY`
 
-Migrations are validated at startup (unique, positive versions; both Up and Down present). A lightweight `gosmig` table tracks applied versions:
+Migrations are validated at startup (unique, positive versions; both `Up` and `Down` present). A lightweight `gosmig` table tracks applied versions:
 
 ```sql
 CREATE TABLE gosmig (
@@ -248,28 +266,28 @@ CREATE TABLE gosmig (
 );
 ```
 
-Operations use a timeout (default 10s; configurable via `&gosmig.Config{Timeout: ...}`), and GoSMig defends against concurrent version jumps during a migration with clear error messages.
+Operations use a timeout (default `10s`; configurable via `&gosmig.Config{Timeout: ...}`), and [**GoSMig**](https://github.com/padurean/gosmig) defends against concurrent version jumps during a migration with clear error messages.
 
 ## Concurrency: keep it single-writer
 
 Like any migration system, don’t run multiple writers at once. Use your DB’s advisory lock (or equivalent):
 
-- PostgreSQL: `pg_try_advisory_lock` / `pg_advisory_unlock`
-- MySQL/MariaDB: `GET_LOCK` / `RELEASE_LOCK`
-- SQL Server: `sp_getapplock` / `sp_releaseapplock`
-- SQLite: file lock or a serialized `BEGIN EXCLUSIVE` strategy
+- [PostgreSQL](https://www.postgresql.org): `pg_try_advisory_lock` / `pg_advisory_unlock`
+- [MySQL](https://www.mysql.com)/[MariaDB](https://mariadb.org): `GET_LOCK` / `RELEASE_LOCK`
+- [SQL Server](https://www.microsoft.com/en-us/sql-server): `sp_getapplock` / `sp_releaseapplock`
+- [SQLite](https://www.sqlite.org): file lock or a serialized `BEGIN EXCLUSIVE` strategy
 
-There’s a PostgreSQL example linked from the repo’s examples branch.
+There’s a [PostgreSQL](https://www.postgresql.org) example linked from the repo’s examples branch.
 
 ## Tested: CI, coverage, and Docker
 
-- PostgreSQL integration tests
-- 100% coverage badge
+- [PostgreSQL](https://www.postgresql.org) integration tests
+- 100% coverage
 - Makefile for local workflows
 
-Some handy commands (fish):
+Some handy commands:
 
-```fish
+```console
 # run tests locally
 make test
 
@@ -285,7 +303,7 @@ make build
 make build-only
 ```
 
-## When to use GoSMig
+## When to use [**GoSMig**](https://github.com/padurean/gosmig)
 
 Use it if you:
 
@@ -301,4 +319,4 @@ If you want a standalone, batteries-included CLI, you can still build one easily
 - Repo: <https://github.com/padurean/gosmig>
 - Examples: <https://github.com/padurean/gosmig/tree/examples>
 
-If you try GoSMig, I’d love your feedback — PRs and issues are welcome.
+If you try [**GoSMig**](https://github.com/padurean/gosmig), I’d love your feedback — PRs and issues are welcome.

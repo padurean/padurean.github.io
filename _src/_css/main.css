@@ -135,7 +135,7 @@ h6 {
 
 .post-body p {
   margin-top: 0;
-  margin-bottom: 0.75em;
+  margin-bottom: 1em;
 }
 
 hr {
@@ -453,7 +453,7 @@ body > footer .markedista-logotext {
 }
 
 .full-post .post-body > h2 {
-  margin-top: 1.5em;
+  margin-top: 2em;
   padding-bottom: 0.25em;
   border-bottom: 1px solid #f3f3fc;
   color: #666666;
