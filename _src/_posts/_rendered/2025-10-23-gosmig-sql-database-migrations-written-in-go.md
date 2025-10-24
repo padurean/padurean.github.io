@@ -249,7 +249,7 @@ Examples:
 [**GoSMig**](https://github.com/padurean/gosmig) uses tiny, generic interfaces so anything that looks like [database/sql](https://pkg.go.dev/database/sql) can plug in:
 
 - `DBRow`, `DBResult` mirror stdlib shapes
-- `DB` and `TX` allow `QueryRowContext`/`ExecContext`/`BeginTx`/`Commit`/`Rollback`
+- `DB` and `TX` allow `QueryRowContext` / `ExecContext` / `BeginTx` / `Commit` / `Rollback`
 - Generics tie it together without reflection or magic
 
 There are two migration styles:
@@ -316,7 +316,7 @@ If you want a standalone, batteries-included CLI, you can still build one easily
 
 ## Links
 
-- Repo: <https://github.com/padurean/gosmig>
-- Examples: <https://github.com/padurean/gosmig/tree/examples>
+- [GitHub Repo](https://github.com/padurean/gosmig)
+- [Examples](https://github.com/padurean/gosmig/tree/examples)
 
 If you try [**GoSMig**](https://github.com/padurean/gosmig), I’d love your feedback — PRs and issues are welcome.
