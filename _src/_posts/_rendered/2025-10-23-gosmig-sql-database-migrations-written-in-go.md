@@ -312,7 +312,7 @@ Use it if you:
 - Need explicit control over transactions vs. no-TX operations
 - Like small tools you can reason about quickly
 
-If you want a standalone, batteries-included CLI, you can still build one easily with GoSMig—but you’ll own the wrapper (which is usually a small and healthy amount of code).
+If you want a standalone, batteries-included CLI, you can still build one easily with [**GoSMig**](https://github.com/padurean/gosmig) — but you’ll own the wrapper (which is usually a small and healthy amount of code).
 
 ## Links
 
