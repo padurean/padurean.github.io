@@ -433,7 +433,7 @@ body > footer .markedista-logotext {
 
 .post-summary > a.post-read-more {
   color: orangered;
-  text-shadow: 0 1px 1px #cfcbc9;
+  font-size: 1.05em;
 }
 
 .full-post {
